@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Resource Mapper | Final Project</title>
+    <style>
+        :root {
+            --green: #00BF63;
+            --orange: #ED9F47;
+            --red: #9C2B36;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        .map-container {
+            height: 70vh;
+            background: #f0f0f0;
+            position: relative;
+        }
+
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .resource-type {
+            margin: 0.5rem 0;
+        }
+
+        .resource-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background: var(--green);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .resource-button:hover {
+            background: var(--orange);
+        }
+
+        .resource-list {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 300px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .resource-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+
+        .resource-icon {
+            font-size: 1.5rem;
+        }
+
+        .resource-details {
+            flex: 1;
+        }
+
+        .resource-name {
+            font-weight: bold;
+            color: var(--green);
+        }
+
+        .resource-address {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .add-resource-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 2000;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        .submit-btn,
+        .cancel-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background: var(--green);
+            color: white;
+        }
+
+        .cancel-btn {
+            background: #f0f0f0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container" id="map">
+        <!-- Map will be initialized here -->
+        <div class="controls">
+            <h3>Add Resource</h3>
+            <div class="resource-type">
+                <button class="resource-button" onclick="showAddForm('hospital')">
+                    🏥 Add Hospital
+                </button>
+            </div>
+            <div class="resource-type">
+                <button class="resource-button" onclick="showAddForm('school')">
+                    🏫 Add School
+                </button>
+            </div>
+            <div class="resource-type">
+                <button class="resource-button" onclick="showAddForm('park')">
+                    🌳 Add Park
+                </button>
+            </div>
+        </div>
+
+        <div class="resource-list">
+            <h3>Community Resources</h3>
+            <div class="resource-item">
+                <span class="resource-icon">🏥</span>
+                <div class="resource-details">
+                    <div class="resource-name">Central Hospital</div>
+                    <div class="resource-address">123 Health Street</div>
+                </div>
+            </div>
+            <div class="resource-item">
+                <span class="resource-icon">🏫</span>
+                <div class="resource-details">
+                    <div class="resource-name">Community School</div>
+                    <div class="resource-address">456 Education Ave</div>
+                </div>
+            </div>
+            <div class="resource-item">
+                <span class="resource-icon">🌳</span>
+                <div class="resource-details">
+                    <div class="resource-name">City Park</div>
+                    <div class="resource-address">789 Nature Road</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="add-resource-form" id="addResourceForm">
+        <h3>Add New Resource</h3>
+        <form onsubmit="addResource(event)">
+            <div class="form-group">
+                <label for="resourceType">Resource Type</label>
+                <select id="resourceType" required>
+                    <option value="hospital">Hospital 🏥</option>
+                    <option value="school">School 🏫</option>
+                    <option value="park">Park 🌳</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="resourceName">Name</label>
+                <input type="text" id="resourceName" required>
+            </div>
+            <div class="form-group">
+                <label for="resourceAddress">Address</label>
+                <input type="text" id="resourceAddress" required>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="cancel-btn" onclick="hideAddForm()">Cancel</button>
+                <button type="submit" class="submit-btn">Add Resource</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Initialize the map (we'll use Leaflet.js in the full implementation)
+        function initMap() {
+            // Map initialization code will go here
+        }
+
+        function showAddForm(type) {
+            const form = document.getElementById('addResourceForm');
+            form.style.display = 'block';
+            document.getElementById('resourceType').value = type;
+        }
+
+        function hideAddForm() {
+            document.getElementById('addResourceForm').style.display = 'none';
+        }
+
+        function addResource(event) {
+            event.preventDefault();
+            const type = document.getElementById('resourceType').value;
+            const name = document.getElementById('resourceName').value;
+            const address = document.getElementById('resourceAddress').value;
+
+            // Add the resource to the list
+            const list = document.querySelector('.resource-list');
+            const icon = type === 'hospital' ? '🏥' : type === 'school' ? '🏫' : '🌳';
+            
+            const resourceHTML = `
+                <div class="resource-item">
+                    <span class="resource-icon">${icon}</span>
+                    <div class="resource-details">
+                        <div class="resource-name">${name}</div>
+                        <div class="resource-address">${address}</div>
+                    </div>
+                </div>
+            `;
+            list.insertAdjacentHTML('beforeend', resourceHTML);
+
+            // Clear form and hide it
+            event.target.reset();
+            hideAddForm();
+        }
+
+        // Initialize map when page loads
+        window.addEventListener('load', initMap);
+    </script>
+</body>
+</html>

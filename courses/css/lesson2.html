@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: Layout & Positioning | Community Resource Mapper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../course-styles.css">
+    <style>
+        .layout-demo {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .flex-item {
+            background: var(--green);
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .grid-item {
+            background: var(--orange);
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .position-demo {
+            position: relative;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            margin: 1rem 0;
+            padding: 1rem;
+        }
+
+        .position-absolute {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--red);
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .playground {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .editor-section {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .editor-section textarea {
+            width: 100%;
+            min-height: 300px;
+            font-family: monospace;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+        }
+
+        .preview-section {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        #preview {
+            min-height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+        }
+
+        .interactive-demo {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .control-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .control-group {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--orange);
+        }
+
+        .control-group select,
+        .control-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .demo-box {
+            width: 100px;
+            height: 100px;
+            background: var(--green);
+            margin: 1rem;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../../index.html" class="back-home">
+                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            </a>
+            <div class="lesson-info">
+                <h1>Lesson 2: Layout & Positioning 📐</h1>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 66%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <aside class="lesson-nav">
+            <div class="module-progress">
+                <h3>CSS Styling</h3>
+                <ul>
+                    <li><a href="lesson1.html">1. CSS Basics</a></li>
+                    <li class="active"><a href="lesson2.html">2. Layout & Positioning</a></li>
+                    <li><a href="lesson3.html">3. Responsive Design</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="lesson-main">
+            <div class="lesson-section introduction">
+                <h2>Organizing Your Content! 📐</h2>
+                <p>Learn how to arrange elements on your page using modern CSS layout techniques like Flexbox and Grid!</p>
+            </div>
+
+            <div class="lesson-section concept">
+                <h3>Flexbox Layout 📦</h3>
+                <div class="layout-demo">
+                    <div class="flex-container">
+                        <div class="flex-item">Item 1</div>
+                        <div class="flex-item">Item 2</div>
+                        <div class="flex-item">Item 3</div>
+                    </div>
+                    <div class="code-example">
+                        <pre>
+.container {
+    display: flex;
+    gap: 1rem;
+}
+
+.item {
+    flex: 1;
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-section concept">
+                <h3>Grid Layout 🎯</h3>
+                <div class="layout-demo">
+                    <div class="grid-container">
+                        <div class="grid-item">1</div>
+                        <div class="grid-item">2</div>
+                        <div class="grid-item">3</div>
+                        <div class="grid-item">4</div>
+                        <div class="grid-item">5</div>
+                        <div class="grid-item">6</div>
+                    </div>
+                    <div class="code-example">
+                        <pre>
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-section concept">
+                <h3>Positioning 📍</h3>
+                <div class="position-demo">
+                    <div class="position-absolute">
+                        Centered Element
+                    </div>
+                </div>
+                <div class="code-example">
+                    <pre>
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}</pre>
+                </div>
+            </div>
+
+            <div class="lesson-section practice">
+                <h3>Interactive Layout Builder 🎮</h3>
+                <div class="interactive-demo">
+                    <div class="control-panel">
+                        <div class="control-group">
+                            <label>Display Type</label>
+                            <select id="display-type" onchange="updateLayout()">
+                                <option value="block">Block</option>
+                                <option value="flex">Flex</option>
+                                <option value="grid">Grid</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Justify Content</label>
+                            <select id="justify-content" onchange="updateLayout()">
+                                <option value="flex-start">Start</option>
+                                <option value="center">Center</option>
+                                <option value="flex-end">End</option>
+                                <option value="space-between">Space Between</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Align Items</label>
+                            <select id="align-items" onchange="updateLayout()">
+                                <option value="flex-start">Start</option>
+                                <option value="center">Center</option>
+                                <option value="flex-end">End</option>
+                                <option value="stretch">Stretch</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="layout-preview" style="min-height: 200px; border: 1px dashed #ccc; margin-top: 1rem;">
+                        <div class="demo-box"></div>
+                        <div class="demo-box"></div>
+                        <div class="demo-box"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-section practice">
+                <h3>Try It Yourself! 🎯</h3>
+                <div class="playground">
+                    <div class="editor-section">
+                        <h4>CSS Editor</h4>
+                        <textarea id="css-input">
+/* Try creating a layout! */
+.container {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: #00BF63;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}</textarea>
+                        <button onclick="updatePreview()" class="run-code">Apply Layout ▶️</button>
+                    </div>
+                    <div class="preview-section">
+                        <h4>Preview</h4>
+                        <div id="preview">
+                            <div class="container">
+                                <div class="box">Box 1</div>
+                                <div class="box">Box 2</div>
+                                <div class="box">Box 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-section quiz">
+                <h3>Layout Quiz! 📝</h3>
+                <div id="layout-quiz"></div>
+            </div>
+
+            <div class="lesson-section next-steps">
+                <h3>Well Done! 🌟</h3>
+                <p>You've mastered CSS layouts! Ready to learn about making your designs work on all screen sizes?</p>
+                <a href="lesson3.html" class="next-lesson">
+                    Next Lesson: Responsive Design →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <span>Made with <span class="heart">❤️</span> by</span>
+                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo">
+                <span>For more information, please email <a href="mailto:contact@giiyo.com">contact@giiyo.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../course-scripts.js"></script>
+    <script src="../quiz-system.js"></script>
+    <script>
+        // Initialize quiz
+        const quizQuestions = [
+            {
+                question: "Which display property value creates a flex container?",
+                options: ["block", "inline", "flex", "grid"],
+                correct: 2
+            },
+            {
+                question: "What property is used to create gaps between grid items?",
+                options: ["spacing", "gap", "grid-gap", "margin"],
+                correct: 1
+            },
+            {
+                question: "Which position value makes an element relative to its closest positioned ancestor?",
+                options: ["static", "relative", "absolute", "fixed"],
+                correct: 2
+            },
+            {
+                question: "Which property aligns flex items along the main axis?",
+                options: ["align-items", "justify-content", "align-content", "flex-align"],
+                correct: 1
+            }
+        ];
+
+        // Initialize quiz when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizContainer = document.getElementById('layout-quiz');
+            new QuizSystem(quizContainer, quizQuestions);
+        });
+
+        // Layout playground functionality
+        function updateLayout() {
+            const container = document.getElementById('layout-preview');
+            const displayType = document.getElementById('display-type').value;
+            const justifyContent = document.getElementById('justify-content').value;
+            const alignItems = document.getElementById('align-items').value;
+
+            container.style.display = displayType;
+            container.style.justifyContent = justifyContent;
+            container.style.alignItems = alignItems;
+
+            if (displayType === 'grid') {
+                container.style.gridTemplateColumns = 'repeat(3, 1fr)';
+            }
+        }
+
+        // CSS Playground functionality
+        function updatePreview() {
+            const css = document.getElementById('css-input').value;
+            const preview = document.getElementById('preview');
+            
+            // Create a style element
+            const style = document.createElement('style');
+            style.textContent = css;
+            
+            // Remove any previous style elements
+            const oldStyles = preview.getElementsByTagName('style');
+            Array.from(oldStyles).forEach(oldStyle => oldStyle.remove());
+            
+            // Add the new style element
+            preview.appendChild(style);
+        }
+    </script>
+</body>
+</html>

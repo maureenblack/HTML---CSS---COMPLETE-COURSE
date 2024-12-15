@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cheat Sheet | GiiyoTech</title>
+    <style>
+        :root {
+            --green: #00BF63;
+            --orange: #ED9F47;
+            --red: #9C2B36;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: var(--green);
+            text-align: center;
+            border-bottom: 3px solid var(--green);
+            padding-bottom: 1rem;
+        }
+
+        .property-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .property-section h2 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .property-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--green);
+        }
+
+        .property-name {
+            color: var(--red);
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .example {
+            background: #f0f0f0;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .live-example {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+        }
+
+        @media print {
+            .property-section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Cheat Sheet</h1>
+
+    <div class="property-section">
+        <h2>Text Styling</h2>
+        <div class="property-grid">
+            <div class="property-card">
+                <div class="property-name">color</div>
+                <div class="property-description">Sets the color of text</div>
+                <div class="example">color: blue;</div>
+                <div class="live-example" style="color: blue;">
+                    Blue text example
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-name">font-size</div>
+                <div class="property-description">Sets the size of the font</div>
+                <div class="example">font-size: 20px;</div>
+                <div class="live-example" style="font-size: 20px;">
+                    Larger text example
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-name">font-weight</div>
+                <div class="property-description">Sets the thickness of text</div>
+                <div class="example">font-weight: bold;</div>
+                <div class="live-example" style="font-weight: bold;">
+                    Bold text example
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="property-section">
+        <h2>Box Model</h2>
+        <div class="property-grid">
+            <div class="property-card">
+                <div class="property-name">margin</div>
+                <div class="property-description">Sets the outer spacing of an element</div>
+                <div class="example">margin: 10px;</div>
+                <div class="live-example">
+                    <div style="background: #ddd; margin: 10px; text-align: center;">
+                        Box with margin
+                    </div>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-name">padding</div>
+                <div class="property-description">Sets the inner spacing of an element</div>
+                <div class="example">padding: 10px;</div>
+                <div class="live-example">
+                    <div style="background: #ddd; padding: 10px; text-align: center;">
+                        Box with padding
+                    </div>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-name">border</div>
+                <div class="property-description">Sets the border of an element</div>
+                <div class="example">border: 2px solid black;</div>
+                <div class="live-example">
+                    <div style="border: 2px solid black; padding: 5px; text-align: center;">
+                        Box with border
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="property-section">
+        <h2>Layout</h2>
+        <div class="property-grid">
+            <div class="property-card">
+                <div class="property-name">display</div>
+                <div class="property-description">Sets how an element should be displayed</div>
+                <div class="example">display: flex;</div>
+            </div>
+            <div class="property-card">
+                <div class="property-name">position</div>
+                <div class="property-description">Sets the positioning method</div>
+                <div class="example">position: relative;</div>
+            </div>
+            <div class="property-card">
+                <div class="property-name">float</div>
+                <div class="property-description">Sets how an element should float</div>
+                <div class="example">float: left;</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="property-section">
+        <h2>Colors & Background</h2>
+        <div class="property-grid">
+            <div class="property-card">
+                <div class="property-name">background-color</div>
+                <div class="property-description">Sets the background color</div>
+                <div class="example">background-color: #ff0000;</div>
+                <div class="live-example" style="background-color: #ff0000; color: white; padding: 5px; text-align: center;">
+                    Red background
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-name">background-image</div>
+                <div class="property-description">Sets a background image</div>
+                <div class="example">background-image: url('image.jpg');</div>
+            </div>
+            <div class="property-card">
+                <div class="property-name">opacity</div>
+                <div class="property-description">Sets the transparency</div>
+                <div class="example">opacity: 0.5;</div>
+                <div class="live-example" style="background: black; opacity: 0.5; padding: 5px; color: white; text-align: center;">
+                    50% opacity
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 2rem; color: #666;">
+        <p>Created by GiiyoTech - Empowering young minds through technology</p>
+    </footer>
+</body>
+</html>

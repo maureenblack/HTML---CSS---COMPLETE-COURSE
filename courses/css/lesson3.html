@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Responsive Design | Community Resource Mapper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../course-styles.css">
+    <style>
+        .responsive-demo {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .device-preview {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .device-content {
+            padding: 1rem;
+        }
+
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .grid-card {
+            background: var(--green);
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .media-query-demo {
+            padding: 1rem;
+            background: var(--orange);
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .media-query-demo {
+                background: var(--green);
+            }
+        }
+
+        .device-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .device-button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            background: var(--green);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .device-button:hover {
+            background: var(--orange);
+        }
+
+        .playground {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .editor-section {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .editor-section textarea {
+            width: 100%;
+            min-height: 300px;
+            font-family: monospace;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+        }
+
+        .preview-section {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .preview-container {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        #preview {
+            padding: 1rem;
+            min-height: 300px;
+        }
+
+        .width-indicator {
+            background: #f0f0f0;
+            padding: 0.5rem;
+            text-align: center;
+            font-family: monospace;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .breakpoint-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .breakpoint-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .breakpoint-card h4 {
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .code-example {
+            background: #2d2d2d;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../../index.html" class="back-home">
+                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            </a>
+            <div class="lesson-info">
+                <h1>Lesson 3: Responsive Design 📱</h1>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="lesson-content">
+        <aside class="lesson-nav">
+            <div class="module-progress">
+                <h3>CSS Styling</h3>
+                <ul>
+                    <li><a href="lesson1.html">1. CSS Basics</a></li>
+                    <li><a href="lesson2.html">2. Layout & Positioning</a></li>
+                    <li class="active"><a href="lesson3.html">3. Responsive Design</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="lesson-main">
+            <div class="lesson-section introduction">
+                <h2>Design for All Devices! 📱</h2>
+                <p>Learn how to make your websites look great on phones, tablets, and computers using responsive design techniques!</p>
+            </div>
+
+            <div class="lesson-section concept">
+                <h3>Common Breakpoints 📏</h3>
+                <div class="breakpoint-list">
+                    <div class="breakpoint-card">
+                        <h4>Mobile Devices</h4>
+                        <p>Up to 600px</p>
+                        <div class="code-example">
+                            @media (max-width: 600px) {
+                                /* Mobile styles */
+                            }
+                        </div>
+                    </div>
+                    <div class="breakpoint-card">
+                        <h4>Tablets</h4>
+                        <p>601px to 1024px</p>
+                        <div class="code-example">
+                            @media (min-width: 601px) and (max-width: 1024px) {
+                                /* Tablet styles */
+                            }
+                        </div>
+                    </div>
+                    <div class="breakpoint-card">
+                        <h4>Desktops</h4>
+                        <p>1025px and above</p>
+                        <div class="code-example">
+                            @media (min-width: 1025px) {
+                                /* Desktop styles */
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-section concept">
+                <h3>Responsive Grid 🎯</h3>
+                <div class="responsive-demo">
+                    <div class="responsive-grid">
+                        <div class="grid-card">Card 1</div>
+                        <div class="grid-card">Card 2</div>
+                        <div class="grid-card">Card 3</div>
+                        <div class="grid-card">Card 4</div>
+                    </div>
+                    <div class="code-example">
+                        .grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                            gap: 1rem;
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-section practice">
+                <h3>Device Preview 📱</h3>
+                <div class="device-controls">
+                    <button class="device-button" onclick="setPreviewWidth('320px')">Mobile</button>
+                    <button class="device-button" onclick="setPreviewWidth('768px')">Tablet</button>
+                    <button class="device-button" onclick="setPreviewWidth('1024px')">Desktop</button>
+                </div>
+                <div class="playground">
+                    <div class="editor-section">
+                        <h4>CSS Editor</h4>
+                        <textarea id="css-input">
+/* Try making this responsive! */
+.container {
+    padding: 1rem;
+}
+
+.card {
+    background: #00BF63;
+    color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+@media (min-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}</textarea>
+                        <button onclick="updatePreview()" class="run-code">Apply Styles ▶️</button>
+                    </div>
+                    <div class="preview-section">
+                        <div class="preview-container">
+                            <div class="width-indicator">Width: <span id="width-display">100%</span></div>
+                            <div id="preview">
+                                <div class="container">
+                                    <div class="card">Card 1</div>
+                                    <div class="card">Card 2</div>
+                                    <div class="card">Card 3</div>
+                                    <div class="card">Card 4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-section quiz">
+                <h3>Responsive Design Quiz! 📝</h3>
+                <div id="responsive-quiz"></div>
+            </div>
+
+            <div class="lesson-section next-steps">
+                <h3>Congratulations! 🎉</h3>
+                <p>You've completed the CSS course! Now you know how to create beautiful, responsive websites that work on all devices!</p>
+                <a href="../../projects/index.html" class="next-lesson">
+                    Start Building Projects →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <span>Made with <span class="heart">❤️</span> by</span>
+                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo">
+                <span>For more information, please email <a href="mailto:contact@giiyo.com">contact@giiyo.com</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../course-scripts.js"></script>
+    <script src="../quiz-system.js"></script>
+    <script>
+        // Initialize quiz
+        const quizQuestions = [
+            {
+                question: "What CSS rule is used to create responsive designs?",
+                options: ["@responsive", "@media", "@screen", "@device"],
+                correct: 1
+            },
+            {
+                question: "Which CSS unit is relative to the viewport width?",
+                options: ["px", "em", "vw", "%"],
+                correct: 2
+            },
+            {
+                question: "What's the best practice for mobile-first design?",
+                options: [
+                    "Start with desktop styles and override for mobile",
+                    "Start with mobile styles and enhance for larger screens",
+                    "Create separate stylesheets for each device",
+                    "Use only fixed pixel values"
+                ],
+                correct: 1
+            },
+            {
+                question: "Which property creates a flexible grid that adapts to screen size?",
+                options: [
+                    "grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))",
+                    "grid-template: auto",
+                    "grid: responsive",
+                    "grid-auto-flow: responsive"
+                ],
+                correct: 0
+            }
+        ];
+
+        // Initialize quiz when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizContainer = document.getElementById('responsive-quiz');
+            new QuizSystem(quizContainer, quizQuestions);
+        });
+
+        // Device preview functionality
+        function setPreviewWidth(width) {
+            const container = document.querySelector('.preview-container');
+            container.style.width = width;
+            document.getElementById('width-display').textContent = width;
+        }
+
+        // CSS Playground functionality
+        function updatePreview() {
+            const css = document.getElementById('css-input').value;
+            const preview = document.getElementById('preview');
+            
+            // Create a style element
+            const style = document.createElement('style');
+            style.textContent = css;
+            
+            // Remove any previous style elements
+            const oldStyles = preview.getElementsByTagName('style');
+            Array.from(oldStyles).forEach(oldStyle => oldStyle.remove());
+            
+            // Add the new style element
+            preview.appendChild(style);
+        }
+    </script>
+</body>
+</html>

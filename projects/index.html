@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Projects | Community Resource Mapper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            color: var(--green);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-skills {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--orange);
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .beginner {
+            background: rgba(0, 191, 99, 0.1);
+            color: var(--green);
+        }
+
+        .intermediate {
+            background: rgba(237, 159, 71, 0.1);
+            color: var(--orange);
+        }
+
+        .advanced {
+            background: rgba(156, 43, 54, 0.1);
+            color: var(--red);
+        }
+    </style>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../index.html" class="back-home">
+                <img src="../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            </a>
+            <div class="lesson-info">
+                <h1>Practice Projects 🚀</h1>
+                <p>Put your skills to the test with these fun projects!</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="difficulty advanced">Final Project</span>
+                    <h2 class="project-title">Community Resource Mapper 🗺️</h2>
+                    <p class="project-description">Build an interactive map to help people find hospitals 🏥, schools 🏫, and parks 🌳 in their community.</p>
+                    <div class="project-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Interactive Map</span>
+                    </div>
+                    <a href="resource-mapper/index.html" class="project-link">Start Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="difficulty beginner">Beginner</span>
+                    <h2 class="project-title">Recipe Card 🍳</h2>
+                    <p class="project-description">Create a beautiful recipe card with ingredients and instructions.</p>
+                    <div class="project-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                    <a href="recipe-card/index.html" class="project-link">Start Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="difficulty intermediate">Intermediate</span>
+                    <h2 class="project-title">Photo Gallery 📸</h2>
+                    <p class="project-description">Build a responsive image gallery with hover effects and lightbox.</p>
+                    <div class="project-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS Grid</span>
+                        <span class="skill-tag">Flexbox</span>
+                    </div>
+                    <a href="gallery/index.html" class="project-link">Start Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="difficulty advanced">Advanced</span>
+                    <h2 class="project-title">Travel Blog ✈️</h2>
+                    <p class="project-description">Create a full blog layout with articles, sidebar, and navigation.</p>
+                    <div class="project-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Responsive</span>
+                    </div>
+                    <a href="travel-blog/index.html" class="project-link">Start Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="difficulty intermediate">Intermediate</span>
+                    <h2 class="project-title">Weather Widget 🌤️</h2>
+                    <p class="project-description">Design a beautiful weather display widget with animations.</p>
+                    <div class="project-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Animations</span>
+                    </div>
+                    <a href="weather-widget/index.html" class="project-link">Start Project →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="difficulty intermediate">Intermediate</span>
+                    <h2 class="project-title">Music Player 🎵</h2>
+                    <p class="project-description">Create a sleek music player interface with controls.</p>
+                    <div class="project-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Flexbox</span>
+                    </div>
+                    <a href="music-player/index.html" class="project-link">Start Project →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <span>Made with <span class="heart">❤️</span> by</span>
+                <img src="../images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo">
+                <span>For more information, please email <a href="mailto:contact@giiyo.com">contact@giiyo.com</a></span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
