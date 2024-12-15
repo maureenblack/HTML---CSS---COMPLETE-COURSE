@@ -97,22 +97,12 @@
                 <div class="code-playground">
                     <div class="code-editor">
                         <h4>Type your code here:</h4>
-                        <textarea id="code-input" class="code-input" rows="10">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;About Me&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        <!-- Add your introduction here! -->
-        
-    &lt;/body&gt;
-&lt;/html&gt;</textarea>
-                        <button class="run-code">Run Code ▶️</button>
+                        <textarea id="code-input" class="code-input"></textarea>
+                        <button id="run-code" class="run-code">Run Code ▶️</button>
                     </div>
                     <div class="preview">
                         <h4>Your webpage will appear here:</h4>
-                        <div id="preview" class="preview-window"></div>
+                        <iframe id="preview" class="preview-frame"></iframe>
                     </div>
                 </div>
                 <div class="tips">
@@ -178,6 +168,14 @@
                     <p>Let's see what you've learned! Don't worry if you don't get everything right the first time - that's how we learn! 🌟</p>
                 </div>
                 <div id="beginner-quiz"></div>
+            </div>
+
+            <div class="lesson-section next-steps">
+                <h3>Great Job! 🌟</h3>
+                <p>You've created your first HTML page! In the next lesson, we'll learn how to add different types of content to make your page more interesting.</p>
+                <a href="lesson2.html" class="next-lesson">
+                    Next Lesson: Adding Content
+                </a>
             </div>
 
             <style>
@@ -290,6 +288,5 @@
 
     <script src="../course-scripts.js"></script>
     <script src="../quiz-system.js"></script>
-    <script src="lesson1.js"></script>
 </body>
 </html>

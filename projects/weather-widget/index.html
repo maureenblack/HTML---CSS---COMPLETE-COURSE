@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget Project | Web Development Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Project-specific styles */
+        .project-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .instructions h2 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .instructions li::before {
+            content: "✓";
+            color: var(--green);
+            position: absolute;
+            left: 0;
+        }
+
+        .starter-code {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        code {
+            font-family: monospace;
+            background: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .preview {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview h3 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        /* Weather Widget Styles - Students will create these */
+        .weather-widget {
+            /* Students will style this */
+        }
+    </style>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Projects
+            </a>
+            <div class="lesson-info">
+                <h1>Weather Widget Project 🌤️</h1>
+                <p>Create a beautiful weather display with animations!</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="project-container">
+        <section class="instructions">
+            <h2>Project Instructions</h2>
+            <p>In this project, you'll create a weather widget that displays:</p>
+            <ul>
+                <li>Current temperature and conditions</li>
+                <li>Animated weather icons</li>
+                <li>5-day forecast</li>
+                <li>Additional weather details</li>
+                <li>Location information</li>
+            </ul>
+
+            <h3>Getting Started</h3>
+            <p>Here's your starter HTML code:</p>
+            <div class="starter-code">
+                <pre><code>&lt;div class="weather-widget"&gt;
+    &lt;div class="current-weather"&gt;
+        &lt;div class="weather-icon"&gt;☀️&lt;/div&gt;
+        &lt;div class="temperature"&gt;72°&lt;/div&gt;
+        &lt;div class="condition"&gt;Sunny&lt;/div&gt;
+        &lt;div class="location"&gt;San Francisco, CA&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="weather-details"&gt;
+        &lt;div class="detail"&gt;
+            &lt;span class="label"&gt;Humidity&lt;/span&gt;
+            &lt;span class="value"&gt;65%&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="detail"&gt;
+            &lt;span class="label"&gt;Wind&lt;/span&gt;
+            &lt;span class="value"&gt;8 mph&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="detail"&gt;
+            &lt;span class="label"&gt;Precipitation&lt;/span&gt;
+            &lt;span class="value"&gt;0%&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="forecast"&gt;
+        &lt;div class="forecast-day"&gt;
+            &lt;div class="day"&gt;Mon&lt;/div&gt;
+            &lt;div class="icon"&gt;🌤️&lt;/div&gt;
+            &lt;div class="temp"&gt;75°&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="forecast-day"&gt;
+            &lt;div class="day"&gt;Tue&lt;/div&gt;
+            &lt;div class="icon"&gt;⛅&lt;/div&gt;
+            &lt;div class="temp"&gt;72°&lt;/div&gt;
+        &lt;/div&gt;
+        /* Add more forecast days */
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <h3>Styling Requirements</h3>
+            <ul>
+                <li>Use a modern, clean design</li>
+                <li>Create smooth animations</li>
+                <li>Add hover effects</li>
+                <li>Make it responsive</li>
+                <li>Use gradients and shadows</li>
+            </ul>
+
+            <h3>Bonus Challenges</h3>
+            <ul>
+                <li>Add dark/light mode toggle</li>
+                <li>Create custom weather icons</li>
+                <li>Add temperature unit converter</li>
+                <li>Include weather alerts</li>
+            </ul>
+        </section>
+
+        <section class="preview">
+            <h3>Your Weather Widget Will Appear Here:</h3>
+            <!-- Students will copy the starter code here -->
+            <div class="weather-widget">
+                <div class="current-weather">
+                    <div class="weather-icon">☀️</div>
+                    <div class="temperature">72°</div>
+                    <div class="condition">Sunny</div>
+                    <div class="location">San Francisco, CA</div>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail">
+                        <span class="label">Humidity</span>
+                        <span class="value">65%</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Wind</span>
+                        <span class="value">8 mph</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Precipitation</span>
+                        <span class="value">0%</span>
+                    </div>
+                </div>
+                
+                <div class="forecast">
+                    <div class="forecast-day">
+                        <div class="day">Mon</div>
+                        <div class="icon">🌤️</div>
+                        <div class="temp">75°</div>
+                    </div>
+                    <div class="forecast-day">
+                        <div class="day">Tue</div>
+                        <div class="icon">⛅</div>
+                        <div class="temp">72°</div>
+                    </div>
+                    <div class="forecast-day">
+                        <div class="day">Wed</div>
+                        <div class="icon">🌧️</div>
+                        <div class="temp">68°</div>
+                    </div>
+                    <div class="forecast-day">
+                        <div class="day">Thu</div>
+                        <div class="icon">⛅</div>
+                        <div class="temp">70°</div>
+                    </div>
+                    <div class="forecast-day">
+                        <div class="day">Fri</div>
+                        <div class="icon">☀️</div>
+                        <div class="temp">74°</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Optional: Add JavaScript for unit conversion and animations
+    </script>
+</body>
+</html>

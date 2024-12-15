@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Card Project | Web Development Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Project-specific styles */
+        .project-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .instructions h2 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .instructions li::before {
+            content: "✓";
+            color: var(--green);
+            position: absolute;
+            left: 0;
+        }
+
+        .starter-code {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        code {
+            font-family: monospace;
+            background: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .preview {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview h3 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        /* Recipe Card Styles - Students will create these */
+        .recipe-card {
+            /* Students will style this */
+        }
+    </style>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Projects
+            </a>
+            <div class="lesson-info">
+                <h1>Recipe Card Project 🍳</h1>
+                <p>Create a beautiful recipe card using HTML & CSS!</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="project-container">
+        <section class="instructions">
+            <h2>Project Instructions</h2>
+            <p>In this project, you'll create a recipe card that displays:</p>
+            <ul>
+                <li>Recipe title and description</li>
+                <li>Cooking time and difficulty level</li>
+                <li>List of ingredients</li>
+                <li>Step-by-step instructions</li>
+                <li>Beautiful styling with CSS</li>
+            </ul>
+
+            <h3>Getting Started</h3>
+            <p>Here's your starter HTML code:</p>
+            <div class="starter-code">
+                <pre><code>&lt;div class="recipe-card"&gt;
+    &lt;h2&gt;Classic Chocolate Chip Cookies 🍪&lt;/h2&gt;
+    &lt;div class="recipe-info"&gt;
+        &lt;span&gt;⏰ 30 minutes&lt;/span&gt;
+        &lt;span&gt;👩‍🍳 Easy&lt;/span&gt;
+        &lt;span&gt;🍽️ Serves 12&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="ingredients"&gt;
+        &lt;h3&gt;Ingredients&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;2 1/4 cups flour&lt;/li&gt;
+            &lt;li&gt;1 cup butter&lt;/li&gt;
+            &lt;li&gt;3/4 cup sugar&lt;/li&gt;
+            &lt;li&gt;2 eggs&lt;/li&gt;
+            &lt;li&gt;2 cups chocolate chips&lt;/li&gt;
+            &lt;li&gt;1 tsp vanilla extract&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="instructions"&gt;
+        &lt;h3&gt;Instructions&lt;/h3&gt;
+        &lt;ol&gt;
+            &lt;li&gt;Preheat oven to 375°F&lt;/li&gt;
+            &lt;li&gt;Mix butter and sugar&lt;/li&gt;
+            &lt;li&gt;Add eggs and vanilla&lt;/li&gt;
+            &lt;li&gt;Mix in dry ingredients&lt;/li&gt;
+            &lt;li&gt;Add chocolate chips&lt;/li&gt;
+            &lt;li&gt;Bake for 10 minutes&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <h3>Styling Requirements</h3>
+            <ul>
+                <li>Use a clean, modern design</li>
+                <li>Add appropriate spacing and padding</li>
+                <li>Use custom fonts and colors</li>
+                <li>Add hover effects for interactivity</li>
+                <li>Make it responsive for all screen sizes</li>
+            </ul>
+
+            <h3>Bonus Challenges</h3>
+            <ul>
+                <li>Add a print button that styles the recipe nicely for printing</li>
+                <li>Create a "dark mode" version</li>
+                <li>Add cooking timer functionality</li>
+                <li>Include serving size calculator</li>
+            </ul>
+        </section>
+
+        <section class="preview">
+            <h3>Your Recipe Card Will Appear Here:</h3>
+            <!-- Students will copy the starter code here -->
+            <div class="recipe-card">
+                <h2>Classic Chocolate Chip Cookies 🍪</h2>
+                <div class="recipe-info">
+                    <span>⏰ 30 minutes</span>
+                    <span>👩‍🍳 Easy</span>
+                    <span>🍽️ Serves 12</span>
+                </div>
+                
+                <div class="ingredients">
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>2 1/4 cups flour</li>
+                        <li>1 cup butter</li>
+                        <li>3/4 cup sugar</li>
+                        <li>2 eggs</li>
+                        <li>2 cups chocolate chips</li>
+                        <li>1 tsp vanilla extract</li>
+                    </ul>
+                </div>
+                
+                <div class="instructions">
+                    <h3>Instructions</h3>
+                    <ol>
+                        <li>Preheat oven to 375°F</li>
+                        <li>Mix butter and sugar</li>
+                        <li>Add eggs and vanilla</li>
+                        <li>Mix in dry ingredients</li>
+                        <li>Add chocolate chips</li>
+                        <li>Bake for 10 minutes</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Optional: Add JavaScript for bonus features
+    </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery Project | Web Development Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Project-specific styles */
+        .project-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .instructions h2 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .instructions li::before {
+            content: "✓";
+            color: var(--green);
+            position: absolute;
+            left: 0;
+        }
+
+        .starter-code {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        code {
+            font-family: monospace;
+            background: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .preview {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview h3 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery Styles - Students will create these */
+        .gallery {
+            /* Students will style this */
+        }
+    </style>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Projects
+            </a>
+            <div class="lesson-info">
+                <h1>Photo Gallery Project 📸</h1>
+                <p>Create a responsive image gallery with CSS Grid and Flexbox!</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="project-container">
+        <section class="instructions">
+            <h2>Project Instructions</h2>
+            <p>In this project, you'll create a responsive photo gallery that includes:</p>
+            <ul>
+                <li>Grid layout for photos</li>
+                <li>Hover effects with image info</li>
+                <li>Lightbox for full-size viewing</li>
+                <li>Filter categories</li>
+                <li>Responsive design</li>
+            </ul>
+
+            <h3>Getting Started</h3>
+            <p>Here's your starter HTML code:</p>
+            <div class="starter-code">
+                <pre><code>&lt;div class="gallery"&gt;
+    &lt;div class="filters"&gt;
+        &lt;button class="filter-btn active" data-category="all"&gt;All&lt;/button&gt;
+        &lt;button class="filter-btn" data-category="nature"&gt;Nature&lt;/button&gt;
+        &lt;button class="filter-btn" data-category="city"&gt;City&lt;/button&gt;
+        &lt;button class="filter-btn" data-category="people"&gt;People&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="gallery-grid"&gt;
+        &lt;div class="gallery-item" data-category="nature"&gt;
+            &lt;img src="🌲" alt="Forest"&gt;
+            &lt;div class="item-info"&gt;
+                &lt;h3&gt;Forest Path&lt;/h3&gt;
+                &lt;p&gt;A beautiful morning walk&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="gallery-item" data-category="city"&gt;
+            &lt;img src="🌆" alt="City"&gt;
+            &lt;div class="item-info"&gt;
+                &lt;h3&gt;City Lights&lt;/h3&gt;
+                &lt;p&gt;Downtown at night&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="gallery-item" data-category="people"&gt;
+            &lt;img src="👥" alt="People"&gt;
+            &lt;div class="item-info"&gt;
+                &lt;h3&gt;Street Life&lt;/h3&gt;
+                &lt;p&gt;Daily commute&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        /* Add more gallery items as needed */
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <h3>Styling Requirements</h3>
+            <ul>
+                <li>Use CSS Grid for the gallery layout</li>
+                <li>Create smooth hover transitions</li>
+                <li>Style the filter buttons</li>
+                <li>Make images responsive</li>
+                <li>Add overlay effects</li>
+            </ul>
+
+            <h3>Bonus Challenges</h3>
+            <ul>
+                <li>Add image lazy loading</li>
+                <li>Create a masonry layout</li>
+                <li>Add search functionality</li>
+                <li>Implement infinite scroll</li>
+            </ul>
+        </section>
+
+        <section class="preview">
+            <h3>Your Gallery Will Appear Here:</h3>
+            <!-- Students will copy the starter code here -->
+            <div class="gallery">
+                <div class="filters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="nature">Nature</button>
+                    <button class="filter-btn" data-category="city">City</button>
+                    <button class="filter-btn" data-category="people">People</button>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="nature">
+                        <img src="🌲" alt="Forest">
+                        <div class="item-info">
+                            <h3>Forest Path</h3>
+                            <p>A beautiful morning walk</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="city">
+                        <img src="🌆" alt="City">
+                        <div class="item-info">
+                            <h3>City Lights</h3>
+                            <p>Downtown at night</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="people">
+                        <img src="👥" alt="People">
+                        <div class="item-info">
+                            <h3>Street Life</h3>
+                            <p>Daily commute</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Optional: Add JavaScript for filtering functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Get selected category
+                const category = button.dataset.category;
+                
+                // Filter gallery items
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

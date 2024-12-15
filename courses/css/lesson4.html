@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4: Flexbox & Grid | Web Development Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../course-styles.css">
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Home
+            </a>
+            <div class="lesson-info">
+                <h1>Lesson 4: Flexbox & Grid 🎯</h1>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 66.4%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-content">
+        <!-- Sidebar Navigation -->
+        <nav class="lesson-nav">
+            <div class="module-progress">
+                <h3>CSS Fundamentals</h3>
+                <ul>
+                    <li><a href="lesson1.html">1. Introduction to CSS</a></li>
+                    <li><a href="lesson2.html">2. Colors & Typography</a></li>
+                    <li><a href="lesson3.html">3. Box Model & Layout</a></li>
+                    <li class="active"><a href="lesson4.html">4. Flexbox & Grid</a></li>
+                    <li><a href="lesson5.html">5. Responsive Design</a></li>
+                    <li><a href="lesson6.html">6. Animations & Effects</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="lesson-main">
+            <!-- Introduction -->
+            <div class="lesson-section">
+                <h2>Modern Layout Systems! 🎯</h2>
+                <p>Learn how to create flexible and powerful layouts using CSS Flexbox and Grid!</p>
+            </div>
+
+            <!-- Flexbox Section -->
+            <div class="lesson-section">
+                <h3>Flexbox Layout 📦</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Flex Container Properties</h4>
+                        <ul>
+                            <li>display: flex</li>
+                            <li>flex-direction</li>
+                            <li>justify-content</li>
+                            <li>align-items</li>
+                            <li>flex-wrap</li>
+                            <li>gap</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Flex Item Properties</h4>
+                        <ul>
+                            <li>flex-grow</li>
+                            <li>flex-shrink</li>
+                            <li>flex-basis</li>
+                            <li>order</li>
+                            <li>align-self</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Section -->
+            <div class="lesson-section">
+                <h3>CSS Grid 🎯</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Grid Container Properties</h4>
+                        <ul>
+                            <li>display: grid</li>
+                            <li>grid-template-columns</li>
+                            <li>grid-template-rows</li>
+                            <li>grid-gap</li>
+                            <li>grid-template-areas</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Grid Item Properties</h4>
+                        <ul>
+                            <li>grid-column</li>
+                            <li>grid-row</li>
+                            <li>grid-area</li>
+                            <li>justify-self</li>
+                            <li>align-self</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Section -->
+            <div class="lesson-section">
+                <h3>Let's Practice! 💪</h3>
+                <div class="code-playground">
+                    <div class="code-editor">
+                        <h4>Try creating a layout:</h4>
+                        <textarea id="code-input" class="code-input">/* Create a flex container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.item {
+    flex: 1;
+    padding: 20px;
+    background-color: lightblue;
+    text-align: center;
+}</textarea>
+                        <button id="run-code" class="run-code">Run Code ▶️</button>
+                        <div class="preview">
+                            <h4>Preview:</h4>
+                            <iframe id="preview" class="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Common Patterns -->
+            <div class="lesson-section">
+                <h3>Common Layout Patterns 🎨</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Holy Grail Layout</h4>
+                        <p>Classic website layout with header, footer, and three columns:</p>
+                        <code>
+grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+                        </code>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Card Grid</h4>
+                        <p>Responsive grid of cards:</p>
+                        <code>
+grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips Section -->
+            <div class="lesson-section">
+                <div class="tips">
+                    <h4>Pro Tips! 💡</h4>
+                    <ul>
+                        <li>Use Flexbox for 1D layouts (rows or columns)</li>
+                        <li>Use Grid for 2D layouts (rows and columns)</li>
+                        <li>Consider using grid-template-areas for complex layouts</li>
+                        <li>Remember that Flexbox and Grid can be used together!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Challenge Section -->
+            <div class="lesson-section">
+                <h3>Mini Challenge 🏆</h3>
+                <div class="mission">
+                    <h4>Your Mission:</h4>
+                    <p>Create a responsive dashboard layout with:</p>
+                    <ul class="mission-tasks">
+                        <li>Header spanning full width</li>
+                        <li>Sidebar navigation</li>
+                        <li>Main content area with card grid</li>
+                        <li>Footer at the bottom</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="lesson-section next-steps">
+                <h3>Great Job! 🌟</h3>
+                <p>You're now a layout master! Next, we'll learn about making your designs responsive.</p>
+                <a href="lesson5.html" class="next-lesson">
+                    Next Lesson: Responsive Design
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="../course-scripts.js"></script>
+</body>
+</html>

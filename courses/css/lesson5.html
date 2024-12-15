@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5: Responsive Design | Web Development Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../course-styles.css">
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Home
+            </a>
+            <div class="lesson-info">
+                <h1>Lesson 5: Responsive Design 📱</h1>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 83%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-content">
+        <!-- Sidebar Navigation -->
+        <nav class="lesson-nav">
+            <div class="module-progress">
+                <h3>CSS Fundamentals</h3>
+                <ul>
+                    <li><a href="lesson1.html">1. Introduction to CSS</a></li>
+                    <li><a href="lesson2.html">2. Colors & Typography</a></li>
+                    <li><a href="lesson3.html">3. Box Model & Layout</a></li>
+                    <li><a href="lesson4.html">4. Flexbox & Grid</a></li>
+                    <li class="active"><a href="lesson5.html">5. Responsive Design</a></li>
+                    <li><a href="lesson6.html">6. Animations & Effects</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="lesson-main">
+            <!-- Introduction -->
+            <div class="lesson-section">
+                <h2>Design for All Devices! 📱</h2>
+                <p>Learn how to make your websites look great on phones, tablets, and computers!</p>
+            </div>
+
+            <!-- Media Queries -->
+            <div class="lesson-section">
+                <h3>Media Queries 📏</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Common Breakpoints</h4>
+                        <ul>
+                            <li>Mobile: max-width: 600px</li>
+                            <li>Tablet: max-width: 900px</li>
+                            <li>Desktop: min-width: 901px</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Media Query Syntax</h4>
+                        <code>
+@media (max-width: 600px) {
+    /* Mobile styles */
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    /* Tablet styles */
+}
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsive Units -->
+            <div class="lesson-section">
+                <h3>Responsive Units 📐</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Relative Units</h4>
+                        <ul>
+                            <li>em - relative to parent</li>
+                            <li>rem - relative to root</li>
+                            <li>vw - viewport width</li>
+                            <li>vh - viewport height</li>
+                            <li>% - percentage of parent</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>When to Use</h4>
+                        <ul>
+                            <li>Font sizes: rem</li>
+                            <li>Padding/Margin: em</li>
+                            <li>Container widths: %</li>
+                            <li>Full-screen elements: vh/vw</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Section -->
+            <div class="lesson-section">
+                <h3>Let's Practice! 💪</h3>
+                <div class="code-playground">
+                    <div class="code-editor">
+                        <h4>Try making this responsive:</h4>
+                        <textarea id="code-input" class="code-input">/* Base styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Responsive grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/* Media query for tablets */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query for mobile */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}</textarea>
+                        <button id="run-code" class="run-code">Run Code ▶️</button>
+                        <div class="preview">
+                            <h4>Preview:</h4>
+                            <iframe id="preview" class="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile First -->
+            <div class="lesson-section">
+                <h3>Mobile First Design 📱</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Why Mobile First?</h4>
+                        <ul>
+                            <li>Most users are on mobile</li>
+                            <li>Forces focus on content</li>
+                            <li>Easier to scale up than down</li>
+                            <li>Better performance</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Best Practices</h4>
+                        <ul>
+                            <li>Start with mobile layout</li>
+                            <li>Use min-width queries</li>
+                            <li>Keep layouts simple</li>
+                            <li>Test on real devices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips Section -->
+            <div class="lesson-section">
+                <div class="tips">
+                    <h4>Pro Tips! 💡</h4>
+                    <ul>
+                        <li>Always include the viewport meta tag</li>
+                        <li>Use fluid grids and flexible images</li>
+                        <li>Test on multiple devices</li>
+                        <li>Consider touch targets on mobile</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Challenge Section -->
+            <div class="lesson-section">
+                <h3>Mini Challenge 🏆</h3>
+                <div class="mission">
+                    <h4>Your Mission:</h4>
+                    <p>Create a responsive navigation menu that:</p>
+                    <ul class="mission-tasks">
+                        <li>Shows full menu on desktop</li>
+                        <li>Collapses to hamburger on mobile</li>
+                        <li>Has smooth transitions</li>
+                        <li>Works on all screen sizes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="lesson-section next-steps">
+                <h3>Almost There! 🌟</h3>
+                <p>You're now a responsive design expert! Next, we'll learn how to add beautiful animations and effects.</p>
+                <a href="lesson6.html" class="next-lesson">
+                    Next Lesson: Animations & Effects
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="../course-scripts.js"></script>
+</body>
+</html>

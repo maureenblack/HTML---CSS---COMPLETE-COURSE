@@ -136,6 +136,22 @@
             background: var(--orange);
             transform: translateY(-2px);
         }
+
+        .next-lesson {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .next-lesson:hover {
+            background: var(--orange);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -192,22 +208,12 @@
                 <div class="code-playground">
                     <div class="code-editor">
                         <h4>Try adding different types of content:</h4>
-                        <textarea id="code-input" class="code-input">
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Content Page</title>
-</head>
-<body>
-    <!-- Add your content here! -->
-    
-</body>
-</html></textarea>
-                        <button class="run-code">Run Code ▶️</button>
-                    </div>
-                    <div class="preview">
-                        <h4>Your webpage will appear here:</h4>
-                        <div id="preview" class="preview-window"></div>
+                        <textarea id="code-input" class="code-input"></textarea>
+                        <button id="run-code" class="run-code">Run Code ▶️</button>
+                        <div class="preview">
+                            <h4>Your webpage will appear here:</h4>
+                            <iframe id="preview" class="preview-frame"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -239,7 +245,7 @@
                 <h3>Well Done! 🌟</h3>
                 <p>You've learned how to add different types of content to your HTML pages! Next, we'll learn how to add links and images to make your pages even more engaging.</p>
                 <a href="lesson3.html" class="next-lesson">
-                    Next Lesson: Links & Images →
+                    Next Lesson: Links & Images
                 </a>
             </div>
         </section>

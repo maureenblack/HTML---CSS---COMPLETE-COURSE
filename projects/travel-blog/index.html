@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog Project | Web Development Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Project-specific styles */
+        .project-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .instructions h2 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .instructions li::before {
+            content: "✓";
+            color: var(--green);
+            position: absolute;
+            left: 0;
+        }
+
+        .starter-code {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        code {
+            font-family: monospace;
+            background: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .preview {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview h3 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        /* Travel Blog Styles - Students will create these */
+        .travel-blog {
+            /* Students will style this */
+        }
+    </style>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Projects
+            </a>
+            <div class="lesson-info">
+                <h1>Travel Blog Project ✈️</h1>
+                <p>Create an engaging travel blog layout!</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="project-container">
+        <section class="instructions">
+            <h2>Project Instructions</h2>
+            <p>In this project, you'll create a travel blog that includes:</p>
+            <ul>
+                <li>Hero section with featured post</li>
+                <li>Blog post grid</li>
+                <li>Categories sidebar</li>
+                <li>Author bio section</li>
+                <li>Newsletter signup form</li>
+            </ul>
+
+            <h3>Getting Started</h3>
+            <p>Here's your starter HTML code:</p>
+            <div class="starter-code">
+                <pre><code>&lt;div class="travel-blog"&gt;
+    &lt;header class="hero"&gt;
+        &lt;div class="featured-post"&gt;
+            &lt;img src="🌄" alt="Featured destination"&gt;
+            &lt;div class="post-info"&gt;
+                &lt;h1&gt;Adventures in Paradise&lt;/h1&gt;
+                &lt;p&gt;Exploring the hidden gems of Bali&lt;/p&gt;
+                &lt;a href="#" class="read-more"&gt;Read More&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;main class="blog-content"&gt;
+        &lt;div class="posts-grid"&gt;
+            &lt;article class="post"&gt;
+                &lt;img src="🏖️" alt="Beach"&gt;
+                &lt;h2&gt;Secret Beach Getaways&lt;/h2&gt;
+                &lt;p&gt;Discover hidden coastal paradises...&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="post"&gt;
+                &lt;img src="🏔️" alt="Mountains"&gt;
+                &lt;h2&gt;Mountain Adventures&lt;/h2&gt;
+                &lt;p&gt;Hiking through majestic peaks...&lt;/p&gt;
+            &lt;/article&gt;
+            /* Add more posts */
+        &lt;/div&gt;
+
+        &lt;aside class="sidebar"&gt;
+            &lt;div class="categories"&gt;
+                &lt;h3&gt;Categories&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Adventure&lt;/li&gt;
+                    &lt;li&gt;Culture&lt;/li&gt;
+                    &lt;li&gt;Food&lt;/li&gt;
+                    &lt;li&gt;Photography&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+
+            &lt;div class="author"&gt;
+                &lt;img src="👤" alt="Author"&gt;
+                &lt;h3&gt;About Me&lt;/h3&gt;
+                &lt;p&gt;Travel enthusiast sharing adventures...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;section class="newsletter"&gt;
+        &lt;h2&gt;Subscribe for Updates&lt;/h2&gt;
+        &lt;form&gt;
+            &lt;input type="email" placeholder="Enter your email"&gt;
+            &lt;button type="submit"&gt;Subscribe&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <h3>Styling Requirements</h3>
+            <ul>
+                <li>Create an attractive layout</li>
+                <li>Style images and text</li>
+                <li>Add hover effects</li>
+                <li>Make it responsive</li>
+                <li>Use CSS Grid and Flexbox</li>
+            </ul>
+
+            <h3>Bonus Challenges</h3>
+            <ul>
+                <li>Add image galleries</li>
+                <li>Create a search feature</li>
+                <li>Add social sharing buttons</li>
+                <li>Include a map feature</li>
+            </ul>
+        </section>
+
+        <section class="preview">
+            <h3>Your Travel Blog Will Appear Here:</h3>
+            <!-- Students will copy the starter code here -->
+            <div class="travel-blog">
+                <header class="hero">
+                    <div class="featured-post">
+                        <img src="🌄" alt="Featured destination">
+                        <div class="post-info">
+                            <h1>Adventures in Paradise</h1>
+                            <p>Exploring the hidden gems of Bali</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="blog-content">
+                    <div class="posts-grid">
+                        <article class="post">
+                            <img src="🏖️" alt="Beach">
+                            <h2>Secret Beach Getaways</h2>
+                            <p>Discover hidden coastal paradises...</p>
+                        </article>
+                        <article class="post">
+                            <img src="🏔️" alt="Mountains">
+                            <h2>Mountain Adventures</h2>
+                            <p>Hiking through majestic peaks...</p>
+                        </article>
+                    </div>
+
+                    <aside class="sidebar">
+                        <div class="categories">
+                            <h3>Categories</h3>
+                            <ul>
+                                <li>Adventure</li>
+                                <li>Culture</li>
+                                <li>Food</li>
+                                <li>Photography</li>
+                            </ul>
+                        </div>
+
+                        <div class="author">
+                            <img src="👤" alt="Author">
+                            <h3>About Me</h3>
+                            <p>Travel enthusiast sharing adventures...</p>
+                        </div>
+                    </aside>
+                </main>
+
+                <section class="newsletter">
+                    <h2>Subscribe for Updates</h2>
+                    <form>
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </section>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

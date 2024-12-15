@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Project | Web Development Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Project-specific styles */
+        .project-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .instructions h2 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .instructions li::before {
+            content: "✓";
+            color: var(--green);
+            position: absolute;
+            left: 0;
+        }
+
+        .starter-code {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        code {
+            font-family: monospace;
+            background: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .preview {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview h3 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        /* Music Player Styles - Students will create these */
+        .music-player {
+            /* Students will style this */
+        }
+    </style>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Projects
+            </a>
+            <div class="lesson-info">
+                <h1>Music Player Project 🎵</h1>
+                <p>Create a sleek music player interface!</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="project-container">
+        <section class="instructions">
+            <h2>Project Instructions</h2>
+            <p>In this project, you'll create a music player interface that includes:</p>
+            <ul>
+                <li>Album artwork display</li>
+                <li>Track information</li>
+                <li>Playback controls</li>
+                <li>Progress bar</li>
+                <li>Volume control</li>
+            </ul>
+
+            <h3>Getting Started</h3>
+            <p>Here's your starter HTML code:</p>
+            <div class="starter-code">
+                <pre><code>&lt;div class="music-player"&gt;
+    &lt;div class="album-art"&gt;
+        &lt;img src="🎵" alt="Album Cover"&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="track-info"&gt;
+        &lt;h2 class="track-title"&gt;Awesome Song&lt;/h2&gt;
+        &lt;p class="artist"&gt;Amazing Artist&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="progress"&gt;
+        &lt;div class="progress-bar"&gt;&lt;/div&gt;
+        &lt;div class="time"&gt;
+            &lt;span class="current"&gt;2:30&lt;/span&gt;
+            &lt;span class="total"&gt;4:15&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="controls"&gt;
+        &lt;button class="prev"&gt;⏮️&lt;/button&gt;
+        &lt;button class="play-pause"&gt;▶️&lt;/button&gt;
+        &lt;button class="next"&gt;⏭️&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="volume"&gt;
+        &lt;span class="volume-icon"&gt;🔊&lt;/span&gt;
+        &lt;input type="range" min="0" max="100" value="50"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <h3>Styling Requirements</h3>
+            <ul>
+                <li>Create a modern, sleek design</li>
+                <li>Add hover effects on controls</li>
+                <li>Style the progress bar</li>
+                <li>Create smooth animations</li>
+                <li>Make it responsive</li>
+            </ul>
+
+            <h3>Bonus Challenges</h3>
+            <ul>
+                <li>Add a playlist view</li>
+                <li>Create a visualizer</li>
+                <li>Add shuffle and repeat buttons</li>
+                <li>Include a lyrics display</li>
+            </ul>
+        </section>
+
+        <section class="preview">
+            <h3>Your Music Player Will Appear Here:</h3>
+            <!-- Students will copy the starter code here -->
+            <div class="music-player">
+                <div class="album-art">
+                    <img src="🎵" alt="Album Cover">
+                </div>
+                
+                <div class="track-info">
+                    <h2 class="track-title">Awesome Song</h2>
+                    <p class="artist">Amazing Artist</p>
+                </div>
+                
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                    <div class="time">
+                        <span class="current">2:30</span>
+                        <span class="total">4:15</span>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="prev">⏮️</button>
+                    <button class="play-pause">▶️</button>
+                    <button class="next">⏭️</button>
+                </div>
+                
+                <div class="volume">
+                    <span class="volume-icon">🔊</span>
+                    <input type="range" min="0" max="100" value="50">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Optional: Add JavaScript for player functionality
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 1: CSS Basics | Community Resource Mapper</title>
+    <title>Lesson 1: Introduction to CSS | Web Development Course</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
@@ -126,192 +126,151 @@
                 Back to Home
             </a>
             <div class="lesson-info">
-                <h1>Lesson 1: CSS Basics 🎨</h1>
+                <h1>Lesson 1: Introduction to CSS 🎨</h1>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 33%"></div>
+                    <div class="progress" style="width: 16.6%"></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="lesson-content">
-        <aside class="lesson-nav">
+    <div class="lesson-content">
+        <!-- Sidebar Navigation -->
+        <nav class="lesson-nav">
             <div class="module-progress">
-                <h3>CSS Styling</h3>
+                <h3>CSS Fundamentals</h3>
                 <ul>
-                    <li class="active"><a href="lesson1.html">1. CSS Basics</a></li>
-                    <li><a href="lesson2.html">2. Layout & Positioning</a></li>
-                    <li><a href="lesson3.html">3. Responsive Design</a></li>
+                    <li class="active"><a href="lesson1.html">1. Introduction to CSS</a></li>
+                    <li><a href="lesson2.html">2. Colors & Typography</a></li>
+                    <li><a href="lesson3.html">3. Box Model & Layout</a></li>
+                    <li><a href="lesson4.html">4. Flexbox & Grid</a></li>
+                    <li><a href="lesson5.html">5. Responsive Design</a></li>
+                    <li><a href="lesson6.html">6. Animations & Effects</a></li>
                 </ul>
             </div>
-        </aside>
+        </nav>
 
-        <section class="lesson-main">
-            <div class="lesson-section introduction">
-                <h2>Making Your Pages Beautiful! 🎨</h2>
-                <p>CSS (Cascading Style Sheets) is what makes websites look amazing! In this lesson, you'll learn how to add colors, change fonts, and create beautiful designs.</p>
-            </div>
-
-            <div class="lesson-section concept">
-                <h3>Colors in CSS 🌈</h3>
-                <div class="color-palette">
-                    <div class="color-box" style="background-color: #FF5733;">
-                        #FF5733
+        <!-- Main Content -->
+        <main class="lesson-main">
+            <!-- Introduction -->
+            <div class="lesson-section">
+                <h2>Welcome to CSS! 🌈</h2>
+                <p>CSS (Cascading Style Sheets) is what makes websites beautiful. It's like having a magic paintbrush for your HTML!</p>
+                
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>What is CSS? 🤔</h4>
+                        <p>CSS is a style sheet language that controls how your HTML elements look on the webpage. It handles:</p>
+                        <ul>
+                            <li>Colors and backgrounds</li>
+                            <li>Fonts and text styles</li>
+                            <li>Spacing and layout</li>
+                            <li>Animations and effects</li>
+                        </ul>
                     </div>
-                    <div class="color-box" style="background-color: #33FF57;">
-                        #33FF57
-                    </div>
-                    <div class="color-box" style="background-color: #3357FF;">
-                        #3357FF
-                    </div>
-                    <div class="color-box" style="background-color: #FF33F6;">
-                        #FF33F6
+                    <div class="explanation-card">
+                        <h4>Why Use CSS? ✨</h4>
+                        <ul>
+                            <li>Makes websites visually appealing</li>
+                            <li>Improves user experience</li>
+                            <li>Separates design from content</li>
+                            <li>Works on all devices</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="lesson-section concept">
-                <h3>Basic Styling Properties 🖌️</h3>
-                <div class="style-examples">
-                    <div class="style-card">
-                        <h4>Text Styling</h4>
-                        <div class="style-preview">
-                            <p style="color: blue; font-size: 20px; font-weight: bold;">
-                                Styled Text Example
-                            </p>
-                        </div>
-                        <div class="style-code">
-                            color: blue;
-                            font-size: 20px;
-                            font-weight: bold;
+            <!-- CSS Syntax -->
+            <div class="lesson-section">
+                <h3>CSS Syntax 📝</h3>
+                <p>Let's learn the basic structure of CSS:</p>
+
+                <div class="code-playground">
+                    <div class="code-editor">
+                        <h4>Try writing your first CSS:</h4>
+                        <textarea id="code-input" class="code-input"></textarea>
+                        <button id="run-code" class="run-code">Run Code ▶️</button>
+                        <div class="preview">
+                            <h4>Your styled text will appear here:</h4>
+                            <iframe id="preview" class="preview-frame"></iframe>
                         </div>
                     </div>
-                    <div class="style-card">
-                        <h4>Box Model</h4>
-                        <div class="style-preview">
-                            <div style="background: #f0f0f0; padding: 10px; margin: 10px; border: 2px solid #333;">
-                                Box Model Example
-                            </div>
-                        </div>
-                        <div class="style-code">
-                            padding: 10px;
-                            margin: 10px;
-                            border: 2px solid #333;
-                        </div>
+                </div>
+
+                <div class="key-points">
+                    <h4>Key Points 🔑</h4>
+                    <ul>
+                        <li>CSS rules have a selector and declarations</li>
+                        <li>Selectors target HTML elements</li>
+                        <li>Declarations go inside curly braces { }</li>
+                        <li>Each declaration has a property and value</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- How to Add CSS -->
+            <div class="lesson-section">
+                <h3>Three Ways to Add CSS 🛠️</h3>
+                
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>1. Inline CSS</h4>
+                        <p>Added directly to HTML elements:</p>
+                        <code>&lt;p style="color: blue;"&gt;Blue text&lt;/p&gt;</code>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>2. Internal CSS</h4>
+                        <p>Added in the &lt;head&gt; section:</p>
+                        <code>&lt;style&gt;
+    p { color: blue; }
+&lt;/style&gt;</code>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>3. External CSS</h4>
+                        <p>In a separate .css file:</p>
+                        <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
                     </div>
                 </div>
             </div>
 
-            <div class="lesson-section practice">
-                <h3>Try It Yourself! 🎯</h3>
-                <div class="playground">
-                    <div class="editor-section">
-                        <h4>CSS Editor</h4>
-                        <textarea id="css-input">
-.example-text {
-    /* Try changing these values! */
-    color: #333;
-    font-size: 18px;
-    text-align: center;
-}
-
-.example-box {
-    width: 100px;
-    height: 100px;
-    background-color: #00BF63;
-    margin: 20px auto;
-}</textarea>
-                        <button onclick="updatePreview()" class="run-code">Apply Styles ▶️</button>
-                    </div>
-                    <div class="preview-section">
-                        <h4>Preview</h4>
-                        <div id="preview">
-                            <p class="example-text">This is sample text</p>
-                            <div class="example-box"></div>
-                        </div>
-                    </div>
+            <!-- Practice -->
+            <div class="lesson-section">
+                <h3>Let's Practice! 💪</h3>
+                <div class="mission">
+                    <h4>Your Mission:</h4>
+                    <p>Style a simple paragraph using CSS. Try to:</p>
+                    <ul class="mission-tasks">
+                        <li>🎨 Change the text color</li>
+                        <li>📏 Make the text bigger</li>
+                        <li>✨ Add a background color</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="lesson-section quiz">
-                <h3>Quick Quiz! 📝</h3>
-                <div id="css-quiz"></div>
+            <!-- Tips -->
+            <div class="lesson-section">
+                <div class="tips">
+                    <h4>Helpful Tips! 💡</h4>
+                    <ul>
+                        <li>CSS properties are always followed by a colon :</li>
+                        <li>Each declaration ends with a semicolon ;</li>
+                        <li>Property names use hyphens, not spaces (font-size, not font size)</li>
+                        <li>Colors can be names (red) or codes (#FF0000)</li>
+                    </ul>
+                </div>
             </div>
 
+            <!-- Next Steps -->
             <div class="lesson-section next-steps">
-                <h3>Great Progress! 🌟</h3>
-                <p>You've learned the basics of CSS! Ready to learn about layout and positioning?</p>
+                <h3>Excellent Start! 🌟</h3>
+                <p>Now you know the basics of CSS! In the next lesson, we'll dive into colors and typography to make your text look amazing.</p>
                 <a href="lesson2.html" class="next-lesson">
-                    Next Lesson: Layout & Positioning →
+                    Next Lesson: Colors & Typography
                 </a>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-text">
-                <span>Made with <span class="heart">❤️</span> by</span>
-                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo">
-                <span>For more information, please email <a href="mailto:contact@giiyo.com">contact@giiyo.com</a></span>
-            </div>
-        </div>
-    </footer>
+        </main>
+    </div>
 
     <script src="../course-scripts.js"></script>
-    <script src="../quiz-system.js"></script>
-    <script>
-        // Initialize quiz
-        const quizQuestions = [
-            {
-                question: "Which property is used to change text color in CSS?",
-                options: ["text-color", "color", "font-color", "text-style"],
-                correct: 1
-            },
-            {
-                question: "What does CSS stand for?",
-                options: [
-                    "Computer Style Sheets",
-                    "Creative Style Sheets",
-                    "Cascading Style Sheets",
-                    "Colorful Style Sheets"
-                ],
-                correct: 2
-            },
-            {
-                question: "Which property is used to change the background color?",
-                options: ["color", "bgcolor", "background-color", "background"],
-                correct: 2
-            },
-            {
-                question: "How do you add space inside an element?",
-                options: ["spacing", "margin", "padding", "border"],
-                correct: 2
-            }
-        ];
-
-        // Initialize quiz when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const quizContainer = document.getElementById('css-quiz');
-            new QuizSystem(quizContainer, quizQuestions);
-        });
-
-        // CSS Playground functionality
-        function updatePreview() {
-            const css = document.getElementById('css-input').value;
-            const preview = document.getElementById('preview');
-            
-            // Create a style element
-            const style = document.createElement('style');
-            style.textContent = css;
-            
-            // Remove any previous style elements
-            const oldStyles = preview.getElementsByTagName('style');
-            Array.from(oldStyles).forEach(oldStyle => oldStyle.remove());
-            
-            // Add the new style element
-            preview.appendChild(style);
-        }
-    </script>
 </body>
 </html>

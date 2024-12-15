@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 3: Responsive Design | Community Resource Mapper</title>
+    <title>Lesson 3: Box Model & Layout | Web Development Course</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
@@ -164,224 +164,190 @@
                 Back to Home
             </a>
             <div class="lesson-info">
-                <h1>Lesson 3: Responsive Design 📱</h1>
+                <h1>Lesson 3: Box Model & Layout 📦</h1>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 100%"></div>
+                    <div class="progress" style="width: 49.8%"></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="lesson-content">
-        <aside class="lesson-nav">
+    <div class="lesson-content">
+        <!-- Sidebar Navigation -->
+        <nav class="lesson-nav">
             <div class="module-progress">
-                <h3>CSS Styling</h3>
+                <h3>CSS Fundamentals</h3>
                 <ul>
-                    <li><a href="lesson1.html">1. CSS Basics</a></li>
-                    <li><a href="lesson2.html">2. Layout & Positioning</a></li>
-                    <li class="active"><a href="lesson3.html">3. Responsive Design</a></li>
+                    <li><a href="lesson1.html">1. Introduction to CSS</a></li>
+                    <li><a href="lesson2.html">2. Colors & Typography</a></li>
+                    <li class="active"><a href="lesson3.html">3. Box Model & Layout</a></li>
+                    <li><a href="lesson4.html">4. Flexbox & Grid</a></li>
+                    <li><a href="lesson5.html">5. Responsive Design</a></li>
+                    <li><a href="lesson6.html">6. Animations & Effects</a></li>
                 </ul>
             </div>
-        </aside>
+        </nav>
 
-        <section class="lesson-main">
-            <div class="lesson-section introduction">
-                <h2>Design for All Devices! 📱</h2>
-                <p>Learn how to make your websites look great on phones, tablets, and computers using responsive design techniques!</p>
+        <!-- Main Content -->
+        <main class="lesson-main">
+            <!-- Introduction -->
+            <div class="lesson-section">
+                <h2>Understanding the Box Model 📦</h2>
+                <p>Every element in HTML is a box! Let's learn how to control these boxes with CSS.</p>
             </div>
 
-            <div class="lesson-section concept">
-                <h3>Common Breakpoints 📏</h3>
-                <div class="breakpoint-list">
-                    <div class="breakpoint-card">
-                        <h4>Mobile Devices</h4>
-                        <p>Up to 600px</p>
-                        <div class="code-example">
-                            @media (max-width: 600px) {
-                                /* Mobile styles */
-                            }
-                        </div>
+            <!-- Box Model Section -->
+            <div class="lesson-section">
+                <h3>The Box Model Parts 🎁</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Content</h4>
+                        <p>The actual content of the box:</p>
+                        <ul>
+                            <li>width</li>
+                            <li>height</li>
+                            <li>min-width</li>
+                            <li>max-width</li>
+                        </ul>
                     </div>
-                    <div class="breakpoint-card">
-                        <h4>Tablets</h4>
-                        <p>601px to 1024px</p>
-                        <div class="code-example">
-                            @media (min-width: 601px) and (max-width: 1024px) {
-                                /* Tablet styles */
-                            }
-                        </div>
+                    <div class="explanation-card">
+                        <h4>Padding</h4>
+                        <p>Space inside the border:</p>
+                        <ul>
+                            <li>padding-top</li>
+                            <li>padding-right</li>
+                            <li>padding-bottom</li>
+                            <li>padding-left</li>
+                        </ul>
                     </div>
-                    <div class="breakpoint-card">
-                        <h4>Desktops</h4>
-                        <p>1025px and above</p>
-                        <div class="code-example">
-                            @media (min-width: 1025px) {
-                                /* Desktop styles */
-                            }
-                        </div>
+                    <div class="explanation-card">
+                        <h4>Border</h4>
+                        <p>The line around the box:</p>
+                        <ul>
+                            <li>border-width</li>
+                            <li>border-style</li>
+                            <li>border-color</li>
+                            <li>border-radius</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Margin</h4>
+                        <p>Space outside the border:</p>
+                        <ul>
+                            <li>margin-top</li>
+                            <li>margin-right</li>
+                            <li>margin-bottom</li>
+                            <li>margin-left</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="lesson-section concept">
-                <h3>Responsive Grid 🎯</h3>
-                <div class="responsive-demo">
-                    <div class="responsive-grid">
-                        <div class="grid-card">Card 1</div>
-                        <div class="grid-card">Card 2</div>
-                        <div class="grid-card">Card 3</div>
-                        <div class="grid-card">Card 4</div>
+            <!-- Display Properties -->
+            <div class="lesson-section">
+                <h3>Display Properties 🖥️</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Block</h4>
+                        <p>Takes full width, starts on new line:</p>
+                        <code>display: block;</code>
                     </div>
-                    <div class="code-example">
-                        .grid {
-                            display: grid;
-                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                            gap: 1rem;
-                        }
+                    <div class="explanation-card">
+                        <h4>Inline</h4>
+                        <p>Takes only needed width:</p>
+                        <code>display: inline;</code>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Inline-Block</h4>
+                        <p>Mix of both:</p>
+                        <code>display: inline-block;</code>
                     </div>
                 </div>
             </div>
 
-            <div class="lesson-section practice">
-                <h3>Device Preview 📱</h3>
-                <div class="device-controls">
-                    <button class="device-button" onclick="setPreviewWidth('320px')">Mobile</button>
-                    <button class="device-button" onclick="setPreviewWidth('768px')">Tablet</button>
-                    <button class="device-button" onclick="setPreviewWidth('1024px')">Desktop</button>
-                </div>
-                <div class="playground">
-                    <div class="editor-section">
-                        <h4>CSS Editor</h4>
-                        <textarea id="css-input">
-/* Try making this responsive! */
-.container {
-    padding: 1rem;
-}
-
-.card {
-    background: #00BF63;
-    color: white;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 4px;
-}
-
-@media (min-width: 600px) {
-    .container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
+            <!-- Practice Section -->
+            <div class="lesson-section">
+                <h3>Let's Practice! 💪</h3>
+                <div class="code-playground">
+                    <div class="code-editor">
+                        <h4>Try styling a box:</h4>
+                        <textarea id="code-input" class="code-input">/* Style the box */
+.my-box {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border: 2px solid blue;
+    margin: 10px;
+    background-color: lightblue;
 }</textarea>
-                        <button onclick="updatePreview()" class="run-code">Apply Styles ▶️</button>
-                    </div>
-                    <div class="preview-section">
-                        <div class="preview-container">
-                            <div class="width-indicator">Width: <span id="width-display">100%</span></div>
-                            <div id="preview">
-                                <div class="container">
-                                    <div class="card">Card 1</div>
-                                    <div class="card">Card 2</div>
-                                    <div class="card">Card 3</div>
-                                    <div class="card">Card 4</div>
-                                </div>
-                            </div>
+                        <button id="run-code" class="run-code">Run Code ▶️</button>
+                        <div class="preview">
+                            <h4>Preview:</h4>
+                            <iframe id="preview" class="preview-frame"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="lesson-section quiz">
-                <h3>Responsive Design Quiz! 📝</h3>
-                <div id="responsive-quiz"></div>
+            <!-- Box Sizing -->
+            <div class="lesson-section">
+                <h3>Box Sizing 📏</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Content-Box</h4>
+                        <p>Default behavior:</p>
+                        <code>box-sizing: content-box;</code>
+                        <p>Width and height only include content</p>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Border-Box</h4>
+                        <p>Modern approach:</p>
+                        <code>box-sizing: border-box;</code>
+                        <p>Width and height include padding and border</p>
+                    </div>
+                </div>
             </div>
 
+            <!-- Tips Section -->
+            <div class="lesson-section">
+                <div class="tips">
+                    <h4>Pro Tips! 💡</h4>
+                    <ul>
+                        <li>Use border-box for easier sizing calculations</li>
+                        <li>Remember margins collapse between elements</li>
+                        <li>Use shorthand properties for cleaner code</li>
+                        <li>Consider using relative units for responsive design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Challenge Section -->
+            <div class="lesson-section">
+                <h3>Mini Challenge 🏆</h3>
+                <div class="mission">
+                    <h4>Your Mission:</h4>
+                    <p>Create a card design with these requirements:</p>
+                    <ul class="mission-tasks">
+                        <li>Fixed width and height</li>
+                        <li>Padding around content</li>
+                        <li>Rounded corners</li>
+                        <li>Shadow effect</li>
+                        <li>Centered on the page</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
             <div class="lesson-section next-steps">
-                <h3>Congratulations! 🎉</h3>
-                <p>You've completed the CSS course! Now you know how to create beautiful, responsive websites that work on all devices!</p>
-                <a href="../../projects/index.html" class="next-lesson">
-                    Start Building Projects →
+                <h3>Excellent Progress! 🌟</h3>
+                <p>Now you understand how boxes work in CSS! Next, we'll learn about Flexbox and Grid for advanced layouts.</p>
+                <a href="lesson4.html" class="next-lesson">
+                    Next Lesson: Flexbox & Grid
                 </a>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-text">
-                <span>Made with <span class="heart">❤️</span> by</span>
-                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo">
-                <span>For more information, please email <a href="mailto:contact@giiyo.com">contact@giiyo.com</a></span>
-            </div>
-        </div>
-    </footer>
+        </main>
+    </div>
 
     <script src="../course-scripts.js"></script>
-    <script src="../quiz-system.js"></script>
-    <script>
-        // Initialize quiz
-        const quizQuestions = [
-            {
-                question: "What CSS rule is used to create responsive designs?",
-                options: ["@responsive", "@media", "@screen", "@device"],
-                correct: 1
-            },
-            {
-                question: "Which CSS unit is relative to the viewport width?",
-                options: ["px", "em", "vw", "%"],
-                correct: 2
-            },
-            {
-                question: "What's the best practice for mobile-first design?",
-                options: [
-                    "Start with desktop styles and override for mobile",
-                    "Start with mobile styles and enhance for larger screens",
-                    "Create separate stylesheets for each device",
-                    "Use only fixed pixel values"
-                ],
-                correct: 1
-            },
-            {
-                question: "Which property creates a flexible grid that adapts to screen size?",
-                options: [
-                    "grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))",
-                    "grid-template: auto",
-                    "grid: responsive",
-                    "grid-auto-flow: responsive"
-                ],
-                correct: 0
-            }
-        ];
-
-        // Initialize quiz when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const quizContainer = document.getElementById('responsive-quiz');
-            new QuizSystem(quizContainer, quizQuestions);
-        });
-
-        // Device preview functionality
-        function setPreviewWidth(width) {
-            const container = document.querySelector('.preview-container');
-            container.style.width = width;
-            document.getElementById('width-display').textContent = width;
-        }
-
-        // CSS Playground functionality
-        function updatePreview() {
-            const css = document.getElementById('css-input').value;
-            const preview = document.getElementById('preview');
-            
-            // Create a style element
-            const style = document.createElement('style');
-            style.textContent = css;
-            
-            // Remove any previous style elements
-            const oldStyles = preview.getElementsByTagName('style');
-            Array.from(oldStyles).forEach(oldStyle => oldStyle.remove());
-            
-            // Add the new style element
-            preview.appendChild(style);
-        }
-    </script>
 </body>
 </html>

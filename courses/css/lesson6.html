@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: Animations & Effects | Web Development Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../course-styles.css">
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Home
+            </a>
+            <div class="lesson-info">
+                <h1>Lesson 6: Animations & Effects ✨</h1>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-content">
+        <!-- Sidebar Navigation -->
+        <nav class="lesson-nav">
+            <div class="module-progress">
+                <h3>CSS Fundamentals</h3>
+                <ul>
+                    <li><a href="lesson1.html">1. Introduction to CSS</a></li>
+                    <li><a href="lesson2.html">2. Colors & Typography</a></li>
+                    <li><a href="lesson3.html">3. Box Model & Layout</a></li>
+                    <li><a href="lesson4.html">4. Flexbox & Grid</a></li>
+                    <li><a href="lesson5.html">5. Responsive Design</a></li>
+                    <li class="active"><a href="lesson6.html">6. Animations & Effects</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="lesson-main">
+            <!-- Introduction -->
+            <div class="lesson-section">
+                <h2>Make Your Website Come Alive! ✨</h2>
+                <p>Learn how to add beautiful animations and effects to create engaging user experiences!</p>
+            </div>
+
+            <!-- Transitions -->
+            <div class="lesson-section">
+                <h3>CSS Transitions 🔄</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Transition Properties</h4>
+                        <ul>
+                            <li>transition-property</li>
+                            <li>transition-duration</li>
+                            <li>transition-timing-function</li>
+                            <li>transition-delay</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Common Uses</h4>
+                        <ul>
+                            <li>Hover effects</li>
+                            <li>Button interactions</li>
+                            <li>Menu animations</li>
+                            <li>Color changes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animations -->
+            <div class="lesson-section">
+                <h3>CSS Animations 🎬</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Animation Properties</h4>
+                        <ul>
+                            <li>animation-name</li>
+                            <li>animation-duration</li>
+                            <li>animation-timing-function</li>
+                            <li>animation-delay</li>
+                            <li>animation-iteration-count</li>
+                            <li>animation-direction</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>@keyframes</h4>
+                        <code>
+@keyframes slide-in {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Section -->
+            <div class="lesson-section">
+                <h3>Let's Practice! 💪</h3>
+                <div class="code-playground">
+                    <div class="code-editor">
+                        <h4>Try creating an animation:</h4>
+                        <textarea id="code-input" class="code-input">/* Create a bounce animation */
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateY(0);
+    }
+    50% { 
+        transform: translateY(-20px);
+    }
+}
+
+.bouncing-element {
+    animation: bounce 1s infinite;
+    background: #007bff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}</textarea>
+                        <button id="run-code" class="run-code">Run Code ▶️</button>
+                        <div class="preview">
+                            <h4>Preview:</h4>
+                            <iframe id="preview" class="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transform -->
+            <div class="lesson-section">
+                <h3>CSS Transforms 🔄</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>2D Transforms</h4>
+                        <ul>
+                            <li>translate(x, y)</li>
+                            <li>rotate(deg)</li>
+                            <li>scale(x, y)</li>
+                            <li>skew(x-deg, y-deg)</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>3D Transforms</h4>
+                        <ul>
+                            <li>translateZ(z)</li>
+                            <li>rotateX(deg)</li>
+                            <li>rotateY(deg)</li>
+                            <li>perspective(n)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips Section -->
+            <div class="lesson-section">
+                <div class="tips">
+                    <h4>Pro Tips! 💡</h4>
+                    <ul>
+                        <li>Use transform instead of position for better performance</li>
+                        <li>Keep animations subtle and purposeful</li>
+                        <li>Consider users who prefer reduced motion</li>
+                        <li>Test animations across different browsers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Challenge Section -->
+            <div class="lesson-section">
+                <h3>Final Challenge 🏆</h3>
+                <div class="mission">
+                    <h4>Your Mission:</h4>
+                    <p>Create an animated card that:</p>
+                    <ul class="mission-tasks">
+                        <li>Rises and shows shadow on hover</li>
+                        <li>Has a smooth transition</li>
+                        <li>Shows content with fade-in effect</li>
+                        <li>Uses 3D transforms for depth</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="lesson-section next-steps">
+                <h3>Congratulations! 🎉</h3>
+                <p>You've completed the CSS course! You now have all the skills needed to create beautiful, responsive, and interactive websites!</p>
+                <a href="../../projects/index.html" class="next-lesson">
+                    Start Building Projects →
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="../course-scripts.js"></script>
+</body>
+</html>
