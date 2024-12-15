@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Resource Mapper | Final Project</title>
+    <title>Community Resource Mapper | Web Development Course</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
         :root {
             --green: #00BF63;
             --orange: #ED9F47;
             --red: #9C2B36;
+            --blue: #3498db;
         }
 
         * {
@@ -22,98 +24,99 @@
             line-height: 1.6;
         }
 
-        .map-container {
-            height: 70vh;
-            background: #f0f0f0;
-            position: relative;
+        /* Project Header */
+        .project-header {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
         }
 
+        .project-header h1 {
+            color: var(--green);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            max-width: 800px;
+        }
+
+        /* Map Container */
+        .map-container {
+            height: 70vh;
+            position: relative;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 0 1rem;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Controls Panel */
         .controls {
             position: absolute;
             top: 20px;
             left: 20px;
             background: white;
-            padding: 1rem;
+            padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
+            min-width: 250px;
         }
 
-        .resource-type {
-            margin: 0.5rem 0;
+        .controls h3 {
+            color: var(--green);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Resource Types */
+        .resource-types {
+            display: grid;
+            gap: 0.5rem;
         }
 
         .resource-button {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 1rem;
             border: none;
-            border-radius: 4px;
-            background: var(--green);
-            color: white;
+            border-radius: 6px;
+            background: #f8f9fa;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
+            color: #333;
         }
 
         .resource-button:hover {
-            background: var(--orange);
+            background: var(--green);
+            color: white;
         }
 
-        .resource-list {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            max-width: 300px;
-            max-height: 80vh;
-            overflow-y: auto;
+        .resource-button img {
+            width: 20px;
+            height: 20px;
         }
 
-        .resource-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .resource-item:last-child {
-            border-bottom: none;
-        }
-
-        .resource-icon {
-            font-size: 1.5rem;
-        }
-
-        .resource-details {
-            flex: 1;
-        }
-
-        .resource-name {
-            font-weight: bold;
-            color: var(--green);
-        }
-
-        .resource-address {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .add-resource-form {
+        /* Add Resource Form */
+        .add-form {
             display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 2000;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .add-form.active {
+            display: block;
         }
 
         .form-group {
@@ -122,156 +125,255 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
             color: #666;
+            font-size: 0.9rem;
         }
 
         .form-group input,
-        .form-group select {
+        .form-group textarea {
             width: 100%;
             padding: 0.5rem;
             border: 1px solid #ddd;
             border-radius: 4px;
+            font-size: 0.9rem;
         }
 
-        .form-buttons {
+        .form-group textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        /* Buttons */
+        .button-group {
             display: flex;
-            gap: 1rem;
-            justify-content: flex-end;
+            gap: 0.5rem;
         }
 
-        .submit-btn,
-        .cancel-btn {
+        .btn {
             padding: 0.5rem 1rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
         }
 
-        .submit-btn {
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-primary {
             background: var(--green);
             color: white;
         }
 
-        .cancel-btn {
-            background: #f0f0f0;
-            color: #666;
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        /* Resource Markers */
+        .resource-marker {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .resource-marker img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Instructions */
+        .instructions {
+            margin: 2rem 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .instructions h2 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .instructions li::before {
+            content: "→";
+            position: absolute;
+            left: -1.5rem;
+            color: var(--green);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .map-container {
+                height: 60vh;
+                margin: 0 0.5rem;
+            }
+
+            .controls {
+                left: 10px;
+                right: 10px;
+                min-width: auto;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="map-container" id="map">
-        <!-- Map will be initialized here -->
+    <!-- Project Header -->
+    <header class="project-header">
+        <h1>Community Resource Mapper</h1>
+        <p class="project-description">
+            Create an interactive map to help people find and share community resources like libraries,
+            parks, community centers, and more. This project teaches you about working with maps,
+            handling user input, and creating a useful community tool.
+        </p>
+    </header>
+
+    <!-- Map Container -->
+    <div class="map-container">
+        <div id="map"></div>
+        
+        <!-- Controls Panel -->
         <div class="controls">
             <h3>Add Resource</h3>
-            <div class="resource-type">
-                <button class="resource-button" onclick="showAddForm('hospital')">
-                    🏥 Add Hospital
+            <div class="resource-types">
+                <button class="resource-button" onclick="showAddForm('library')">
+                    📚 Library
                 </button>
-            </div>
-            <div class="resource-type">
-                <button class="resource-button" onclick="showAddForm('school')">
-                    🏫 Add School
-                </button>
-            </div>
-            <div class="resource-type">
                 <button class="resource-button" onclick="showAddForm('park')">
-                    🌳 Add Park
+                    🌳 Park
+                </button>
+                <button class="resource-button" onclick="showAddForm('community-center')">
+                    🏛️ Community Center
+                </button>
+                <button class="resource-button" onclick="showAddForm('food-bank')">
+                    🥫 Food Bank
+                </button>
+                <button class="resource-button" onclick="showAddForm('health-center')">
+                    🏥 Health Center
                 </button>
             </div>
-        </div>
 
-        <div class="resource-list">
-            <h3>Community Resources</h3>
-            <div class="resource-item">
-                <span class="resource-icon">🏥</span>
-                <div class="resource-details">
-                    <div class="resource-name">Central Hospital</div>
-                    <div class="resource-address">123 Health Street</div>
+            <!-- Add Resource Form -->
+            <form id="add-form" class="add-form" onsubmit="addResource(event)">
+                <div class="form-group">
+                    <label for="resource-name">Name:</label>
+                    <input type="text" id="resource-name" required>
                 </div>
-            </div>
-            <div class="resource-item">
-                <span class="resource-icon">🏫</span>
-                <div class="resource-details">
-                    <div class="resource-name">Community School</div>
-                    <div class="resource-address">456 Education Ave</div>
+                <div class="form-group">
+                    <label for="resource-description">Description:</label>
+                    <textarea id="resource-description" required></textarea>
                 </div>
-            </div>
-            <div class="resource-item">
-                <span class="resource-icon">🌳</span>
-                <div class="resource-details">
-                    <div class="resource-name">City Park</div>
-                    <div class="resource-address">789 Nature Road</div>
+                <div class="form-group">
+                    <label for="resource-address">Address:</label>
+                    <input type="text" id="resource-address" required>
                 </div>
-            </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Add Resource</button>
+                    <button type="button" class="btn btn-secondary" onclick="hideAddForm()">Cancel</button>
+                </div>
+            </form>
         </div>
     </div>
 
-    <div class="add-resource-form" id="addResourceForm">
-        <h3>Add New Resource</h3>
-        <form onsubmit="addResource(event)">
-            <div class="form-group">
-                <label for="resourceType">Resource Type</label>
-                <select id="resourceType" required>
-                    <option value="hospital">Hospital 🏥</option>
-                    <option value="school">School 🏫</option>
-                    <option value="park">Park 🌳</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="resourceName">Name</label>
-                <input type="text" id="resourceName" required>
-            </div>
-            <div class="form-group">
-                <label for="resourceAddress">Address</label>
-                <input type="text" id="resourceAddress" required>
-            </div>
-            <div class="form-buttons">
-                <button type="button" class="cancel-btn" onclick="hideAddForm()">Cancel</button>
-                <button type="submit" class="submit-btn">Add Resource</button>
-            </div>
-        </form>
-    </div>
+    <!-- Instructions -->
+    <section class="instructions">
+        <h2>Project Instructions</h2>
+        <ul>
+            <li>Click on the map to select a location for your resource</li>
+            <li>Choose a resource type from the control panel</li>
+            <li>Fill in the resource details in the form</li>
+            <li>Click "Add Resource" to place it on the map</li>
+            <li>Click on markers to view resource information</li>
+        </ul>
+    </section>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-        // Initialize the map (we'll use Leaflet.js in the full implementation)
+        let map;
+        let selectedLocation;
+        let markers = [];
+
+        // Initialize the map
         function initMap() {
-            // Map initialization code will go here
+            map = L.map('map').setView([51.505, -0.09], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Add click event to map
+            map.on('click', function(e) {
+                selectedLocation = e.latlng;
+                showAddForm('library'); // Default to library
+            });
         }
 
+        // Show the add resource form
         function showAddForm(type) {
-            const form = document.getElementById('addResourceForm');
-            form.style.display = 'block';
-            document.getElementById('resourceType').value = type;
+            const form = document.getElementById('add-form');
+            form.classList.add('active');
+            form.dataset.type = type;
         }
 
+        // Hide the add resource form
         function hideAddForm() {
-            document.getElementById('addResourceForm').style.display = 'none';
+            const form = document.getElementById('add-form');
+            form.classList.remove('active');
+            selectedLocation = null;
         }
 
+        // Add a resource to the map
         function addResource(event) {
             event.preventDefault();
-            const type = document.getElementById('resourceType').value;
-            const name = document.getElementById('resourceName').value;
-            const address = document.getElementById('resourceAddress').value;
 
-            // Add the resource to the list
-            const list = document.querySelector('.resource-list');
-            const icon = type === 'hospital' ? '🏥' : type === 'school' ? '🏫' : '🌳';
+            if (!selectedLocation) {
+                alert('Please click on the map to select a location');
+                return;
+            }
+
+            const form = document.getElementById('add-form');
+            const type = form.dataset.type;
+            const name = document.getElementById('resource-name').value;
+            const description = document.getElementById('resource-description').value;
+            const address = document.getElementById('resource-address').value;
+
+            // Create marker
+            const marker = L.marker(selectedLocation).addTo(map);
             
-            const resourceHTML = `
-                <div class="resource-item">
-                    <span class="resource-icon">${icon}</span>
-                    <div class="resource-details">
-                        <div class="resource-name">${name}</div>
-                        <div class="resource-address">${address}</div>
+            // Create popup content
+            const popupContent = `
+                <div class="resource-marker">
+                    <div>
+                        <strong>${name}</strong><br>
+                        ${description}<br>
+                        <small>${address}</small>
                     </div>
                 </div>
             `;
-            list.insertAdjacentHTML('beforeend', resourceHTML);
+            
+            marker.bindPopup(popupContent);
+            markers.push(marker);
 
-            // Clear form and hide it
-            event.target.reset();
+            // Reset form
+            form.reset();
             hideAddForm();
         }
 
