@@ -1,0 +1,271 @@
+/* Course-specific styles */
+.lesson-header {
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.lesson-header .header-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-home {
+    display: block;
+}
+
+.back-home .logo {
+    height: 40px;
+    width: auto;
+}
+
+.lesson-info {
+    flex-grow: 1;
+}
+
+.lesson-info h1 {
+    font-size: 1.8rem;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--green);
+    transition: width 0.3s ease;
+}
+
+/* Main lesson layout */
+.lesson-content {
+    display: flex;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 100px auto 2rem;
+    padding: 0 2rem;
+}
+
+/* Sidebar navigation */
+.lesson-nav {
+    width: 250px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.module-progress h3 {
+    color: var(--green);
+    margin-bottom: 1rem;
+}
+
+.module-progress ul {
+    list-style: none;
+    padding: 0;
+}
+
+.module-progress li {
+    margin-bottom: 0.5rem;
+}
+
+.module-progress a {
+    display: block;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.module-progress li.active a {
+    background: var(--green);
+    color: white;
+}
+
+.module-progress a:hover:not(.active) {
+    background: #f0f0f0;
+}
+
+/* Main lesson area */
+.lesson-main {
+    flex-grow: 1;
+    max-width: 800px;
+}
+
+.lesson-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.lesson-section h2 {
+    color: var(--green);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.lesson-section h3 {
+    color: var(--orange);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.fun-list {
+    list-style: none;
+    padding: 0;
+}
+
+.fun-list li {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.fun-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+}
+
+/* Code playground */
+.code-playground {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.code-editor, .code-preview {
+    flex: 1;
+}
+
+.code-area {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: monospace;
+    margin: 1rem 0;
+    white-space: pre-wrap;
+    min-height: 200px;
+}
+
+.preview-area {
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 200px;
+}
+
+.run-code, .check-answer {
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.run-code:hover, .check-answer:hover {
+    background: var(--orange);
+    transform: translateY(-2px);
+}
+
+/* Explanation cards */
+.explanation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.explanation-card {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--green);
+}
+
+.explanation-card h4 {
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+/* Challenge section */
+.challenge-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--orange);
+}
+
+.challenge-card h4 {
+    color: var(--orange);
+    margin-bottom: 1rem;
+}
+
+/* Next steps */
+.next-lesson {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.next-lesson:hover {
+    background: var(--orange);
+    transform: translateX(5px);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .lesson-content {
+        flex-direction: column;
+    }
+
+    .lesson-nav {
+        width: 100%;
+        position: static;
+    }
+
+    .code-playground {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .lesson-header .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lesson-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .lesson-section {
+        padding: 1rem;
+    }
+}
