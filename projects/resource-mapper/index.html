@@ -45,8 +45,11 @@
         }
 
         .practice-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             border: 2px dashed var(--primary-color);
-            padding: 1rem;
+            padding: 1.5rem;
             margin-top: 1rem;
             border-radius: 8px;
         }
@@ -252,6 +255,251 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        .code-editor {
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .editor-header {
+            background: #2d2d2d;
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #3d3d3d;
+        }
+
+        .editor-title {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .editor-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .editor-btn {
+            background: #3d3d3d;
+            border: none;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+
+        .editor-btn:hover {
+            background: #4d4d4d;
+        }
+
+        .editor-content {
+            padding: 1rem;
+            color: #fff;
+            font-family: monospace;
+            min-height: 200px;
+        }
+
+        .preview-panel {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .preview-header {
+            background: #f8f9fa;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .preview-content {
+            padding: 1rem;
+            min-height: 200px;
+        }
+
+        .hint-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .hint-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .hint-content {
+            display: none;
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .hint-content.show {
+            display: block;
+        }
+
+        /* Additional styles for enhanced features */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            background: #f8f9fa;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .tab.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .validation-message {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .validation-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .validation-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #e9ecef;
+            margin-top: 1rem;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--primary-color);
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+        .editor-toolbar {
+            background: #2d2d2d;
+            padding: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid #3d3d3d;
+        }
+
+        .toolbar-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 0.3rem;
+            border-radius: 3px;
+            font-size: 1.2rem;
+        }
+
+        .toolbar-btn:hover {
+            background: #3d3d3d;
+        }
+
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+
+        .resources-panel {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .resources-title {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .resources-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .resource-chip {
+            background: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .resource-chip:hover {
+            transform: translateY(-2px);
+        }
+
+        .keyboard-shortcuts {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: none;
+        }
+
+        .keyboard-shortcuts.show {
+            display: block;
+        }
+
+        .shortcut-key {
+            background: #3d3d3d;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            margin: 0 0.2rem;
+        }
+
         @media (max-width: 768px) {
             .preview-map {
                 grid-template-columns: 1fr;
@@ -264,6 +512,226 @@
             .map-legend {
                 flex-wrap: wrap;
             }
+        }
+
+        /* Additional styles for project steps and help options */
+        .floating-help {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .help-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .help-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .help-menu {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: absolute;
+            right: 70px;
+            bottom: 0;
+            width: 300px;
+            display: none;
+        }
+
+        .help-menu.show {
+            display: block;
+        }
+
+        .help-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .help-option:hover {
+            background: #f8f9fa;
+        }
+
+        .help-icon {
+            font-size: 1.5rem;
+        }
+
+        .step-progress {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .step-indicator {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .step-indicator::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            height: 2rem;
+            width: 2px;
+            background: #dee2e6;
+            transform: translateX(-50%);
+        }
+
+        .step-indicator:last-child::after {
+            display: none;
+        }
+
+        .step-indicator.active {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.2);
+        }
+
+        .step-indicator.completed {
+            background: #28a745;
+            color: white;
+        }
+
+        .step-tooltip {
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            margin-left: 1rem;
+        }
+
+        .step-indicator:hover .step-tooltip {
+            opacity: 1;
+        }
+
+        .submit-panel {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .completion-status {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .celebration {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .celebration-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -383,13 +851,78 @@
 &lt;/section&gt;</code></pre>
             </div>
             <div class="practice-area">
-                <h3>Your Turn!</h3>
-                <p>Try adding a new resource type to the map:</p>
-                <ul class="task-list">
-                    <li>Create a section for the new resource</li>
-                    <li>Add appropriate semantic tags</li>
-                    <li>Include descriptive headings</li>
-                </ul>
+                <div class="editor-section">
+                    <h3>Your Turn!</h3>
+                    <p>Try adding a new resource type to the map:</p>
+                    <div class="tabs">
+                        <button class="tab active" onclick="switchTab(this, 'html')">HTML</button>
+                        <button class="tab" onclick="switchTab(this, 'css')">CSS</button>
+                    </div>
+                    <div class="code-editor">
+                        <div class="editor-header">
+                            <span class="editor-title">index.html</span>
+                            <div class="editor-actions">
+                                <button class="editor-btn tooltip" data-tooltip="Run (Ctrl+Enter)" onclick="runCode()">▶</button>
+                                <button class="editor-btn tooltip" data-tooltip="Reset" onclick="resetCode()">↺</button>
+                                <button class="editor-btn tooltip" data-tooltip="Format Code" onclick="formatCode()">{ }</button>
+                            </div>
+                        </div>
+                        <div class="editor-toolbar">
+                            <button class="toolbar-btn tooltip" data-tooltip="Bold" onclick="insertTag('strong')"><strong>B</strong></button>
+                            <button class="toolbar-btn tooltip" data-tooltip="Italic" onclick="insertTag('em')"><em>I</em></button>
+                            <button class="toolbar-btn tooltip" data-tooltip="Link" onclick="insertTag('a')">🔗</button>
+                            <button class="toolbar-btn tooltip" data-tooltip="Image" onclick="insertTag('img')">🖼️</button>
+                        </div>
+                        <div class="editor-content" contenteditable="true" spellcheck="false">
+<!-- Add your code here -->
+<section class="map-container">
+    <div id="resource-map"></div>
+    <aside class="resource-list">
+        <h3>Community Resources</h3>
+        <!-- Add your new resource type here -->
+    </aside>
+</section></div>
+                    </div>
+                    <div class="validation-message"></div>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <button class="hint-btn" onclick="toggleHint(this)">Show Hint</button>
+                    <div class="hint-content">
+                        <pre><code><!-- Solution -->
+<section class="map-container">
+    <div id="resource-map"></div>
+    <aside class="resource-list">
+        <h3>Community Resources</h3>
+        <div class="resource-item">
+            <span class="resource-icon">🏥</span>
+            <div class="resource-info">
+                <h4>Medical Center</h4>
+                <p>789 Health Street</p>
+            </div>
+        </div>
+    </aside>
+</section></code></pre>
+                    </div>
+                    <div class="resources-panel">
+                        <div class="resources-title">Quick Insert Resources:</div>
+                        <div class="resources-list">
+                            <div class="resource-chip" onclick="insertResource('🏫', 'School')">🏫 School</div>
+                            <div class="resource-chip" onclick="insertResource('🏥', 'Hospital')">🏥 Hospital</div>
+                            <div class="resource-chip" onclick="insertResource('🎪', 'Park')">🎪 Park</div>
+                            <div class="resource-chip" onclick="insertResource('📚', 'Library')">📚 Library</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-panel">
+                    <div class="preview-header">
+                        <span>Live Preview</span>
+                        <button class="editor-btn" onclick="toggleFullscreen()">⛶</button>
+                    </div>
+                    <div class="preview-content" id="previewContent">
+                        <!-- Preview will be shown here -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -413,13 +946,53 @@
 }</code></pre>
             </div>
             <div class="practice-area">
-                <h3>Your Turn!</h3>
-                <p>Practice styling your resource:</p>
-                <ul class="task-list">
-                    <li>Add colors and borders</li>
-                    <li>Use flexbox for layout</li>
-                    <li>Make it responsive</li>
-                </ul>
+                <div class="editor-section">
+                    <h3>Your Turn!</h3>
+                    <p>Practice styling your resource:</p>
+                    <div class="code-editor">
+                        <div class="editor-header">
+                            <span class="editor-title">styles.css</span>
+                            <div class="editor-actions">
+                                <button class="editor-btn" onclick="runCode()">Run</button>
+                                <button class="editor-btn" onclick="resetCode()">Reset</button>
+                            </div>
+                        </div>
+                        <div class="editor-content" contenteditable="true">
+/* Add your CSS here */
+.resource-item {
+    background: #f8f9fa;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.resource-item:hover {
+    transform: translateX(5px);
+}</div>
+                    </div>
+                    <button class="hint-btn" onclick="toggleHint(this)">Show Hint</button>
+                    <div class="hint-content">
+                        <pre><code><!-- Solution -->
+.resource-item {
+    background: #f8f9fa;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.resource-item:hover {
+    transform: translateX(5px);
+}</code></pre>
+                    </div>
+                </div>
+                <div class="preview-panel">
+                    <div class="preview-header">
+                        <span>Preview</span>
+                    </div>
+                    <div class="preview-content" id="previewContent">
+                        <!-- Preview will be shown here -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -446,5 +1019,300 @@
             </div>
         </div>
     </footer>
+
+    <div class="keyboard-shortcuts">
+        <strong>Keyboard Shortcuts:</strong>
+        <span><span class="shortcut-key">Ctrl</span>+<span class="shortcut-key">Enter</span> Run Code</span>
+        <span><span class="shortcut-key">Ctrl</span>+<span class="shortcut-key">S</span> Format Code</span>
+        <span><span class="shortcut-key">Ctrl</span>+<span class="shortcut-key">H</span> Toggle Hint</span>
+    </div>
+
+    <div class="step-progress">
+        <div class="step-indicator active" onclick="jumpToStep(1)">
+            1
+            <div class="step-tooltip">Setup Project Structure</div>
+        </div>
+        <div class="step-indicator" onclick="jumpToStep(2)">
+            2
+            <div class="step-tooltip">Build Map Interface</div>
+        </div>
+        <div class="step-indicator" onclick="jumpToStep(3)">
+            3
+            <div class="step-tooltip">Create Resource Directory</div>
+        </div>
+        <div class="step-indicator" onclick="jumpToStep(4)">
+            4
+            <div class="step-tooltip">Add Resource Management</div>
+        </div>
+        <div class="step-indicator" onclick="jumpToStep(5)">
+            5
+            <div class="step-tooltip">Polish UI</div>
+        </div>
+    </div>
+
+    <div class="floating-help">
+        <button class="help-btn" onclick="toggleHelpMenu()">❓</button>
+        <div class="help-menu">
+            <div class="help-option" onclick="bookSession()">
+                <span class="help-icon">📅</span>
+                <div>
+                    <strong>Stuck? Book a Session</strong>
+                    <p>Get 1-on-1 help from our tutors</p>
+                </div>
+            </div>
+            <div class="help-option" onclick="showDiscussion()">
+                <span class="help-icon">💬</span>
+                <div>
+                    <strong>Discussion Forum</strong>
+                    <p>Ask questions and help others</p>
+                </div>
+            </div>
+            <div class="help-option" onclick="showResources()">
+                <span class="help-icon">📚</span>
+                <div>
+                    <strong>Resources</strong>
+                    <p>Additional learning materials</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="submit-panel">
+        <div class="completion-status">
+            <strong>Progress:</strong> <span id="completionPercent">20</span>% Complete
+        </div>
+        <button class="submit-btn" onclick="submitProject()">Submit Final Project 🚀</button>
+    </div>
+
+    <div class="modal" id="submitModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('submitModal')">&times;</button>
+            <div class="celebration">
+                <div class="celebration-emoji">🎉</div>
+                <h2>Congratulations!</h2>
+                <p>You've completed the Community Resource Mapper project!</p>
+            </div>
+            <form id="submitForm" onsubmit="sendToTutor(event)">
+                <div style="margin-bottom: 1rem;">
+                    <label for="studentName">Your Name:</label>
+                    <input type="text" id="studentName" required style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="studentEmail">Your Email:</label>
+                    <input type="email" id="studentEmail" required style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="feedback">Any comments for your tutor?</label>
+                    <textarea id="feedback" rows="4" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;"></textarea>
+                </div>
+                <button type="submit" class="submit-btn" style="width: 100%;">Send to Tutor</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function startProject() {
+            document.querySelector('.steps-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleHint(btn) {
+            const hintContent = btn.nextElementSibling;
+            hintContent.classList.toggle('show');
+            btn.textContent = hintContent.classList.contains('show') ? 'Hide Hint' : 'Show Hint';
+        }
+
+        function switchTab(tab, type) {
+            const tabs = tab.parentElement.getElementsByClassName('tab');
+            Array.from(tabs).forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            const editor = document.querySelector('.editor-content');
+            const editorTitle = document.querySelector('.editor-title');
+            
+            if (type === 'html') {
+                editorTitle.textContent = 'index.html';
+                editor.innerHTML = `<!-- Add your HTML here -->
+<section class="map-container">
+    <div id="resource-map"></div>
+    <aside class="resource-list">
+        <h3>Community Resources</h3>
+        <!-- Add your new resource type here -->
+    </aside>
+</section>`;
+            } else {
+                editorTitle.textContent = 'styles.css';
+                editor.innerHTML = `/* Add your CSS here */
+.resource-item {
+    background: #f8f9fa;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}`;
+            }
+        }
+
+        function runCode() {
+            const editorContent = document.querySelector('.editor-content').innerText;
+            const previewContent = document.getElementById('previewContent');
+            const validationMessage = document.querySelector('.validation-message');
+            const progressBar = document.querySelector('.progress');
+            
+            try {
+                previewContent.innerHTML = editorContent;
+                validationMessage.className = 'validation-message success';
+                validationMessage.textContent = 'Code successfully updated!';
+                progressBar.style.width = '100%';
+            } catch (error) {
+                validationMessage.className = 'validation-message error';
+                validationMessage.textContent = 'Error: ' + error.message;
+                progressBar.style.width = '30%';
+            }
+        }
+
+        function formatCode() {
+            const editor = document.querySelector('.editor-content');
+            const code = editor.innerText;
+            // Simple formatting - in real implementation, use a proper formatter
+            editor.innerHTML = code.replace(/></g, '>\n<');
+        }
+
+        function insertTag(tag) {
+            const editor = document.querySelector('.editor-content');
+            const selection = window.getSelection();
+            const range = selection.getRangeAt(0);
+            const content = range.toString() || 'content';
+            
+            const element = document.createElement(tag);
+            element.textContent = content;
+            range.deleteContents();
+            range.insertNode(element);
+        }
+
+        function insertResource(emoji, type) {
+            const template = `
+<div class="resource-item">
+    <span class="resource-icon">${emoji}</span>
+    <div class="resource-info">
+        <h4>${type}</h4>
+        <p>Add address here</p>
+    </div>
+</div>`;
+            
+            const editor = document.querySelector('.editor-content');
+            const position = editor.innerHTML.indexOf('<!-- Add your new resource type here -->');
+            if (position !== -1) {
+                editor.innerHTML = editor.innerHTML.slice(0, position) + template + editor.innerHTML.slice(position);
+            }
+        }
+
+        function toggleFullscreen() {
+            const preview = document.querySelector('.preview-panel');
+            preview.classList.toggle('fullscreen');
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'Enter') {
+                runCode();
+            } else if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                formatCode();
+            } else if (e.ctrlKey && e.key === 'h') {
+                document.querySelector('.hint-btn').click();
+            }
+        });
+
+        // Show keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === '/') {
+                document.querySelector('.keyboard-shortcuts').classList.toggle('show');
+            }
+        });
+
+        function toggleHelpMenu() {
+            const helpMenu = document.querySelector('.help-menu');
+            helpMenu.classList.toggle('show');
+        }
+
+        function bookSession() {
+            window.open('https://calendly.com/contact-giiyo', '_blank');
+        }
+
+        function showDiscussion() {
+            // Implement discussion forum functionality
+            alert('Discussion forum coming soon!');
+        }
+
+        function showResources() {
+            // Implement resources panel
+            alert('Additional resources coming soon!');
+        }
+
+        function jumpToStep(step) {
+            const indicators = document.querySelectorAll('.step-indicator');
+            indicators.forEach((indicator, index) => {
+                if (index + 1 === step) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+
+            // Scroll to the corresponding section
+            const sections = document.querySelectorAll('.learning-section');
+            sections[step - 1].scrollIntoView({ behavior: 'smooth' });
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const indicators = document.querySelectorAll('.step-indicator');
+            let completed = 0;
+
+            indicators.forEach((indicator, index) => {
+                if (index + 1 < getCurrentStep()) {
+                    indicator.classList.add('completed');
+                    completed++;
+                }
+            });
+
+            const percent = Math.round((completed / indicators.length) * 100);
+            document.getElementById('completionPercent').textContent = percent;
+        }
+
+        function getCurrentStep() {
+            // Implement logic to determine current step based on progress
+            return 3; // Example: user is on step 3
+        }
+
+        function submitProject() {
+            document.getElementById('submitModal').classList.add('show');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+        }
+
+        function sendToTutor(event) {
+            event.preventDefault();
+            const name = document.getElementById('studentName').value;
+            const email = document.getElementById('studentEmail').value;
+            const feedback = document.getElementById('feedback').value;
+
+            // Here you would typically send this data to your backend
+            alert(`Project submitted successfully!\nWe'll send feedback to ${email}`);
+            closeModal('submitModal');
+        }
+
+        // Initialize progress
+        updateProgress();
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('show');
+            }
+        }
+    </script>
 </body>
 </html>
