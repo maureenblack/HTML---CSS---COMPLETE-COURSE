@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🗺️ Community Resource Mapper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            </div>
+            <div class="title-container">
+                <h1>🗺️ Community Resource Mapper</h1>
+                <p class="subtitle">Let's explore our amazing community together! 🌟</p>
+            </div>
+        </div>
+        <nav class="nav-buttons">
+            <a href="#schools" class="nav-button schools">🏫 Schools</a>
+            <a href="#hospitals" class="nav-button hospitals">🏥 Hospitals</a>
+            <a href="#playgrounds" class="nav-button playgrounds">🎪 Playgrounds</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="schools" class="resource-section">
+            <h2>🏫 Awesome Schools</h2>
+            <div class="resource-cards">
+                <div class="card">
+                    <img src="https://placehold.co/300x200/9DE7C3/ffffff?text=Magic+School" alt="Magic School">
+                    <h3>Magic School</h3>
+                    <p>Where learning is magical! ✨</p>
+                </div>
+                <!-- More cards will be added here -->
+            </div>
+        </section>
+
+        <section id="hospitals" class="resource-section">
+            <h2>🏥 Happy Health Centers</h2>
+            <div class="resource-cards">
+                <div class="card">
+                    <img src="https://placehold.co/300x200/FAEAE9/ffffff?text=Sunshine+Clinic" alt="Sunshine Clinic">
+                    <h3>Sunshine Clinic</h3>
+                    <p>Making everyone feel better! 🌞</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="playgrounds" class="resource-section">
+            <h2>🎪 Super Fun Playgrounds</h2>
+            <div class="resource-cards">
+                <div class="card">
+                    <img src="https://placehold.co/300x200/D98640/ffffff?text=Rainbow+Park" alt="Rainbow Park">
+                    <h3>Rainbow Park</h3>
+                    <p>The most colorful place to play! 🌈</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="add-resource" class="form-section">
+            <h2>🎈 Share a Cool Place!</h2>
+            <form class="resource-form">
+                <div class="form-group">
+                    <label for="place-name">What's this amazing place called?</label>
+                    <input type="text" id="place-name" placeholder="Like 'Super Fun Park' or 'Magic Library'">
+                </div>
+                <div class="form-group">
+                    <label for="place-type">What kind of place is it?</label>
+                    <select id="place-type">
+                        <option value="school">🏫 School</option>
+                        <option value="hospital">🏥 Hospital</option>
+                        <option value="playground">🎪 Playground</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Tell us what makes it special!</label>
+                    <textarea id="description" placeholder="Is it super fun? What cool things can we do there?"></textarea>
+                </div>
+                <button type="submit" class="submit-button">🚀 Add to the Map!</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with ❤️ by Super Coders</p>
+        <p>Contact us: 📧 supercoders@example.com</p>
+    </footer>
+</body>
+</html>

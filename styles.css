@@ -1,0 +1,280 @@
+/* Fun and Playful Styles for Kids! */
+:root {
+    --orange: #ED9F47;
+    --green: #00BF63;
+    --red: #9C2B36;
+    --text-color: #333;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: var(--text-color);
+    padding-top: 120px; /* Space for fixed header */
+}
+
+/* Sticky Header */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* Header Layout */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Styling */
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo {
+    max-height: 80px;
+    width: auto;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2.5rem;
+    color: var(--green);
+    margin: 0;
+    animation: bounce 1s ease;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--orange);
+    margin-top: 0.5rem;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.nav-button {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    background-color: white;
+}
+
+.nav-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Button Colors */
+.schools {
+    border-color: var(--green);
+    color: var(--green);
+}
+.schools:hover {
+    background-color: var(--green);
+    color: white;
+}
+
+.hospitals {
+    border-color: var(--red);
+    color: var(--red);
+}
+.hospitals:hover {
+    background-color: var(--red);
+    color: white;
+}
+
+.playgrounds {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+.playgrounds:hover {
+    background-color: var(--orange);
+    color: white;
+}
+
+/* Resource Cards Section */
+.resource-section {
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.resource-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--green);
+    font-size: 2rem;
+}
+
+.resource-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+    animation: popIn 0.5s ease-out;
+    border: 2px solid var(--orange);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+/* Form Styling */
+.form-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 600px;
+    border: 3px solid var(--green);
+}
+
+.form-section h2 {
+    color: var(--green);
+}
+
+.resource-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 2px solid var(--orange);
+    border-radius: 10px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+.submit-button {
+    background-color: var(--green);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--orange);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: var(--green);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* Animations */
+@keyframes bounce {
+    0% { transform: translateY(-20px); opacity: 0; }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 160px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+    }
+    
+    .nav-button {
+        width: 100%;
+    }
+    
+    .card {
+        width: 100%;
+    }
+}
