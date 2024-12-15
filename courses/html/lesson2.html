@@ -141,8 +141,9 @@
 <body>
     <header class="lesson-header">
         <div class="header-content">
-            <a href="../../index.html" class="back-home">
-                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            <a href="../../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Home
             </a>
             <div class="lesson-info">
                 <h1>Lesson 2: Adding Content 📝</h1>
@@ -187,28 +188,26 @@
             </div>
 
             <div class="lesson-section example">
-                <h3>Try Different Text Styles 🎯</h3>
+                <h3>Try adding different types of content:</h3>
                 <div class="code-playground">
                     <div class="code-editor">
-                        <h4>Edit this code:</h4>
-                        <pre class="code-area" contenteditable="true">
-<h1>My Favorite Things</h1>
-<h2>Foods I Love</h2>
-<ul>
-    <li>Pizza 🍕</li>
-    <li>Ice Cream 🍦</li>
-    <li>Tacos 🌮</li>
-</ul>
-
-<h2>My Hobbies</h2>
-<p>I <strong>love</strong> to play games and read <em>exciting</em> books!</p></pre>
+                        <h4>Try adding different types of content:</h4>
+                        <textarea id="code-input" class="code-input">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Content Page</title>
+</head>
+<body>
+    <!-- Add your content here! -->
+    
+</body>
+</html></textarea>
                         <button class="run-code">Run Code ▶️</button>
                     </div>
-                    <div class="code-preview">
-                        <h4>Preview:</h4>
-                        <div class="preview-area">
-                            <!-- Preview will be shown here -->
-                        </div>
+                    <div class="preview">
+                        <h4>Your webpage will appear here:</h4>
+                        <div id="preview" class="preview-window"></div>
                     </div>
                 </div>
             </div>
@@ -258,36 +257,6 @@
 
     <script src="../course-scripts.js"></script>
     <script src="../quiz-system.js"></script>
-    <script>
-        // Initialize quiz
-        const quizQuestions = [
-            {
-                question: "Which tag is used for the largest heading?",
-                options: ["<h6>", "<h1>", "<heading>", "<head>"],
-                correct: 1
-            },
-            {
-                question: "How do you create an unordered list?",
-                options: ["<ol>", "<list>", "<ul>", "<unordered>"],
-                correct: 2
-            },
-            {
-                question: "Which tag makes text bold?",
-                options: ["<bold>", "<b>", "<strong>", "<em>"],
-                correct: 2
-            },
-            {
-                question: "What tag should you use for a paragraph?",
-                options: ["<paragraph>", "<text>", "<p>", "<para>"],
-                correct: 2
-            }
-        ];
-
-        // Initialize quiz when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const quizContainer = document.getElementById('content-quiz');
-            new QuizSystem(quizContainer, quizQuestions);
-        });
-    </script>
+    <script src="lesson2.js"></script>
 </body>
 </html>

@@ -6,16 +6,18 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .lesson-header .header-content {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    max-width: 1400px;
+    gap: 1rem;
+    max-width: 1600px;
     margin: 0 auto;
+    position: relative;
+    padding: 0 2rem;
 }
 
 .back-home {
@@ -32,16 +34,17 @@
 }
 
 .lesson-info h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--green);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .progress-bar {
-    height: 8px;
+    height: 6px;
     background: #eee;
     border-radius: 4px;
     overflow: hidden;
+    margin-top: 0.2rem;
 }
 
 .progress {
@@ -53,24 +56,31 @@
 /* Main lesson layout */
 .lesson-content {
     display: flex;
-    gap: 2rem;
-    max-width: 1400px;
-    margin: 100px auto 2rem;
+    gap: 1.5rem;
+    max-width: 1600px;
+    margin: 70px auto 2rem;
     padding: 0 2rem;
+    min-height: calc(100vh - 90px);
 }
 
 /* Sidebar navigation */
 .lesson-nav {
-    width: 250px;
+    width: 220px;
     flex-shrink: 0;
     position: sticky;
-    top: 100px;
+    top: 80px;
     height: fit-content;
+    font-size: 0.9rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .module-progress h3 {
     color: var(--green);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
 }
 
 .module-progress ul {
@@ -79,16 +89,17 @@
 }
 
 .module-progress li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .module-progress a {
     display: block;
-    padding: 0.8rem;
+    padding: 0.6rem 0.8rem;
     text-decoration: none;
     color: var(--text-color);
-    border-radius: 8px;
+    border-radius: 6px;
     transition: all 0.3s ease;
+    line-height: 1.2;
 }
 
 .module-progress li.active a {
@@ -103,27 +114,29 @@
 /* Main lesson area */
 .lesson-main {
     flex-grow: 1;
-    max-width: 800px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .lesson-section {
-    margin-bottom: 3rem;
+    background: #fff;
     padding: 2rem;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .lesson-section h2 {
     color: var(--green);
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .lesson-section h3 {
-    color: var(--orange);
+    color: var(--dark);
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .fun-list {
@@ -146,9 +159,11 @@
 
 /* Code playground */
 .code-playground {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .code-editor, .code-preview {
@@ -156,116 +171,232 @@
 }
 
 .code-area {
-    background: #1e1e1e;
-    color: #fff;
+    width: 100%;
+    min-height: 200px;
+    font-family: 'Courier New', monospace;
     padding: 1rem;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    font-family: monospace;
     margin: 1rem 0;
-    white-space: pre-wrap;
-    min-height: 200px;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    background: #f8f9fa;
 }
 
-.preview-area {
-    background: white;
-    border: 2px solid #eee;
-    border-radius: 8px;
+.code-input {
+    width: 100%;
+    min-height: 200px;
+    font-family: 'Courier New', monospace;
     padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    background: #f8f9fa;
+}
+
+.preview {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.preview-window {
     min-height: 200px;
-}
-
-.run-code, .check-answer {
-    background: var(--green);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.run-code:hover, .check-answer:hover {
-    background: var(--orange);
-    transform: translateY(-2px);
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-top: 1rem;
+    background: #fff;
 }
 
 /* Explanation cards */
 .explanation-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .explanation-card {
     background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
+    padding: 1.5rem;
+    border-radius: 12px;
     border-left: 4px solid var(--green);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .explanation-card h4 {
     color: var(--green);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
-/* Challenge section */
-.challenge-card {
-    background: #f8f9fa;
+.explanation-card ul {
+    margin-top: 0.8rem;
+    padding-left: 1.2rem;
+}
+
+.explanation-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Key points and common mistakes */
+.key-points, .common-mistakes, .debugging-help {
+    background: #fff;
     padding: 1.5rem;
     border-radius: 12px;
-    border: 2px solid var(--orange);
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.challenge-card h4 {
-    color: var(--orange);
+.key-points {
+    border-left: 4px solid var(--blue);
+}
+
+.common-mistakes {
+    border-left: 4px solid var(--orange);
+}
+
+.debugging-help {
+    border-left: 4px solid var(--purple);
+}
+
+.key-points h4, .common-mistakes h4, .debugging-help h4 {
+    color: var(--dark);
     margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
-/* Next steps */
-.next-lesson {
-    display: inline-block;
+/* Tips section */
+.tips, .debugging-help {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.tips ul, .debugging-help ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tips li, .debugging-help li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.tips li:before {
+    content: '💡';
+    position: absolute;
+    left: 0;
+}
+
+.debugging-help li:before {
+    content: '🔧';
+    position: absolute;
+    left: 0;
+}
+
+/* Mission section */
+.mission {
+    background: #f0f7ff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--blue);
+}
+
+.mission-tasks {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.mission-tasks li {
+    margin-bottom: 0.8rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.mission-tasks li:before {
+    content: attr(data-emoji);
+    position: absolute;
+    left: 0;
+}
+
+/* Back to Home Button */
+.back-home-btn {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
     background: var(--green);
     color: white;
-    padding: 1rem 2rem;
-    border-radius: 25px;
+    padding: 8px 16px;
+    border-radius: 20px;
     text-decoration: none;
-    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
 }
 
-.next-lesson:hover {
+.back-home-btn:hover {
     background: var(--orange);
-    transform: translateX(5px);
+    transform: translateY(-50%) translateX(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.back-home-btn .home-icon {
+    font-size: 1.1em;
 }
 
 /* Responsive design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .lesson-content {
-        flex-direction: column;
+        padding: 0 1.5rem;
     }
+    
+    .lesson-main {
+        max-width: 900px;
+    }
+}
 
+@media (max-width: 992px) {
     .lesson-nav {
-        width: 100%;
-        position: static;
+        width: 180px;
     }
-
-    .code-playground {
-        flex-direction: column;
+    
+    .lesson-section {
+        padding: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .lesson-header .header-content {
+    .lesson-content {
         flex-direction: column;
-        text-align: center;
+        padding: 0 1rem;
     }
-
-    .lesson-info h1 {
-        font-size: 1.5rem;
+    
+    .lesson-nav {
+        width: 100%;
+        position: static;
+        margin-bottom: 1.5rem;
     }
-
-    .lesson-section {
-        padding: 1rem;
+    
+    .lesson-main {
+        padding: 0;
     }
 }

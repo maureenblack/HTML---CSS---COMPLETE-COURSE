@@ -13,11 +13,12 @@
 <body>
     <header class="lesson-header">
         <div class="header-content">
-            <a href="../../index.html" class="back-home">
-                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            <a href="../../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Home
             </a>
             <div class="lesson-info">
-                <h1>Lesson 1: Building Your First Page 🏗️</h1>
+                <h1>Lesson 1: Building Your First Page 🚀</h1>
                 <div class="progress-bar">
                     <div class="progress" style="width: 33%"></div>
                 </div>
@@ -38,84 +39,65 @@
         </aside>
 
         <section class="lesson-main">
-            <div class="lesson-section introduction">
-                <h2>Welcome to Your First Web Page! 🎉</h2>
-                <div class="explanation-box">
-                    <h3>What is HTML? 🤔</h3>
-                    <p>Imagine you're building a house with LEGO blocks. HTML is like those LEGO blocks for websites! Just like how you need different LEGO pieces to build a house (walls, windows, doors), you need different HTML "tags" to build a webpage.</p>
-                    
-                    <div class="fun-fact">
-                        <span class="emoji">💡</span>
-                        <p>Fun Fact: HTML stands for "HyperText Markup Language" - but don't worry about remembering that! Just think of it as your website's building blocks.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lesson-section concept">
-                <h3>The Basic Building Blocks 🧱</h3>
-                <div class="explanation-box">
-                    <p>Every webpage needs a special structure to work properly. Think of it like making a sandwich:</p>
-                    <div class="analogy">
-                        <div class="analogy-item">
-                            <span class="emoji">🍞</span>
-                            <p><code>&lt;!DOCTYPE html&gt;</code> - This is like telling everyone "Hey, I'm making a webpage!"</p>
-                        </div>
-                        <div class="analogy-item">
-                            <span class="emoji">🥬</span>
-                            <p><code>&lt;html&gt;</code> - This is like the plate that holds everything</p>
-                        </div>
-                        <div class="analogy-item">
-                            <span class="emoji">🧀</span>
-                            <p><code>&lt;head&gt;</code> - This is where we put important information about our webpage (like its title)</p>
-                        </div>
-                        <div class="analogy-item">
-                            <span class="emoji">🍅</span>
-                            <p><code>&lt;body&gt;</code> - This is where all the stuff people see goes!</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="code-example">
-                    <h4>Let's Build Our First Webpage! 🚀</h4>
-                    <pre class="code-area" contenteditable="true">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;My Awesome Page&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        Hello, World! 👋
-    &lt;/body&gt;
-&lt;/html&gt;</pre>
-                    <div class="explanation">
-                        <p>👆 Look at the code above! Each line has a special job:</p>
-                        <ul class="code-explanation">
-                            <li>Line 1: Tells the computer this is a webpage</li>
-                            <li>Line 2: Starts our webpage (like "Once upon a time...")</li>
-                            <li>Line 3-5: Gives our page a title (you'll see this at the top of your browser)</li>
-                            <li>Line 6-8: This is where we put what we want people to see!</li>
+            <div class="lesson-section intro">
+                <h3>Welcome to HTML! 🌟</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>What is HTML? 🤔</h4>
+                        <p>HTML is like building with LEGO blocks for websites! Each block (called a "tag") has a special job:</p>
+                        <ul>
+                            <li>Some blocks make headings (big titles)</li>
+                            <li>Some blocks make paragraphs (normal text)</li>
+                            <li>Some blocks add pictures or links</li>
                         </ul>
                     </div>
-                    <button class="run-code">Try It Out! ▶️</button>
+                    <div class="explanation-card">
+                        <h4>How Does It Work? 🔨</h4>
+                        <p>Think of HTML like making a sandwich:</p>
+                        <ul>
+                            <li>The &lt;html&gt; tag is like the bread slices</li>
+                            <li>The &lt;head&gt; tag is where we put information about our page (like the name)</li>
+                            <li>The &lt;body&gt; tag is where we put everything we want to show (like the sandwich filling)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="key-points">
+                    <h4>Important Things to Remember! 📝</h4>
+                    <ul>
+                        <li><strong>Tags come in pairs:</strong> Opening tag &lt;tag&gt; and closing tag &lt;/tag&gt;</li>
+                        <li><strong>Spacing doesn't matter:</strong> HTML ignores extra spaces, but good spacing makes your code easier to read</li>
+                        <li><strong>Order matters:</strong> Tags inside other tags must be closed in the right order</li>
+                        <li><strong>Case doesn't matter:</strong> &lt;P&gt; and &lt;p&gt; mean the same thing, but lowercase is preferred</li>
+                    </ul>
+                </div>
+
+                <div class="common-mistakes">
+                    <h4>Common Mistakes to Avoid! ⚠️</h4>
+                    <ul>
+                        <li><strong>Forgetting to close tags:</strong> Every &lt;tag&gt; needs a matching &lt;/tag&gt;</li>
+                        <li><strong>Nesting tags incorrectly:</strong> If tag A opens before tag B, tag B must close before tag A</li>
+                        <li><strong>Missing angle brackets:</strong> Always use &lt; and &gt; for tags</li>
+                        <li><strong>Spelling mistakes:</strong> Tags must be spelled exactly right to work</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="lesson-section practice">
-                <h3>Your Turn to Build! 🎮</h3>
-                <div class="practice-box">
-                    <div class="mission">
-                        <h4>🎯 Mission: Create Your Own Introduction Page</h4>
-                        <p>Let's make a page that tells people about you! Try adding:</p>
-                        <ul class="mission-tasks">
-                            <li>👋 A greeting (like "Hi! I'm [your name]")</li>
-                            <li>🎈 Your age</li>
-                            <li>🎮 Your favorite game or hobby</li>
-                        </ul>
-                    </div>
-                    <div class="code-playground">
-                        <div class="code-editor">
-                            <h4>Type your code here:</h4>
-                            <textarea class="code-input" rows="10">
+                <h3>Let's Write Some Code! 👩‍💻</h3>
+                <div class="mission">
+                    <h4>🎯 Mission: Create Your Own Introduction Page</h4>
+                    <p>Let's make a page that tells people about you! Try adding:</p>
+                    <ul class="mission-tasks">
+                        <li>👋 A greeting (like "Hi! I'm [your name]")</li>
+                        <li>🎈 Your age</li>
+                        <li>🎮 Your favorite game or hobby</li>
+                    </ul>
+                </div>
+                <div class="code-playground">
+                    <div class="code-editor">
+                        <h4>Type your code here:</h4>
+                        <textarea id="code-input" class="code-input" rows="10">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
@@ -126,13 +108,32 @@
         
     &lt;/body&gt;
 &lt;/html&gt;</textarea>
-                            <button onclick="runCode()" class="run-code">See How It Looks! ▶️</button>
-                        </div>
-                        <div class="preview">
-                            <h4>Your webpage will appear here:</h4>
-                            <div class="preview-window"></div>
-                        </div>
+                        <button class="run-code">Run Code ▶️</button>
                     </div>
+                    <div class="preview">
+                        <h4>Your webpage will appear here:</h4>
+                        <div id="preview" class="preview-window"></div>
+                    </div>
+                </div>
+                <div class="tips">
+                    <h4>Cool Tips! 🌟</h4>
+                    <ul>
+                        <li>Use emojis to make your page fun! Just copy and paste them in!</li>
+                        <li>Try pressing Enter to put different things on new lines</li>
+                        <li>If something doesn't work, check your spelling first</li>
+                        <li>Use the Tab key to indent your code and make it easier to read</li>
+                        <li>Save your work often by copying your code somewhere safe</li>
+                    </ul>
+                </div>
+                <div class="debugging-help">
+                    <h4>If Something Goes Wrong 🔧</h4>
+                    <ul>
+                        <li>Check if all your tags are properly closed</li>
+                        <li>Make sure your tags are in the right order</li>
+                        <li>Look for missing angle brackets &lt; or &gt;</li>
+                        <li>Try writing your code step by step</li>
+                        <li>If stuck, try starting fresh with a new page</li>
+                    </ul>
                 </div>
             </div>
 
@@ -288,5 +289,7 @@
     </footer>
 
     <script src="../course-scripts.js"></script>
+    <script src="../quiz-system.js"></script>
+    <script src="lesson1.js"></script>
 </body>
 </html>

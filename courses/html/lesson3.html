@@ -93,8 +93,9 @@
 <body>
     <header class="lesson-header">
         <div class="header-content">
-            <a href="../../index.html" class="back-home">
-                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            <a href="../../index.html" class="back-home-btn">
+                <span class="home-icon">🏠</span>
+                Back to Home
             </a>
             <div class="lesson-info">
                 <h1>Lesson 3: Links & Images 🖼️</h1>
@@ -176,8 +177,7 @@
                 <h3>Try It Yourself! 🎯</h3>
                 <div class="practice-area">
                     <p>Create a small gallery with linked images:</p>
-                    <textarea id="code-input">
-<!DOCTYPE html>
+                    <textarea id="code-input"><!DOCTYPE html>
 <html>
 <head>
     <title>My Gallery</title>
@@ -188,7 +188,7 @@
     
 </body>
 </html></textarea>
-                    <button onclick="updatePreview()" class="run-code">Run Code ▶️</button>
+                    <button class="run-code">Run Code ▶️</button>
                     <iframe id="preview" class="preview-frame"></iframe>
                 </div>
             </div>
@@ -220,51 +220,6 @@
 
     <script src="../course-scripts.js"></script>
     <script src="../quiz-system.js"></script>
-    <script>
-        // Initialize quiz
-        const quizQuestions = [
-            {
-                question: "Which HTML tag is used to create a link?",
-                options: ["<link>", "<a>", "<href>", "<url>"],
-                correct: 1
-            },
-            {
-                question: "What attribute specifies the destination of a link?",
-                options: ["src", "href", "link", "to"],
-                correct: 1
-            },
-            {
-                question: "Which attribute is required for the <img> tag?",
-                options: ["href", "src", "link", "url"],
-                correct: 1
-            },
-            {
-                question: "What's the purpose of the 'alt' attribute in an image tag?",
-                options: [
-                    "To make the image load faster",
-                    "To provide alternative text when the image can't be displayed",
-                    "To specify the image size",
-                    "To add a border to the image"
-                ],
-                correct: 1
-            }
-        ];
-
-        // Initialize quiz when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const quizContainer = document.getElementById('links-quiz');
-            new QuizSystem(quizContainer, quizQuestions);
-        });
-
-        // Preview functionality
-        function updatePreview() {
-            const code = document.getElementById('code-input').value;
-            const preview = document.getElementById('preview');
-            const previewDoc = preview.contentDocument || preview.contentWindow.document;
-            previewDoc.open();
-            previewDoc.write(code);
-            previewDoc.close();
-        }
-    </script>
+    <script src="lesson3.js"></script>
 </body>
 </html>

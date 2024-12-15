@@ -7,18 +7,45 @@ document.addEventListener('DOMContentLoaded', function() {
         const codeArea = editor.querySelector('.code-area');
         const runButton = editor.querySelector('.run-code');
         const checkButton = editor.querySelector('.check-answer');
-        const previewArea = editor.nextElementSibling?.querySelector('.preview-area');
+        const previewArea = editor.nextElementSibling?.querySelector('.preview-area') || 
+                           editor.nextElementSibling?.querySelector('.preview-window') ||
+                           document.getElementById('preview');
+
+        // Function to update the preview iframe with the code from the textarea
+        function updatePreview() {
+            const codeInput = codeArea;
+            const preview = previewArea;
+            
+            if (codeInput && preview) {
+                if (preview instanceof HTMLIFrameElement) {
+                    const previewDocument = preview.contentDocument || preview.contentWindow.document;
+                    previewDocument.open();
+                    previewDocument.write(codeInput.value);
+                    previewDocument.close();
+                } else {
+                    preview.innerHTML = codeInput.value;
+                }
+            }
+        }
 
         if (runButton && previewArea) {
+            updatePreview(); // Initial preview
             runButton.addEventListener('click', () => {
-                // Update preview with code
-                previewArea.innerHTML = codeArea.textContent;
-                
-                // Add success animation
-                runButton.textContent = 'Code Running! 🚀';
-                setTimeout(() => {
-                    runButton.textContent = 'Run Code ▶️';
-                }, 1000);
+                try {
+                    updatePreview();
+                    
+                    // Add success animation
+                    runButton.textContent = 'Code Running! ';
+                    setTimeout(() => {
+                        runButton.textContent = 'Run Code ';
+                    }, 1000);
+                } catch (error) {
+                    console.error('Error running code:', error);
+                    runButton.textContent = 'Error! Try Again ';
+                    setTimeout(() => {
+                        runButton.textContent = 'Run Code ';
+                    }, 1000);
+                }
             });
         }
 
@@ -39,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 // Show result
-                checkButton.textContent = correct ? 'Great Job! 🎉' : 'Try Again! 💪';
+                checkButton.textContent = correct ? 'Great Job! ' : 'Try Again! ';
                 checkButton.style.background = correct ? '#00BF63' : '#9C2B36';
                 
                 setTimeout(() => {
-                    checkButton.textContent = 'Check My Code ✅';
+                    checkButton.textContent = 'Check My Code ';
                     checkButton.style.background = '';
                 }, 2000);
             });
