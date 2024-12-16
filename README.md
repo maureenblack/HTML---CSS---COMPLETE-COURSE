@@ -36,14 +36,8 @@ Welcome to the HTML & CSS Young Innovators Edition - a fun and interactive learn
 
 Get ready to embark on an exciting coding adventure that will spark your creativity and help you build amazing things for the web! 🚀
 
-![Course Preview](HTML%20%26%20CSS%20-%20yOUNG%20INNOVATORS%20EDITION.PNG)
+![HTML   CSS - Young Innovators Edition](https://github.com/user-attachments/assets/ec4ca236-2371-478a-a36d-6ed4e913250e)
 
-## 🌟 What Makes This Course Special?
-- 🎮 Kid-friendly examples and explanations
-- 🎨 Fun and creative projects
-- 🏆 Interactive challenges
-- 🎯 Easy-to-follow lessons
-- 🚀 Learn at your own pace
 
 ## 📚 Course Structure
 
