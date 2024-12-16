@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements Quiz - Lesson 2</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <a href="../../../index.html" class="nav-brand">
+                <img src="../../../assets/logo.png" alt="Course Logo" class="nav-logo">
+                <span>HTML & CSS Course</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="quiz-page">
+        <div class="quiz-container">
+            <h1>🌟 HTML Elements Quiz</h1>
+            <p class="quiz-intro">Test your knowledge about HTML elements and attributes!</p>
+            
+            <div class="questions">
+                <div class="question">
+                    <h3>1. Which HTML attribute is used to define styles?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q1" value="a">
+                            <span>class</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="b">
+                            <span>style</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="c">
+                            <span>css</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>2. What is the correct HTML for creating a hyperlink?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q2" value="a">
+                            <span>&lt;a href="url"&gt;link text&lt;/a&gt;</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="b">
+                            <span>&lt;link&gt;url&lt;/link&gt;</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="c">
+                            <span>&lt;hyperlink&gt;url&lt;/hyperlink&gt;</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>3. Which HTML element is used to display images?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q3" value="a">
+                            <span>&lt;picture&gt;</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="b">
+                            <span>&lt;image&gt;</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="c">
+                            <span>&lt;img&gt;</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button id="submit-quiz" class="quiz-button">
+                <i class="fas fa-check-circle"></i>
+                Submit Answers
+            </button>
+
+            <div id="quiz-results" class="hidden">
+                <h2>Your Results</h2>
+                <p class="score">Score: <span id="score">0</span>/3</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="feedback"></p>
+                <a href="../lesson2.html" class="quiz-button">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Lesson
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('submit-quiz').addEventListener('click', function() {
+            let score = 0;
+            const answers = {
+                q1: 'b', // style
+                q2: 'a', // <a href="url">link text</a>
+                q3: 'c'  // <img>
+            };
+
+            // Calculate score
+            for (let question in answers) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === answers[question]) {
+                    score++;
+                }
+            }
+
+            // Show results
+            const resultsDiv = document.getElementById('quiz-results');
+            const scoreSpan = document.getElementById('score');
+            const feedback = resultsDiv.querySelector('.feedback');
+            const stars = resultsDiv.querySelectorAll('.fa-star');
+
+            scoreSpan.textContent = score;
+            
+            // Update stars based on score
+            stars.forEach((star, index) => {
+                if (index < score) {
+                    star.style.color = '#FFD700';
+                } else {
+                    star.style.color = '#ddd';
+                }
+            });
+
+            // Set feedback message
+            if (score === 3) {
+                feedback.textContent = "Amazing work! You're a HTML elements expert! 🎉";
+            } else if (score === 2) {
+                feedback.textContent = "Good job! Just a bit more practice needed! 👍";
+            } else {
+                feedback.textContent = "Keep studying! Review the lesson and try again! 💪";
+            }
+
+            resultsDiv.classList.remove('hidden');
+            document.querySelector('.questions').style.display = 'none';
+            document.getElementById('submit-quiz').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

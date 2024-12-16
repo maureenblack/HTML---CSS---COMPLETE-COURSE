@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics Quiz - Lesson 1</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="quiz-nav">
+        <a href="../lesson1.html" class="back-to-lesson">
+            <i class="fas fa-arrow-left"></i>
+            Back to Lesson
+        </a>
+        <div class="quiz-progress">
+            <span class="current-question">HTML Basics Quiz</span>
+        </div>
+    </nav>
+
+    <header>
+        <nav class="main-nav">
+            <a href="../../../index.html" class="nav-brand">
+                <img src="../../../assets/logo.png" alt="Course Logo" class="nav-logo">
+                <span>HTML & CSS Course</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="quiz-page">
+        <div class="quiz-container">
+            <h1>🌟 HTML Basics Quiz</h1>
+            <p class="quiz-intro">Let's test what you've learned about HTML basics!</p>
+            
+            <div class="questions">
+                <div class="question">
+                    <h3>1. What does HTML stand for?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q1" value="a">
+                            <span>Hyper Text Markup Language</span>
+                            <div class="feedback-message"></div>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="b">
+                            <span>High Tech Modern Language</span>
+                            <div class="feedback-message"></div>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="c">
+                            <span>Home Tool Markup Language</span>
+                            <div class="feedback-message"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>2. Which tag is used to create a paragraph in HTML?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q2" value="a">
+                            <span>&lt;paragraph&gt;</span>
+                            <div class="feedback-message"></div>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="b">
+                            <span>&lt;p&gt;</span>
+                            <div class="feedback-message"></div>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="c">
+                            <span>&lt;para&gt;</span>
+                            <div class="feedback-message"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h3>3. What is the correct HTML element for the largest heading?</h3>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q3" value="a">
+                            <span>&lt;h6&gt;</span>
+                            <div class="feedback-message"></div>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="b">
+                            <span>&lt;heading&gt;</span>
+                            <div class="feedback-message"></div>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="c">
+                            <span>&lt;h1&gt;</span>
+                            <div class="feedback-message"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button id="submit-quiz" class="quiz-button">
+                <i class="fas fa-check-circle"></i>
+                Submit Answers
+            </button>
+
+            <div id="quiz-results" class="hidden">
+                <h2>Your Results</h2>
+                <p class="score">Score: <span id="score">0</span>/3</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="feedback"></p>
+                <a href="../lesson1.html" class="quiz-button">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Lesson
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('submit-quiz').addEventListener('click', function() {
+            let score = 0;
+            const answers = {
+                q1: 'a', // Hyper Text Markup Language
+                q2: 'b', // <p>
+                q3: 'c'  // <h1>
+            };
+
+            // Reset previous feedback
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.remove('correct', 'wrong');
+            });
+
+            // Check each answer and show immediate feedback
+            for (let question in answers) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected) {
+                    const optionLabel = selected.closest('.option');
+                    const correctOption = document.querySelector(`input[name="${question}"][value="${answers[question]}"]`).closest('.option');
+                    
+                    if (selected.value === answers[question]) {
+                        score++;
+                        optionLabel.classList.add('correct');
+                    } else {
+                        optionLabel.classList.add('wrong');
+                        correctOption.classList.add('correct');
+                    }
+                }
+            }
+
+            // Show results
+            const resultsDiv = document.getElementById('quiz-results');
+            const scoreSpan = document.getElementById('score');
+            const feedback = resultsDiv.querySelector('.feedback');
+            const stars = resultsDiv.querySelectorAll('.fa-star');
+
+            scoreSpan.textContent = score;
+            
+            // Update stars based on score
+            stars.forEach((star, index) => {
+                if (index < score) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+
+            // Set feedback message based on actual performance
+            if (score === 3) {
+                feedback.textContent = "Perfect score! You've mastered HTML basics! 🎉";
+            } else if (score === 2) {
+                feedback.textContent = "Good effort! Review the incorrect answer and try again! 👍";
+            } else if (score === 1) {
+                feedback.textContent = "Keep practicing! Review the lesson material and try again! 💪";
+            } else {
+                feedback.textContent = "Time to review the lesson! You'll get it next time! 📚";
+            }
+
+            resultsDiv.classList.remove('hidden');
+            document.getElementById('submit-quiz').style.display = 'none';
+        });
+
+        // Add hover effect to options
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('mouseover', function() {
+                if (!this.classList.contains('correct') && !this.classList.contains('wrong')) {
+                    this.style.borderColor = 'var(--red)';
+                }
+            });
+            
+            option.addEventListener('mouseout', function() {
+                if (!this.classList.contains('correct') && !this.classList.contains('wrong')) {
+                    this.style.borderColor = '#e9ecef';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

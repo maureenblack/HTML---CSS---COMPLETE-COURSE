@@ -176,17 +176,21 @@
             <div class="lesson-section practice">
                 <h3>Try It Yourself! 🎯</h3>
                 <div class="code-playground">
-                    <div class="code-editor">
-                        <h4>Try adding images and links:</h4>
-                        <textarea id="code-input" class="code-input"></textarea>
-                        <button id="run-code" class="run-code">Run Code ▶️</button>
-                        <div class="preview">
-                            <h4>Your webpage will appear here:</h4>
-                            <iframe id="preview" class="preview-frame"></iframe>
+                    <div class="code-editor" id="editor1">
+                        <textarea class="code-input"><!-- Your HTML code here --></textarea>
+                        <div class="code-editor-buttons">
+                            <button class="reset-code-btn" onclick="resetCode(1)">
+                                <i class="fas fa-undo"></i>
+                                Reset Code
+                            </button>
+                            <button class="run-code-btn" onclick="runCode(1)">
+                                <i class="fas fa-play"></i>
+                                Run Code
+                            </button>
                         </div>
+                        <div class="code-output" id="output1"></div>
                     </div>
                 </div>
-
             </div>
 
             <div class="lesson-section quiz">
@@ -196,6 +200,15 @@
                     <span class="quiz-icon">🎯</span>
                     Start Quiz
                     <span class="quiz-icon">✨</span>
+                </a>
+            </div>
+
+            <div class="quiz-section">
+                <h3>🎯 Quick Quiz!</h3>
+                <p>Ready to test your knowledge about HTML lists and tables?</p>
+                <a href="quizzes/lesson3-quiz.html" class="quiz-button">
+                    <i class="fas fa-play-circle"></i>
+                    Start Quiz
                 </a>
             </div>
 
@@ -219,6 +232,48 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Store original code for each editor
+        const originalCode = {
+            1: document.querySelector('#editor1 .code-input').value,
+            // Add more editors as needed
+        };
+
+        function resetCode(editorId) {
+            const editor = document.querySelector(`#editor${editorId} .code-input`);
+            editor.value = originalCode[editorId];
+            const output = document.querySelector(`#output${editorId}`);
+            output.innerHTML = ''; // Clear output
+        }
+
+        function runCode(editorId) {
+            const editor = document.querySelector(`#editor${editorId} .code-input`);
+            const output = document.querySelector(`#output${editorId}`);
+            try {
+                // Create a safe iframe to run the code
+                const iframe = document.createElement('iframe');
+                iframe.style.width = '100%';
+                iframe.style.height = '300px';
+                iframe.style.border = '1px solid #ccc';
+                output.innerHTML = '';
+                output.appendChild(iframe);
+                
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                doc.open();
+                doc.write(editor.value);
+                doc.close();
+            } catch (error) {
+                output.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+            }
+        }
+
+        // Initialize editors with line numbers and syntax highlighting
+        document.querySelectorAll('.code-input').forEach((editor, index) => {
+            // Store initial code
+            originalCode[index + 1] = editor.value;
+        });
+    </script>
 
     <script src="../js/course-scripts.js"></script>
     <script src="../js/quiz-system.js"></script>
