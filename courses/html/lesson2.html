@@ -218,6 +218,78 @@
                 </div>
             </div>
 
+            <div class="lesson-section practice">
+                <h3>Try It Yourself! 🎯</h3>
+                <div class="code-playground">
+                    <div class="code-editor" id="editor1">
+                        <textarea class="code-input"><!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Elements Practice</title>
+</head>
+<body>
+    <h1>My Web Page</h1>
+    <p>This paragraph contains <strong>bold</strong> and <em>italic</em> text.</p>
+    <img src="https://placekitten.com/200/200" alt="A cute kitten">
+    <a href="https://www.example.com">Click me!</a>
+</body>
+</html></textarea>
+                        <div class="code-editor-buttons">
+                            <button class="reset-code-btn" onclick="resetCode(1)">
+                                <i class="fas fa-undo"></i>
+                                Reset Code
+                            </button>
+                            <button class="run-code-btn" onclick="runCode(1)">
+                                <i class="fas fa-play"></i>
+                                Run Code
+                            </button>
+                        </div>
+                        <div class="code-output" id="output1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Store original code for each editor
+                const originalCode = {
+                    1: document.querySelector('#editor1 .code-input').value,
+                };
+
+                function resetCode(editorId) {
+                    const editor = document.querySelector(`#editor${editorId} .code-input`);
+                    editor.value = originalCode[editorId];
+                    const output = document.querySelector(`#output${editorId}`);
+                    output.innerHTML = ''; // Clear output
+                }
+
+                function runCode(editorId) {
+                    const editor = document.querySelector(`#editor${editorId} .code-input`);
+                    const output = document.querySelector(`#output${editorId}`);
+                    try {
+                        // Create a safe iframe to run the code
+                        const iframe = document.createElement('iframe');
+                        iframe.style.width = '100%';
+                        iframe.style.height = '300px';
+                        iframe.style.border = '1px solid #ccc';
+                        output.innerHTML = '';
+                        output.appendChild(iframe);
+                        
+                        const doc = iframe.contentDocument || iframe.contentWindow.document;
+                        doc.open();
+                        doc.write(editor.value);
+                        doc.close();
+                    } catch (error) {
+                        output.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+                    }
+                }
+
+                // Initialize editors with line numbers and syntax highlighting
+                document.querySelectorAll('.code-input').forEach((editor, index) => {
+                    // Store initial code
+                    originalCode[index + 1] = editor.value;
+                });
+            </script>
+
             <div class="lesson-section resources">
                 <h3>Helpful Resources 📚</h3>
                 <div class="resources-grid">
@@ -236,14 +308,9 @@
                 </div>
             </div>
 
-            <div class="lesson-section practice">
-                <h3>Mini Quiz! 🎯</h3>
-                <div id="content-quiz"></div>
-            </div>
-
-            <div class="quiz-section">
-                <h3>🎯 Quick Quiz!</h3>
-                <p>Test your understanding of HTML elements and attributes!</p>
+            <div class="lesson-section quiz">
+                <h3>Quick Quiz! 📝</h3>
+                <p>Ready to test what you've learned? Take the quiz and earn your stars! ⭐</p>
                 <a href="quizzes/lesson2-quiz.html" class="quiz-button">
                     <i class="fas fa-play-circle"></i>
                     Start Quiz

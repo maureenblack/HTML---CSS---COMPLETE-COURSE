@@ -6,8 +6,37 @@
     <title>HTML Elements Quiz - Lesson 2</title>
     <link rel="stylesheet" href="../../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .quiz-nav {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-to-lesson {
+            text-decoration: none;
+            color: #337ab7;
+        }
+        .quiz-progress {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <nav class="quiz-nav">
+        <a href="../lesson2.html" class="back-to-lesson">
+            <i class="fas fa-arrow-left"></i>
+            Back to Lesson
+        </a>
+        <div class="quiz-progress">
+            <span class="current-question">HTML Elements Quiz</span>
+        </div>
+    </nav>
     <header>
         <nav class="main-nav">
             <a href="../../../index.html" class="nav-brand">

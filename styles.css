@@ -260,6 +260,14 @@ main {
 }
 
 /* Quiz Button Styles */
+.lesson-section.quiz {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
 .quiz-button {
     display: inline-flex;
     align-items: center;
@@ -290,20 +298,6 @@ main {
 
 .quiz-button i {
     font-size: 1.2rem;
-}
-
-.quiz-section {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 15px;
-    margin: 2rem 0;
-    text-align: center;
-    border: 2px dashed var(--red);
-}
-
-.quiz-section h3 {
-    color: var(--red);
-    margin-bottom: 1rem;
 }
 
 /* Quiz Styles */
@@ -927,34 +921,3 @@ footer p {
 .reset-code-btn i {
     font-size: 1.1rem;
 }
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Get current page URL
-    const currentPage = window.location.pathname;
-
-    // Add active class to navigation buttons
-    const navButtons = document.querySelectorAll('.nav-button');
-    navButtons.forEach(button => {
-        if (button.getAttribute('href').includes(currentPage)) {
-            button.classList.add('active');
-        }
-    });
-
-    // Add active class to lesson cards
-    const lessonCards = document.querySelectorAll('.lesson-card');
-    lessonCards.forEach(card => {
-        if (card.getAttribute('href') === currentPage) {
-            card.classList.add('active');
-        }
-    });
-
-    // Add active class to project cards
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        if (card.getAttribute('href') === currentPage) {
-            card.classList.add('active');
-        }
-    });
-});
-</script>
