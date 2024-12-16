@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ Weather Reporter - Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../images/favicon.png">
+    <style>
+        /* Weather theme styles */
+        body {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .weather-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .weather-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .weather-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .weather-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .weather-type {
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .weather-info {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation buttons */
+        .nav-buttons {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn {
+            background: #4a90e2;
+            border: none;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background: #357abd;
+        }
+
+        /* Weather animation */
+        .weather-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .weather-element {
+            position: absolute;
+            animation: float 6s infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-animation" id="weatherContainer"></div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            </div>
+            <nav class="nav-buttons">
+                <a href="../../index.html" class="nav-btn">🏠 Home</a>
+                <a href="../../projects.html" class="nav-btn">📂 Projects</a>
+                <a href="../pet-care/index.html" class="nav-btn">⬅️ Previous Project</a>
+                <a href="../resource-mapper/index.html" class="nav-btn">Back to First Project ➡️</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="weather-container">
+        <section class="weather-section">
+            <img src="../../images/kidsonpc.png" alt="Weather Reporter Interface" class="hero-image">
+            <h1>🌤️ Weather Reporter</h1>
+            <p>Build your own weather reporting app! Learn to track temperature, precipitation, and create weather forecasts.</p>
+            
+            <div class="weather-grid">
+                <div class="weather-card" onclick="checkWeather('temperature')">
+                    <div class="weather-icon">🌡️</div>
+                    <h3 class="weather-type">Temperature</h3>
+                    <p class="weather-info">Track daily temperatures</p>
+                </div>
+                <div class="weather-card" onclick="checkWeather('precipitation')">
+                    <div class="weather-icon">🌧️</div>
+                    <h3 class="weather-type">Precipitation</h3>
+                    <p class="weather-info">Monitor rain and snow</p>
+                </div>
+                <div class="weather-card" onclick="checkWeather('wind')">
+                    <div class="weather-icon">🌪️</div>
+                    <h3 class="weather-type">Wind Speed</h3>
+                    <p class="weather-info">Check wind conditions</p>
+                </div>
+                <div class="weather-card" onclick="checkWeather('forecast')">
+                    <div class="weather-icon">📅</div>
+                    <h3 class="weather-type">Forecast</h3>
+                    <p class="weather-info">View 5-day predictions</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Create floating weather elements
+        function createWeatherElements() {
+            const container = document.getElementById('weatherContainer');
+            const elementCount = 15;
+            const weatherSymbols = ['☁️', '⛅', '🌤️', '❄️', '💧'];
+
+            for (let i = 0; i < elementCount; i++) {
+                const element = document.createElement('div');
+                element.className = 'weather-element';
+                element.textContent = weatherSymbols[Math.floor(Math.random() * weatherSymbols.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.top = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 6 + 's';
+                container.appendChild(element);
+            }
+        }
+
+        // Weather checking
+        function checkWeather(type) {
+            // This will be implemented in the next phase
+            alert(`Checking ${type}... Coming soon!`);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', createWeatherElements);
+    </script>
+</body>
+</html>

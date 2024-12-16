@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Space Explorer - Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../images/favicon.png">
+    <style>
+        /* Space theme styles */
+        body {
+            background: #0a0a2a;
+            color: white;
+        }
+
+        .space-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .planet-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .planet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .planet-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .planet-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .planet-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .planet-name {
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+        }
+
+        .planet-info {
+            color: #B0C4DE;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation buttons */
+        .nav-buttons {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Stars animation */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 1s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="starsContainer"></div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            </div>
+            <nav class="nav-buttons">
+                <a href="../../index.html" class="nav-btn">🏠 Home</a>
+                <a href="../../projects.html" class="nav-btn">📂 Projects</a>
+                <a href="../resource-mapper/index.html" class="nav-btn">⬅️ Previous Project</a>
+                <a href="../pet-care/index.html" class="nav-btn">Next Project ➡️</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="space-container">
+        <section class="planet-section">
+            <img src="../../images/gallery2.png" alt="Space Explorer Interface" class="hero-image">
+            <h1>🚀 Space Explorer</h1>
+            <p>Join us on an exciting journey through space! Learn about planets, stars, and galaxies while building your own interactive space explorer.</p>
+            
+            <div class="planet-grid">
+                <div class="planet-card" onclick="explorePlanet('mercury')">
+                    <div class="planet-icon">🌑</div>
+                    <h3 class="planet-name">Mercury</h3>
+                    <p class="planet-info">The smallest and fastest planet</p>
+                </div>
+                <div class="planet-card" onclick="explorePlanet('venus')">
+                    <div class="planet-icon">🌕</div>
+                    <h3 class="planet-name">Venus</h3>
+                    <p class="planet-info">The hottest planet in our system</p>
+                </div>
+                <div class="planet-card" onclick="explorePlanet('earth')">
+                    <div class="planet-icon">🌍</div>
+                    <h3 class="planet-name">Earth</h3>
+                    <p class="planet-info">Our beautiful home planet</p>
+                </div>
+                <div class="planet-card" onclick="explorePlanet('mars')">
+                    <div class="planet-icon">🔴</div>
+                    <h3 class="planet-name">Mars</h3>
+                    <p class="planet-info">The red planet</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Create stars background
+        function createStars() {
+            const container = document.getElementById('starsContainer');
+            const starCount = 200;
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 1 + 's';
+                container.appendChild(star);
+            }
+        }
+
+        // Planet exploration
+        function explorePlanet(planet) {
+            // This will be implemented in the next phase
+            alert(`Exploring ${planet}... Coming soon!`);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', createStars);
+    </script>
+</body>
+</html>

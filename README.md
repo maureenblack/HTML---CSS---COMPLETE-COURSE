@@ -136,7 +136,7 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 - Open source community for tools and support
 
 ## 📞 Contact
-- Website: [www.kid-friendly-mapper.com](http://www.kid-friendly-mapper.com)
-- Email: hello@kid-friendly-mapper.com
-- Twitter: [@KidFriendlyMap](https://twitter.com/KidFriendlyMap)
-- Instagram: [@KidFriendlyMapper](https://instagram.com/KidFriendlyMapper)
+- Website: [www.giiyo.com](http://www.www.giiyo.com)
+- Email: contact@giiyo.com
+- Twitter: [@giiyo Tech](https://twitter.com/giioyo)
+- Facebook:[Giio Tech](https://www.facebook.com/share/1B3QhyDXpk/?mibextid=wwXIfr)

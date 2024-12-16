@@ -88,6 +88,37 @@
             border-radius: 4px;
             margin-top: 1rem;
         }
+
+        .demo-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .demo-image:hover {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            text-align: center;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .image-container {
+            margin: 2rem 0;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
     </style>
 </head>
 <body>
@@ -170,6 +201,48 @@
                             &lt;/a&gt;
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="lesson-section concept">
+                <h1>Links and Images in HTML</h1>
+                
+                <div class="image-container">
+                    <img src="../../images/girlcoding.png" alt="Young girl learning to code" class="demo-image">
+                    <p class="image-caption">A young student exploring the world of coding</p>
+                </div>
+
+                <p>Images and links are fundamental elements that make web pages interactive and visually appealing. Let's learn how to use them effectively!</p>
+                
+                <h2>Working with Images</h2>
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="../../images/kidsonpc.png" alt="Kids working on computers" class="demo-image">
+                        <p class="image-caption">Students collaborating on coding projects</p>
+                    </div>
+                    <div class="code-example">
+                        <pre><code>&lt;img 
+    src="path/to/image.jpg" 
+    alt="Description of image"
+    width="300"
+    height="200"
+&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="explanation-box">
+                    <h3>Key Image Attributes:</h3>
+                    <ul>
+                        <li><strong>src</strong> - The source path to your image file</li>
+                        <li><strong>alt</strong> - Alternative text for accessibility</li>
+                        <li><strong>width</strong> - Image width in pixels</li>
+                        <li><strong>height</strong> - Image height in pixels</li>
+                    </ul>
+                </div>
+
+                <div class="fun-fact">
+                    <span class="emoji">💡</span>
+                    <p>Did you know? The alt text not only helps visually impaired users but also appears when images fail to load!</p>
                 </div>
             </div>
 

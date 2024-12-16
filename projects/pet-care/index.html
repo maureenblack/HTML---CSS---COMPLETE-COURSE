@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 Pet Care App - Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/png" href="../../images/favicon.png">
+    <style>
+        /* Pet Care theme styles */
+        body {
+            background: #f0f7ff;
+            color: #333;
+        }
+
+        .pet-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .pet-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .pet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pet-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .pet-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pet-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .pet-task {
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .pet-info {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation buttons */
+        .nav-buttons {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn {
+            background: #4a90e2;
+            border: none;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background: #357abd;
+        }
+
+        /* Paw print animation */
+        .paw-prints {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .paw {
+            position: absolute;
+            font-size: 2rem;
+            animation: fade-move 3s infinite;
+        }
+
+        @keyframes fade-move {
+            0% { opacity: 0; transform: translateY(-20px); }
+            50% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="paw-prints" id="pawContainer"></div>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            </div>
+            <nav class="nav-buttons">
+                <a href="../../index.html" class="nav-btn">🏠 Home</a>
+                <a href="../../projects.html" class="nav-btn">📂 Projects</a>
+                <a href="../space-explorer/index.html" class="nav-btn">⬅️ Previous Project</a>
+                <a href="../weather-reporter/index.html" class="nav-btn">Next Project ➡️</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pet-container">
+        <section class="pet-section">
+            <img src="../../images/gallery3.png" alt="Pet Care Dashboard" class="hero-image">
+            <h1>🐾 Pet Care App</h1>
+            <p>Learn to build a pet care app that helps you take better care of your furry friends! Track feeding times, walks, and more.</p>
+            
+            <div class="pet-grid">
+                <div class="pet-card" onclick="trackTask('feeding')">
+                    <div class="pet-icon">🍽️</div>
+                    <h3 class="pet-task">Feeding Time</h3>
+                    <p class="pet-info">Track meal times and portions</p>
+                </div>
+                <div class="pet-card" onclick="trackTask('walk')">
+                    <div class="pet-icon">🦮</div>
+                    <h3 class="pet-task">Walk Schedule</h3>
+                    <p class="pet-info">Log walk times and distances</p>
+                </div>
+                <div class="pet-card" onclick="trackTask('health')">
+                    <div class="pet-icon">💊</div>
+                    <h3 class="pet-task">Health Tracker</h3>
+                    <p class="pet-info">Monitor medications and vet visits</p>
+                </div>
+                <div class="pet-card" onclick="trackTask('play')">
+                    <div class="pet-icon">🎾</div>
+                    <h3 class="pet-task">Playtime</h3>
+                    <p class="pet-info">Record play sessions and activities</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Create floating paw prints
+        function createPawPrints() {
+            const container = document.getElementById('pawContainer');
+            const pawCount = 20;
+            const pawSymbols = ['🐾', '🐱', '🐶'];
+
+            for (let i = 0; i < pawCount; i++) {
+                const paw = document.createElement('div');
+                paw.className = 'paw';
+                paw.textContent = pawSymbols[Math.floor(Math.random() * pawSymbols.length)];
+                paw.style.left = Math.random() * 100 + '%';
+                paw.style.top = Math.random() * 100 + '%';
+                paw.style.animationDelay = Math.random() * 3 + 's';
+                container.appendChild(paw);
+            }
+        }
+
+        // Task tracking
+        function trackTask(task) {
+            // This will be implemented in the next phase
+            alert(`Tracking ${task}... Coming soon!`);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', createPawPrints);
+    </script>
+</body>
+</html>

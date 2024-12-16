@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Playground - Kid-Friendly Coding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        .playground-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            height: calc(100vh - 200px);
+        }
+
+        .tools-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .tools-section {
+            margin-bottom: 2rem;
+        }
+
+        .tools-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .tool-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tool-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .canvas-area {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .canvas-toolbar {
+            padding: 1rem;
+            background: var(--primary-color);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .canvas-toolbar button {
+            background: white;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .canvas-toolbar button:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        #playgroundCanvas {
+            flex: 1;
+            background: white;
+        }
+
+        .character-select {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: white;
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .character-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            font-size: 2rem;
+        }
+
+        .character-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .active-character {
+            transform: scale(1.2);
+            position: relative;
+        }
+
+        .active-character::after {
+            content: '✓';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="playground.html" class="active">Playground</a>
+                <a href="projects.html">Projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>🎨 Code Playground</h1>
+            <p>Let your creativity run wild and build amazing things!</p>
+        </section>
+
+        <div class="playground-container">
+            <div class="tools-panel">
+                <div class="tools-section">
+                    <h3>HTML Blocks</h3>
+                    <div class="tool-grid">
+                        <button class="tool-btn" onclick="insertBlock('heading')">
+                            📑 Heading
+                        </button>
+                        <button class="tool-btn" onclick="insertBlock('paragraph')">
+                            📝 Paragraph
+                        </button>
+                        <button class="tool-btn" onclick="insertBlock('image')">
+                            🖼️ Image
+                        </button>
+                        <button class="tool-btn" onclick="insertBlock('button')">
+                            🔘 Button
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tools-section">
+                    <h3>Styling</h3>
+                    <div class="tool-grid">
+                        <button class="tool-btn" onclick="addStyle('color')">
+                            🎨 Color
+                        </button>
+                        <button class="tool-btn" onclick="addStyle('size')">
+                            📏 Size
+                        </button>
+                        <button class="tool-btn" onclick="addStyle('background')">
+                            🌈 Background
+                        </button>
+                        <button class="tool-btn" onclick="addStyle('animation')">
+                            ✨ Animation
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tools-section">
+                    <h3>Special Effects</h3>
+                    <div class="tool-grid">
+                        <button class="tool-btn" onclick="addEffect('sparkles')">
+                            ⭐ Sparkles
+                        </button>
+                        <button class="tool-btn" onclick="addEffect('confetti')">
+                            🎉 Confetti
+                        </button>
+                        <button class="tool-btn" onclick="addEffect('rainbow')">
+                            🌈 Rainbow
+                        </button>
+                        <button class="tool-btn" onclick="addEffect('magic')">
+                            🔮 Magic
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="canvas-area">
+                <div class="canvas-toolbar">
+                    <button onclick="clearCanvas()">Clear Canvas</button>
+                    <button onclick="saveCreation()">Save Creation</button>
+                    <button onclick="shareCreation()">Share</button>
+                </div>
+                <canvas id="playgroundCanvas"></canvas>
+            </div>
+        </div>
+
+        <div class="character-select">
+            <button class="character-btn active-character" onclick="selectCharacter('pixel')">🤖</button>
+            <button class="character-btn" onclick="selectCharacter('cody')">🐱</button>
+            <button class="character-btn" onclick="selectCharacter('byte')">🐞</button>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Giiyo Tech</h3>
+                <p>Empowering young minds through fun and interactive coding education.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://twitter.com/giioyo" target="_blank">Twitter</a>
+                    <a href="https://www.facebook.com/share/1B3QhyDXpk/?mibextid=wwXIfr" target="_blank">Facebook</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: contact@giiyo.com</p>
+                <p>Website: www.giiyo.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Giiyo Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize canvas
+        const canvas = document.getElementById('playgroundCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Resize canvas to fit container
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Character selection
+        function selectCharacter(character) {
+            document.querySelectorAll('.character-btn').forEach(btn => {
+                btn.classList.remove('active-character');
+            });
+            event.target.classList.add('active-character');
+            // Add character-specific animations or behaviors
+        }
+
+        // Tool functions
+        function insertBlock(type) {
+            // Implementation for inserting HTML blocks
+        }
+
+        function addStyle(type) {
+            // Implementation for adding styles
+        }
+
+        function addEffect(type) {
+            // Implementation for adding effects
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function saveCreation() {
+            // Implementation for saving creation
+        }
+
+        function shareCreation() {
+            // Implementation for sharing creation
+        }
+    </script>
+</body>
+</html>

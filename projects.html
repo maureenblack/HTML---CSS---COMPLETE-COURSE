@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Kid-Friendly Coding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            color: var(--primary-color);
+            margin: 0 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--primary-dark);
+        }
+
+        .difficulty {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .difficulty-label {
+            color: #666;
+        }
+
+        .difficulty-stars {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="playground.html">Playground</a>
+                <a href="projects.html" class="active">Projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="nav-buttons">
+        <a href="index.html" class="nav-btn">🏠 Back to Home</a>
+    </nav>
+
+    <main class="projects-container">
+        <section class="hero">
+            <h1>🚀 Fun Coding Projects</h1>
+            <p>Build amazing things and learn while having fun!</p>
+            <img src="images/girlcoding.png" alt="Young girl coding" class="hero-image">
+        </section>
+
+        <div class="projects-grid">
+            <!-- Resource Mapper Project -->
+            <div class="project-card">
+                <img src="images/gallery1.png" alt="Community Resource Map" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Community Resource Mapper</h2>
+                    <div class="difficulty">
+                        <span class="difficulty-label">Difficulty:</span>
+                        <span class="difficulty-stars">⭐⭐</span>
+                    </div>
+                    <p class="project-description">
+                        Create an interactive map to help your community find important resources like schools, hospitals, and parks.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Interactive</span>
+                    </div>
+                    <a href="projects/resource-mapper/index.html" class="project-link">Start Project</a>
+                </div>
+            </div>
+
+            <!-- Space Explorer Project -->
+            <div class="project-card">
+                <img src="images/gallery2.png" alt="Space Explorer Interface" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Space Explorer</h2>
+                    <div class="difficulty">
+                        <span class="difficulty-label">Difficulty:</span>
+                        <span class="difficulty-stars">⭐⭐⭐</span>
+                    </div>
+                    <p class="project-description">
+                        Build an interactive space exploration game where you can learn about planets and stars.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="projects/space-explorer/index.html" class="project-link">Coming Soon!</a>
+                </div>
+            </div>
+
+            <!-- Pet Care App Project -->
+            <div class="project-card">
+                <img src="images/gallery3.png" alt="Pet Care Dashboard" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Pet Care App</h2>
+                    <div class="difficulty">
+                        <span class="difficulty-label">Difficulty:</span>
+                        <span class="difficulty-stars">⭐</span>
+                    </div>
+                    <p class="project-description">
+                        Create a fun app to help kids learn about taking care of different pets.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Beginner</span>
+                    </div>
+                    <a href="projects/pet-care/index.html" class="project-link">Coming Soon!</a>
+                </div>
+            </div>
+
+            <!-- Weather Reporter Project -->
+            <div class="project-card">
+                <img src="images/kidsonpc.png" alt="Weather Reporter Interface" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Weather Reporter</h2>
+                    <div class="difficulty">
+                        <span class="difficulty-label">Difficulty:</span>
+                        <span class="difficulty-stars">⭐⭐</span>
+                    </div>
+                    <p class="project-description">
+                        Build a colorful weather app that shows weather conditions with fun animations.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">APIs</span>
+                    </div>
+                    <a href="projects/weather/index.html" class="project-link">Coming Soon!</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Giiyo Tech</h3>
+                <p>Empowering young minds through fun and interactive coding education.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://twitter.com/giioyo" target="_blank">Twitter</a>
+                    <a href="https://www.facebook.com/share/1B3QhyDXpk/?mibextid=wwXIfr" target="_blank">Facebook</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: contact@giiyo.com</p>
+                <p>Website: www.giiyo.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Giiyo Tech. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
