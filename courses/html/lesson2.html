@@ -3,156 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 2: Adding Content | Community Resource Mapper</title>
+    <title>Lesson 2: HTML Elements | HTML & CSS Course</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../course-styles.css">
-    <style>
-        /* Quiz-specific styles */
-        .quiz-container {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-top: 2rem;
-        }
-
-        .quiz-question {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .option {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .option:hover {
-            border-color: var(--green);
-            background: #f0f0f0;
-        }
-
-        .feedback {
-            margin-top: 1rem;
-            padding: 0.5rem;
-            border-radius: 4px;
-        }
-
-        .feedback.correct {
-            color: var(--green);
-            background: rgba(0, 191, 99, 0.1);
-        }
-
-        .feedback.incorrect {
-            color: var(--red);
-            background: rgba(156, 43, 54, 0.1);
-        }
-
-        .feedback.warning {
-            color: var(--orange);
-            background: rgba(237, 159, 71, 0.1);
-        }
-
-        .quiz-results {
-            display: none;
-            margin-top: 2rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .score-bar {
-            height: 20px;
-            background: #eee;
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 1rem 0;
-        }
-
-        .score-progress {
-            height: 100%;
-            background: var(--green);
-            transition: width 1s ease;
-        }
-
-        .encouragement {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            color: var(--green);
-        }
-
-        /* Resource card styles */
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .resource-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 2px solid var(--green);
-            text-align: center;
-        }
-
-        .resource-card img {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 1rem;
-        }
-
-        .download-btn {
-            display: inline-block;
-            background: var(--green);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: var(--orange);
-            transform: translateY(-2px);
-        }
-
-        .next-lesson {
-            display: inline-block;
-            background: var(--green);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .next-lesson:hover {
-            background: var(--orange);
-            transform: translateY(-2px);
-        }
-    </style>
+    <script src="../../scripts/course-scripts.js" defer></script>
 </head>
 <body>
     <header class="lesson-header">
@@ -162,9 +19,9 @@
                 Back to Home
             </a>
             <div class="lesson-info">
-                <h1>Lesson 2: Adding Content 📝</h1>
+                <h1>Lesson 2: HTML Elements 📝</h1>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 66%"></div>
+                    <div class="progress"></div>
                 </div>
             </div>
         </div>
@@ -175,154 +32,121 @@
             <div class="module-progress">
                 <h3>HTML Basics</h3>
                 <ul>
-                    <li><a href="lesson1.html">1. Building Your First Page</a></li>
-                    <li class="active"><a href="lesson2.html">2. Adding Content</a></li>
-                    <li><a href="lesson3.html">3. Links & Images</a></li>
+                    <li><a href="lesson1.html">1. Getting Started</a></li>
+                    <li class="active"><a href="lesson2.html">2. HTML Elements</a></li>
+                    <li><a href="lesson3.html">3. Lists & Tables</a></li>
+                    <li><a href="lesson4.html">4. Forms</a></li>
+                    <li><a href="lesson5.html">5. Media Elements</a></li>
+                    <li><a href="lesson6.html">6. Semantic HTML</a></li>
                 </ul>
             </div>
         </aside>
 
         <section class="lesson-main">
             <div class="lesson-section introduction">
-                <h2>Making Your Page Come Alive! 🎨</h2>
-                <p>Now that you know the basic structure of HTML, let's learn how to add different types of content to make your page interesting and informative!</p>
+                <h2>Understanding HTML Elements 🎨</h2>
+                <p>HTML elements are the building blocks of web pages. In this lesson, we'll learn about the most common HTML elements and how to use them effectively.</p>
             </div>
 
             <div class="lesson-section concept">
-                <h3>Types of Content 📚</h3>
+                <h3>Common HTML Elements 📚</h3>
                 <div class="content-types">
                     <div class="content-type">
                         <h4>Text Elements</h4>
                         <ul class="fun-list">
-                            <li>Headings (h1 to h6)</li>
-                            <li>Paragraphs (p)</li>
-                            <li>Lists (ul, ol, li)</li>
-                            <li>Emphasis (em, strong)</li>
+                            <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong> - Headings (from most to least important)</li>
+                            <li><strong>&lt;p&gt;</strong> - Paragraphs</li>
+                            <li><strong>&lt;strong&gt;</strong> - Bold text</li>
+                            <li><strong>&lt;em&gt;</strong> - Italic text</li>
+                            <li><strong>&lt;br&gt;</strong> - Line break</li>
+                            <li><strong>&lt;hr&gt;</strong> - Horizontal rule</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="lesson-section example">
-                <h3>Try adding different types of content:</h3>
+                <h3>Example of HTML Elements</h3>
                 <div class="code-playground">
-                    <div class="code-editor">
-                        <h4>Try adding different types of content:</h4>
-                        <textarea id="code-input" class="code-input"></textarea>
-                        <button id="run-code" class="run-code">Run Code ▶️</button>
-                        <div class="preview">
-                            <h4>Your webpage will appear here:</h4>
-                            <iframe id="preview" class="preview-frame"></iframe>
-                        </div>
+                    <div class="editor-section">
+                        <h4>Try it yourself:</h4>
+                        <textarea class="code-editor"><h1>Welcome to My Page</h1>
+
+<h2>About Me</h2>
+<p>This is a paragraph about me. Some words are <strong>bold</strong> and some are <em>italic</em>.</p>
+
+<hr>
+
+<h2>My Hobbies</h2>
+<p>Here are some things I like to do:</p>
+<p>I love coding!<br>
+I also enjoy reading.</p></textarea>
+                        <button class="run-code">Run Code ▶️</button>
+                    </div>
+                    <div class="preview-section">
+                        <h4>Preview:</h4>
+                        <iframe class="preview-frame" sandbox="allow-same-origin"></iframe>
                     </div>
                 </div>
+            </div>
+
+            <div class="lesson-section explanation">
+                <h3>Understanding the Elements</h3>
+                <ul class="explanation-list">
+                    <li><strong>Headings (&lt;h1&gt; to &lt;h6&gt;)</strong>: Used for titles and subtitles. H1 is the most important, H6 is the least important.</li>
+                    <li><strong>Paragraphs (&lt;p&gt;)</strong>: Used for blocks of text.</li>
+                    <li><strong>Text Formatting</strong>:
+                        <ul>
+                            <li>&lt;strong&gt; makes text bold (for importance)</li>
+                            <li>&lt;em&gt; makes text italic (for emphasis)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Line Breaks</strong>:
+                        <ul>
+                            <li>&lt;br&gt; creates a single line break</li>
+                            <li>&lt;hr&gt; creates a horizontal line to separate content</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
 
             <div class="lesson-section practice">
-                <h3>Try It Yourself! 🎯</h3>
+                <h3>Practice Exercise</h3>
+                <p>Try creating a short story using different HTML elements. Include:</p>
+                <ul>
+                    <li>A title using a heading</li>
+                    <li>Several paragraphs</li>
+                    <li>Some bold and italic text</li>
+                    <li>Line breaks and horizontal rules</li>
+                </ul>
                 <div class="code-playground">
-                    <div class="code-editor" id="editor1">
-                        <textarea class="code-input"><!DOCTYPE html>
-<html>
-<head>
-    <title>HTML Elements Practice</title>
-</head>
-<body>
-    <h1>My Web Page</h1>
-    <p>This paragraph contains <strong>bold</strong> and <em>italic</em> text.</p>
-    <img src="https://placekitten.com/200/200" alt="A cute kitten">
-    <a href="https://www.example.com">Click me!</a>
-</body>
-</html></textarea>
-                        <div class="code-editor-buttons">
-                            <button class="reset-code-btn" onclick="resetCode(1)">
-                                <i class="fas fa-undo"></i>
-                                Reset Code
-                            </button>
-                            <button class="run-code-btn" onclick="runCode(1)">
-                                <i class="fas fa-play"></i>
-                                Run Code
-                            </button>
-                        </div>
-                        <div class="code-output" id="output1"></div>
+                    <div class="editor-section">
+                        <h4>Write your story here:</h4>
+                        <textarea class="code-editor"><h1>My Story Title</h1>
+
+<p>Start writing your story here...</p>
+
+<!-- Remember to use:
+     - Different headings (h1, h2)
+     - Paragraphs (p)
+     - Bold text (strong)
+     - Italic text (em)
+     - Line breaks (br)
+     - Horizontal rules (hr)
+--></textarea>
+                        <button class="run-code">Run Code ▶️</button>
+                    </div>
+                    <div class="preview-section">
+                        <h4>Preview:</h4>
+                        <iframe class="preview-frame" sandbox="allow-same-origin"></iframe>
                     </div>
                 </div>
-            </div>
-
-            <script>
-                // Store original code for each editor
-                const originalCode = {
-                    1: document.querySelector('#editor1 .code-input').value,
-                };
-
-                function resetCode(editorId) {
-                    const editor = document.querySelector(`#editor${editorId} .code-input`);
-                    editor.value = originalCode[editorId];
-                    const output = document.querySelector(`#output${editorId}`);
-                    output.innerHTML = ''; // Clear output
-                }
-
-                function runCode(editorId) {
-                    const editor = document.querySelector(`#editor${editorId} .code-input`);
-                    const output = document.querySelector(`#output${editorId}`);
-                    try {
-                        // Create a safe iframe to run the code
-                        const iframe = document.createElement('iframe');
-                        iframe.style.width = '100%';
-                        iframe.style.height = '300px';
-                        iframe.style.border = '1px solid #ccc';
-                        output.innerHTML = '';
-                        output.appendChild(iframe);
-                        
-                        const doc = iframe.contentDocument || iframe.contentWindow.document;
-                        doc.open();
-                        doc.write(editor.value);
-                        doc.close();
-                    } catch (error) {
-                        output.innerHTML = `<div class="error">Error: ${error.message}</div>`;
-                    }
-                }
-
-                // Initialize editors with line numbers and syntax highlighting
-                document.querySelectorAll('.code-input').forEach((editor, index) => {
-                    // Store initial code
-                    originalCode[index + 1] = editor.value;
-                });
-            </script>
-
-            <div class="lesson-section resources">
-                <h3>Helpful Resources 📚</h3>
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text x='50%' y='50%' text-anchor='middle' dy='.3em' font-size='20'>📝</text></svg>" alt="Cheat Sheet">
-                        <h4>HTML Cheat Sheet</h4>
-                        <p>Quick reference for HTML tags</p>
-                        <a href="#" class="download-btn" download>Download PDF</a>
-                    </div>
-                    <div class="resource-card">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text x='50%' y='50%' text-anchor='middle' dy='.3em' font-size='20'>🎮</text></svg>" alt="Practice">
-                        <h4>Practice Exercises</h4>
-                        <p>Extra challenges to try</p>
-                        <a href="#" class="download-btn" download>Download ZIP</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lesson-section quiz">
-                <h3>Quick Quiz! 📝</h3>
-                <p>Ready to test what you've learned? Take the quiz and earn your stars! ⭐</p>
-                <a href="quizzes/lesson2-quiz.html" class="quiz-button">
-                    <i class="fas fa-play-circle"></i>
-                    Start Quiz
-                </a>
             </div>
 
             <div class="lesson-section next-steps">
-                <h3>Well Done! 🌟</h3>
-                <p>You've learned how to add different types of content to your HTML pages! Next, we'll learn how to add links and images to make your pages even more engaging.</p>
-                <a href="lesson3.html" class="next-lesson">
-                    Next Lesson: Links & Images
-                </a>
+                <h3>Ready for More? 🚀</h3>
+                <p>Great job learning about HTML elements! In the next lesson, we'll explore how to create lists and tables.</p>
+                <a href="lesson3.html" class="next-lesson">Next Lesson: Lists & Tables →</a>
             </div>
         </section>
     </main>
@@ -336,9 +160,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="../js/course-scripts.js"></script>
-    <script src="../js/quiz-system.js"></script>
-    <script src="../js/lesson2.js"></script>
 </body>
 </html>

@@ -3,104 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 3: Links & Images | Community Resource Mapper</title>
+    <title>Lesson 3: Links & Images | HTML & CSS Course</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../course-styles.css">
-    <style>
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .image-card {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .image-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        .image-card p {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .link-examples {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .link-card {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--green);
-        }
-
-        .link-card h4 {
-            color: var(--orange);
-            margin-bottom: 0.5rem;
-        }
-
-        .link-card .example {
-            background: white;
-            padding: 0.5rem;
-            border-radius: 4px;
-            font-family: monospace;
-            margin-top: 0.5rem;
-        }
-
-        .practice-area {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-
-        .practice-area textarea {
-            width: 100%;
-            min-height: 150px;
-            font-family: monospace;
-            padding: 0.5rem;
-            margin: 1rem 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        .preview-frame {
-            width: 100%;
-            min-height: 300px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-top: 1rem;
-        }
-    </style>
+    <script src="../../scripts/course-scripts.js" defer></script>
 </head>
 <body>
     <header class="lesson-header">
         <div class="header-content">
-            <a href="../../index.html" class="back-home-btn">
-                <span class="home-icon">🏠</span>
-                Back to Home
+            <a href="../../index.html" class="back-home">
+                <img src="../../images/giiyotech logo.png" alt="GiiyoTech Logo" class="logo">
             </a>
             <div class="lesson-info">
                 <h1>Lesson 3: Links & Images 🖼️</h1>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 100%"></div>
+                    <div class="progress" style="width: 50%"></div>
                 </div>
             </div>
         </div>
@@ -111,84 +31,113 @@
             <div class="module-progress">
                 <h3>HTML Basics</h3>
                 <ul>
-                    <li><a href="lesson1.html">1. Building Your First Page</a></li>
-                    <li><a href="lesson2.html">2. Adding Content</a></li>
+                    <li><a href="lesson1.html">1. Getting Started</a></li>
+                    <li><a href="lesson2.html">2. HTML Elements</a></li>
                     <li class="active"><a href="lesson3.html">3. Links & Images</a></li>
+                    <li><a href="lesson4.html">4. Lists & Tables</a></li>
+                    <li><a href="lesson5.html">5. Forms</a></li>
+                    <li><a href="lesson6.html">6. Semantic HTML</a></li>
                 </ul>
             </div>
         </aside>
 
         <section class="lesson-main">
-            <div class="lesson-section introduction">
-                <h2>Making Your Pages Interactive! 🔗</h2>
-                <p>Links and images are what make the web truly interactive and visually appealing. In this lesson, you'll learn how to add both to your web pages!</p>
+            <div class="lesson-section">
+                <h2>Links & Images in HTML 🔗</h2>
+                <p>Learn how to add links and images to make your web pages interactive and visually appealing.</p>
             </div>
 
-            <div class="lesson-section concept">
-                <h3>Creating Links 🔗</h3>
-                <div class="link-examples">
-                    <div class="link-card">
-                        <h4>Basic Link</h4>
-                        <p>Links to another webpage</p>
-                        <div class="example">
-                            &lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
-                        </div>
-                    </div>
-                    <div class="link-card">
-                        <h4>Internal Link</h4>
-                        <p>Links to another page on your site</p>
-                        <div class="example">
-                            &lt;a href="about.html"&gt;About Us&lt;/a&gt;
-                        </div>
-                    </div>
-                    <div class="link-card">
-                        <h4>Email Link</h4>
-                        <p>Opens email client</p>
-                        <div class="example">
-                            &lt;a href="mailto:email@example.com"&gt;Email Us&lt;/a&gt;
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lesson-section concept">
-                <h3>Adding Images 🖼️</h3>
-                <div class="image-gallery">
-                    <div class="image-card">
-                        <img src="/images/gallery1.png" alt="GiiyoTech Logo">
-                        <p>Basic Image Tag</p>
-                        <div class="example">
-                            &lt;img src="image.jpg" alt="Description"&gt;
-                        </div>
-                    </div>
-                    <div class="image-card">
-                        <img src="/images/gallery2.png" alt="GiiyoTech Logo">
-                        <p>Image with Link</p>
-                        <div class="example">
-                            &lt;a href="page.html"&gt;
-                                &lt;img src="image.jpg" alt="Description"&gt;
-                            &lt;/a&gt;
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lesson-section practice">
-                <h3>Try It Yourself! 🎯</h3>
+            <div class="lesson-section">
+                <h3>Creating Links</h3>
+                <p>Links allow users to navigate between pages. Here's how to create them:</p>
+                
                 <div class="code-playground">
-                    <div class="code-editor" id="editor1">
-                        <textarea class="code-input"><!-- Your HTML code here --></textarea>
-                        <div class="code-editor-buttons">
-                            <button class="reset-code-btn" onclick="resetCode(1)">
-                                <i class="fas fa-undo"></i>
-                                Reset Code
-                            </button>
-                            <button class="run-code-btn" onclick="runCode(1)">
-                                <i class="fas fa-play"></i>
-                                Run Code
-                            </button>
+                    <div class="editor-section">
+                        <h4>Try it yourself:</h4>
+                        <textarea class="code-editor"><a href="https://giiyo.com/">Click me to visit giiyo.com</a>
+
+<p>Here's a link to <a href="https://giiyo.com/about">our About page</a></p>
+
+<!-- Opening in a new tab -->
+<a href="https://giiyo.com/" target="_blank">Open Giiyo Tech in new tab</a>
+
+<!-- Link to email -->
+<a href="mailto:contact@giiyo.com">Send us an email</a></textarea>
+                        <div class="button-group">
+                            <button class="run-code">Run Code ▶️</button>
+                            <button class="reset-code">↺ Reset</button>
                         </div>
-                        <div class="code-output" id="output1"></div>
+                    </div>
+                    <div class="preview-section">
+                        <h4>Preview:</h4>
+                        <iframe class="preview-frame" sandbox="allow-same-origin"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-section">
+                <h3>Adding Images</h3>
+                <p>Images make your web pages visually engaging. Here's how to add them:</p>
+                
+                <div class="code-playground">
+                    <div class="editor-section">
+                        <h4>Try it yourself:</h4>
+                        <textarea class="code-editor"><!-- Basic image -->
+<img src="../../images/gallery1.png" alt="Coding example 1" width="200" style="margin: 10px">
+
+<!-- Image with width and height -->
+<img src="../../images/gallery2.png" alt="Coding example 2" width="200" style="margin: 10px">
+
+<!-- Image with a link -->
+<a href="https://giiyo.com">
+    <img src="../../images/gallery3.png" alt="Coding example 3" width="200" style="margin: 10px">
+</a></textarea>
+                        <div class="button-group">
+                            <button class="run-code">Run Code ▶️</button>
+                            <button class="reset-code">↺ Reset</button>
+                        </div>
+                    </div>
+                    <div class="preview-section">
+                        <h4>Preview:</h4>
+                        <iframe class="preview-frame" sandbox="allow-same-origin"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-section">
+                <h3>Practice Exercise</h3>
+                <p>Create a simple photo gallery with linked images:</p>
+                
+                <div class="code-playground">
+                    <div class="editor-section">
+                        <h4>Write your code here:</h4>
+                        <textarea class="code-editor"><h2>My Photo Gallery</h2>
+
+<!-- Create your photo gallery here! 
+Instructions:
+1. Add at least 3 images using the <img> tag
+2. Make each image a link using <a> tags
+3. Add descriptions under each image
+4. Use these images from our folder:
+   - ../../images/gallery1.png
+   - ../../images/gallery2.png
+   - ../../images/gallery3.png
+   - ../../images/giiyotech logo.png
+
+Tips:
+- Set a consistent width for all images
+- Add margins between images
+- Center your gallery
+- Add descriptive alt text
+--></textarea>
+                        <div class="button-group">
+                            <button class="run-code">Run Code ▶️</button>
+                            <button class="reset-code">↺ Reset</button>
+                        </div>
+                    </div>
+                    <div class="preview-section">
+                        <h4>Preview:</h4>
+                        <iframe class="preview-frame gallery" sandbox="allow-same-origin"></iframe>
                     </div>
                 </div>
             </div>
@@ -196,19 +145,15 @@
             <div class="lesson-section quiz">
                 <h3>Quick Quiz! 📝</h3>
                 <p>Ready to test what you've learned? Take the quiz and earn your stars! ⭐</p>
-                <a href="quizzes/lesson3-quiz.html" class="quiz-button">
-                    <i class="fas fa-play-circle"></i>
+                <a href="quizzes/quiz3.html" class="quiz-button">
                     Start Quiz
                 </a>
             </div>
 
-            <div class="lesson-section next-steps">
-                <h3>Fantastic Work! 🌟</h3>
-                <p>You're making great progress with HTML! Let's move on to learn about organizing information.</p>
-                <a href="lesson4.html" class="next-lesson">
-                    Next Lesson: Lists & Tables
-                    <span class="next-icon">➡️</span>
-                </a>
+            <div class="lesson-section">
+                <h3>Ready for More? 🚀</h3>
+                <p>Great job learning about links and images! In the next lesson, we'll explore lists and tables.</p>
+                <a href="lesson4.html" class="next-lesson">Next Lesson: Lists & Tables →</a>
             </div>
         </section>
     </main>
@@ -222,51 +167,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Store original code for each editor
-        const originalCode = {
-            1: document.querySelector('#editor1 .code-input').value,
-            // Add more editors as needed
-        };
-
-        function resetCode(editorId) {
-            const editor = document.querySelector(`#editor${editorId} .code-input`);
-            editor.value = originalCode[editorId];
-            const output = document.querySelector(`#output${editorId}`);
-            output.innerHTML = ''; // Clear output
-        }
-
-        function runCode(editorId) {
-            const editor = document.querySelector(`#editor${editorId} .code-input`);
-            const output = document.querySelector(`#output${editorId}`);
-            try {
-                // Create a safe iframe to run the code
-                const iframe = document.createElement('iframe');
-                iframe.style.width = '100%';
-                iframe.style.height = '300px';
-                iframe.style.border = '1px solid #ccc';
-                output.innerHTML = '';
-                output.appendChild(iframe);
-                
-                const doc = iframe.contentDocument || iframe.contentWindow.document;
-                doc.open();
-                doc.write(editor.value);
-                doc.close();
-            } catch (error) {
-                output.innerHTML = `<div class="error">Error: ${error.message}</div>`;
-            }
-        }
-
-        // Initialize editors with line numbers and syntax highlighting
-        document.querySelectorAll('.code-input').forEach((editor, index) => {
-            // Store initial code
-            originalCode[index + 1] = editor.value;
-        });
-    </script>
-
-    <script src="../js/course-scripts.js"></script>
-    <script src="../js/quiz-system.js"></script>
-    <script src="../js/lesson3.js"></script>
 </body>
 </html>

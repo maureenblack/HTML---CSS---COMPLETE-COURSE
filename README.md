@@ -1,6 +1,49 @@
-# 🚀 Web Development Course: HTML & CSS
+# 🚀 HTML & CSS Course - Young Innovators Edition
 
-Welcome to our comprehensive web development course! This interactive learning platform will take you from a complete beginner to a confident web developer through hands-on lessons and practical projects.
+## 📖 About This Course
+
+Welcome to the HTML & CSS Young Innovators Edition - a fun and interactive learning journey designed specifically for kids and young tech enthusiasts! This course makes coding accessible and enjoyable for young minds, transforming complex concepts into exciting adventures.
+
+### 🎯 What Will You Learn?
+- Create your own awesome websites from scratch
+- Design beautiful pages using HTML & CSS
+- Build interactive elements that respond to clicks
+- Learn coding concepts through fun examples and games
+- Complete exciting projects that you can show to friends and family
+
+### 🌟 Why This Course is Special
+- Kid-friendly explanations with real-world examples
+- Step-by-step guidance with colorful visuals
+- Interactive code editors to practice as you learn
+- Immediate visual feedback to see your progress
+- Fun quizzes and challenges to test your knowledge
+- Project-based learning with practical applications
+
+### 🎨 Course Features
+- 6 comprehensive lessons covering HTML & CSS basics
+- Built-in code editor with instant preview
+- Practice exercises after each lesson
+- Interactive quizzes to reinforce learning
+- Reset buttons to start fresh when needed
+- Beautiful, easy-to-navigate interface
+
+### 👥 Who Is This For?
+- Young innovators aged 8-15 years
+- Beginners with no prior coding experience
+- Creative minds who love to build and explore
+- Kids who want to start their coding journey
+- Young learners interested in website design
+
+Get ready to embark on an exciting coding adventure that will spark your creativity and help you build amazing things for the web! 🚀
+
+![Course Preview](HTML%20%26%20CSS%20-%20yOUNG%20INNOVATORS%20EDITION.PNG)
+
+## 🌟 What Makes This Course Special?
+- 🎮 Kid-friendly examples and explanations
+- 🎨 Fun and creative projects
+- 🏆 Interactive challenges
+- 🎯 Easy-to-follow lessons
+- 🚀 Learn at your own pace
 
 ## 📚 Course Structure
 
@@ -101,8 +144,7 @@ Welcome to our comprehensive web development course! This interactive learning p
 ## 📞 Support
 
 Need help? We're here for you:
-- 📧 Email: support@giiyotech.com
-- 💬 Discord: [Join our community]
+- 📧 Email: contact@giiyotech.com
 - 📚 Documentation: [View docs]
 
 ## 🤝 Contributing

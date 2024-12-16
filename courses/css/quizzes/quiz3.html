@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Quiz 3 - Box Model & Layout</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../course-styles.css">
+    <link rel="stylesheet" href="quiz-styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>CSS Quiz 3: Box Model & Layout</h1>
+        <div id="quiz">
+            <div class="question" id="q1">
+                <h2>Question 1:</h2>
+                <p>What are the four parts of the CSS box model?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(1, 'a')">a) Content, Padding, Border, Margin</button>
+                    <button onclick="checkAnswer(1, 'b')">b) Header, Content, Footer, Border</button>
+                    <button onclick="checkAnswer(1, 'c')">c) Width, Height, Padding, Margin</button>
+                    <button onclick="checkAnswer(1, 'd')">d) Top, Right, Bottom, Left</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="question" id="q2">
+                <h2>Question 2:</h2>
+                <p>Which CSS property is used to create space around an element's content, inside of any defined borders?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(2, 'a')">a) margin</button>
+                    <button onclick="checkAnswer(2, 'b')">b) padding</button>
+                    <button onclick="checkAnswer(2, 'c')">c) spacing</button>
+                    <button onclick="checkAnswer(2, 'd')">d) border</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="question" id="q3">
+                <h2>Question 3:</h2>
+                <p>What is the default value of the display property?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(3, 'a')">a) block</button>
+                    <button onclick="checkAnswer(3, 'b')">b) inline</button>
+                    <button onclick="checkAnswer(3, 'c')">c) flex</button>
+                    <button onclick="checkAnswer(3, 'd')">d) grid</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+        </div>
+
+        <div class="quiz-controls">
+            <button id="submit-quiz" onclick="submitQuiz()">Submit Quiz</button>
+            <a href="../lesson3.html" class="return-link">Return to Lesson</a>
+        </div>
+
+        <div id="results" style="display: none;">
+            <h2>Quiz Results</h2>
+            <p>Your score: <span id="score">0</span>/3</p>
+            <div id="feedback"></div>
+        </div>
+    </div>
+
+    <script src="quiz-scripts.js"></script>
+</body>
+</html>

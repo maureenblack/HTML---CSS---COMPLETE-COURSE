@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Quiz 5 - Flexbox & Grid</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../course-styles.css">
+    <link rel="stylesheet" href="quiz-styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>CSS Quiz 5: Flexbox & Grid</h1>
+        <div id="quiz">
+            <div class="question" id="q1">
+                <h2>Question 1:</h2>
+                <p>Which property is used to create a flex container?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(1, 'a')">a) display: flex;</button>
+                    <button onclick="checkAnswer(1, 'b')">b) display: flexbox;</button>
+                    <button onclick="checkAnswer(1, 'c')">c) display: flexible;</button>
+                    <button onclick="checkAnswer(1, 'd')">d) display: flex-container;</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="question" id="q2">
+                <h2>Question 2:</h2>
+                <p>What is the default flex-direction value?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(2, 'a')">a) column</button>
+                    <button onclick="checkAnswer(2, 'b')">b) row</button>
+                    <button onclick="checkAnswer(2, 'c')">c) row-reverse</button>
+                    <button onclick="checkAnswer(2, 'd')">d) column-reverse</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="question" id="q3">
+                <h2>Question 3:</h2>
+                <p>Which property defines the size of grid columns?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(3, 'a')">a) grid-column-width</button>
+                    <button onclick="checkAnswer(3, 'b')">b) grid-template-columns</button>
+                    <button onclick="checkAnswer(3, 'c')">c) grid-columns</button>
+                    <button onclick="checkAnswer(3, 'd')">d) column-template</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+        </div>
+
+        <div class="quiz-controls">
+            <button id="submit-quiz" onclick="submitQuiz()">Submit Quiz</button>
+            <a href="../lesson5.html" class="return-link">Return to Lesson</a>
+        </div>
+
+        <div id="results" style="display: none;">
+            <h2>Quiz Results</h2>
+            <p>Your score: <span id="score">0</span>/3</p>
+            <div id="feedback"></div>
+        </div>
+    </div>
+
+    <script src="quiz-scripts.js"></script>
+</body>
+</html>

@@ -236,14 +236,33 @@
             <!-- Practice -->
             <div class="lesson-section">
                 <h3>Let's Practice! 💪</h3>
-                <div class="mission">
-                    <h4>Your Mission:</h4>
-                    <p>Style a simple paragraph using CSS. Try to:</p>
-                    <ul class="mission-tasks">
-                        <li>🎨 Change the text color</li>
-                        <li>📏 Make the text bigger</li>
-                        <li>✨ Add a background color</li>
-                    </ul>
+                <div class="code-playground">
+                    <div class="editor-section">
+                        <h4>Try it yourself:</h4>
+                        <textarea class="code-editor">
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Add your CSS here */
+        p {
+            color: blue;
+            font-size: 20px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a styled paragraph!</p>
+</body>
+</html>
+                        </textarea>
+                        <button class="run-code">Run Code ▶️</button>
+                    </div>
+                    <div class="preview-section">
+                        <h4>Preview:</h4>
+                        <iframe class="preview-frame"></iframe>
+                    </div>
                 </div>
             </div>
 
@@ -262,7 +281,7 @@
             <div class="lesson-section quiz">
                 <h3>Quick Quiz! 📝</h3>
                 <p>Ready to test what you've learned? Take the quiz and earn your stars! ⭐</p>
-                <a href="#" class="quiz-button" onclick="startQuiz()">
+                <a href="quizzes/quiz1.html" class="quiz-button" onclick="startQuiz()">
                     <i class="fas fa-play-circle"></i>
                     Start Quiz
                 </a>
@@ -280,5 +299,6 @@
     </div>
 
     <script src="../course-scripts.js"></script>
+    <script src="lesson1.js"></script>
 </body>
 </html>

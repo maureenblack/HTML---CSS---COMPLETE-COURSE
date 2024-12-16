@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Quiz 6 - Responsive Design</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../course-styles.css">
+    <link rel="stylesheet" href="quiz-styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>CSS Quiz 6: Responsive Design</h1>
+        <div id="quiz">
+            <div class="question" id="q1">
+                <h2>Question 1:</h2>
+                <p>What is the purpose of a media query?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(1, 'a')">a) To apply different styles based on device characteristics</button>
+                    <button onclick="checkAnswer(1, 'b')">b) To play media files</button>
+                    <button onclick="checkAnswer(1, 'c')">c) To query a database</button>
+                    <button onclick="checkAnswer(1, 'd')">d) To create animations</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="question" id="q2">
+                <h2>Question 2:</h2>
+                <p>What is a viewport?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(2, 'a')">a) A CSS framework</button>
+                    <button onclick="checkAnswer(2, 'b')">b) The visible area of a web page on a device</button>
+                    <button onclick="checkAnswer(2, 'c')">c) A JavaScript function</button>
+                    <button onclick="checkAnswer(2, 'd')">d) A type of HTML element</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="question" id="q3">
+                <h2>Question 3:</h2>
+                <p>Which unit is most suitable for responsive design?</p>
+                <div class="options">
+                    <button onclick="checkAnswer(3, 'a')">a) px (pixels)</button>
+                    <button onclick="checkAnswer(3, 'b')">b) rem or em</button>
+                    <button onclick="checkAnswer(3, 'c')">c) pt (points)</button>
+                    <button onclick="checkAnswer(3, 'd')">d) in (inches)</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+        </div>
+
+        <div class="quiz-controls">
+            <button id="submit-quiz" onclick="submitQuiz()">Submit Quiz</button>
+            <a href="../lesson6.html" class="return-link">Return to Lesson</a>
+        </div>
+
+        <div id="results" style="display: none;">
+            <h2>Quiz Results</h2>
+            <p>Your score: <span id="score">0</span>/3</p>
+            <div id="feedback"></div>
+        </div>
+    </div>
+
+    <script src="quiz-scripts.js"></script>
+</body>
+</html>

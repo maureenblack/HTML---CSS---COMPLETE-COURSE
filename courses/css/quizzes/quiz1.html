@@ -61,51 +61,6 @@
         </div>
     </div>
 
-    <script>
-        const answers = {
-            1: 'a',
-            2: 'b',
-            3: 'b'
-        };
-
-        let score = 0;
-        let questionsAnswered = new Set();
-
-        function checkAnswer(questionNum, choice) {
-            const question = document.querySelector(`#q${questionNum}`);
-            const buttons = question.querySelectorAll('button');
-            const feedback = question.querySelector('.feedback');
-            
-            buttons.forEach(button => button.disabled = true);
-            questionsAnswered.add(questionNum);
-
-            if (choice === answers[questionNum]) {
-                feedback.textContent = "Correct! ✅";
-                feedback.style.color = "green";
-                score++;
-            } else {
-                feedback.textContent = "Incorrect! ❌";
-                feedback.style.color = "red";
-            }
-        }
-
-        function submitQuiz() {
-            if (questionsAnswered.size < 3) {
-                alert("Please answer all questions before submitting!");
-                return;
-            }
-
-            document.getElementById('score').textContent = score;
-            document.getElementById('results').style.display = 'block';
-            document.getElementById('submit-quiz').style.display = 'none';
-
-            const feedback = document.getElementById('feedback');
-            feedback.innerHTML = `<p>Great job completing the quiz! ${
-                score === 3 ? "Perfect score! 🌟" :
-                score === 2 ? "Almost there! Keep practicing! 💪" :
-                "Review the material and try again! 📚"
-            }</p>`;
-        }
-    </script>
+    <script src="quiz-scripts.js"></script>
 </body>
 </html>
