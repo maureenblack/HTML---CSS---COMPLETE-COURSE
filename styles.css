@@ -90,8 +90,19 @@ h1 {
 }
 
 .nav-button:hover {
-    background-color: currentColor;
+    background-color: var(--red);
     color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(156, 43, 54, 0.2);
+}
+
+.nav-button.active,
+.lesson-card.active,
+.project-card.active {
+    background-color: var(--red);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(156, 43, 54, 0.2);
 }
 
 /* Track Colors */
@@ -180,6 +191,8 @@ main {
 }
 
 .project-card {
+    position: relative;
+    overflow: hidden;
     background: white;
     border-radius: 12px;
     padding: 1.5rem;
@@ -188,7 +201,14 @@ main {
 }
 
 .project-card:hover {
+    border-color: var(--red);
     transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.project-card.active {
+    border-color: var(--red);
+    background-color: #fff9f9;
 }
 
 .project-card h3 {
@@ -477,28 +497,31 @@ main {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
     background: white;
     border-radius: 12px;
     text-decoration: none;
-    color: var(--text-color);
+    color: inherit;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border: 2px solid transparent;
 }
 
-.beginner .lesson-card:hover {
-    border-color: var(--green);
-    transform: translateX(10px);
-}
-
-.intermediate .lesson-card:hover {
+.lesson-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     border-color: var(--red);
-    transform: translateX(10px);
+    background-color: #fff9f9;
 }
 
-.advanced .lesson-card:hover {
-    border-color: var(--orange);
-    transform: translateX(10px);
+.lesson-card.active {
+    background-color: var(--red);
+    color: white;
+}
+
+.lesson-card.active h4,
+.lesson-card.active p {
+    color: white;
 }
 
 .lesson-number {
@@ -511,25 +534,13 @@ main {
     color: white;
     border-radius: 50%;
     font-weight: bold;
-    flex-shrink: 0;
+    transition: all 0.3s ease;
 }
 
-.intermediate .lesson-number {
+.lesson-card:hover .lesson-number,
+.lesson-card.active .lesson-number {
     background: var(--red);
-}
-
-.advanced .lesson-number {
-    background: var(--orange);
-}
-
-.lesson-content h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
-}
-
-.lesson-content p {
-    font-size: 0.9rem;
-    color: #666;
+    transform: scale(1.1) rotate(360deg);
 }
 
 /* Responsive adjustments for learning path */
@@ -710,3 +721,53 @@ footer p {
         height: 35px;
     }
 }
+
+/* Active States and Highlights */
+.nav-buttons .nav-button[href*="html"]:hover,
+.nav-buttons .nav-button[href*="html"].active {
+    background-color: var(--red);
+    color: white;
+}
+
+.nav-buttons .nav-button[href*="css"]:hover,
+.nav-buttons .nav-button[href*="css"].active {
+    background-color: var(--red);
+    color: white;
+}
+
+.nav-buttons .nav-button[href*="projects"]:hover,
+.nav-buttons .nav-button[href*="projects"].active {
+    background-color: var(--red);
+    color: white;
+}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get current page URL
+    const currentPage = window.location.pathname;
+
+    // Add active class to navigation buttons
+    const navButtons = document.querySelectorAll('.nav-button');
+    navButtons.forEach(button => {
+        if (button.getAttribute('href').includes(currentPage)) {
+            button.classList.add('active');
+        }
+    });
+
+    // Add active class to lesson cards
+    const lessonCards = document.querySelectorAll('.lesson-card');
+    lessonCards.forEach(card => {
+        if (card.getAttribute('href') === currentPage) {
+            card.classList.add('active');
+        }
+    });
+
+    // Add active class to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        if (card.getAttribute('href') === currentPage) {
+            card.classList.add('active');
+        }
+    });
+});
+</script>
