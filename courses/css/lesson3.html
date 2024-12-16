@@ -9,152 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../course-styles.css">
-    <style>
-        .responsive-demo {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-
-        .device-preview {
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            margin: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .device-content {
-            padding: 1rem;
-        }
-
-        .responsive-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        .grid-card {
-            background: var(--green);
-            color: white;
-            padding: 1rem;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .media-query-demo {
-            padding: 1rem;
-            background: var(--orange);
-            color: white;
-            border-radius: 4px;
-            text-align: center;
-            margin: 1rem 0;
-        }
-
-        @media (max-width: 600px) {
-            .media-query-demo {
-                background: var(--green);
-            }
-        }
-
-        .device-controls {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .device-button {
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 4px;
-            background: var(--green);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .device-button:hover {
-            background: var(--orange);
-        }
-
-        .playground {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .editor-section {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-        }
-
-        .editor-section textarea {
-            width: 100%;
-            min-height: 300px;
-            font-family: monospace;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin: 0.5rem 0;
-        }
-
-        .preview-section {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-        }
-
-        .preview-container {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        #preview {
-            padding: 1rem;
-            min-height: 300px;
-        }
-
-        .width-indicator {
-            background: #f0f0f0;
-            padding: 0.5rem;
-            text-align: center;
-            font-family: monospace;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .breakpoint-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .breakpoint-card {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .breakpoint-card h4 {
-            color: var(--orange);
-            margin-bottom: 0.5rem;
-        }
-
-        .code-example {
-            background: #2d2d2d;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 4px;
-            font-family: monospace;
-            margin-top: 0.5rem;
-        }
-    </style>
 </head>
 <body>
     <header class="lesson-header">
@@ -193,36 +47,77 @@
             <!-- Introduction -->
             <div class="lesson-section">
                 <h2>Understanding the Box Model 📦</h2>
-                <p>Every element in HTML is a box! Let's learn how to control these boxes with CSS.</p>
-            </div>
-
-            <!-- Box Model Section -->
-            <div class="lesson-section">
-                <h3>The Box Model Parts 🎁</h3>
+                <p>Every element in CSS is a box! In this lesson, we'll learn how to control the size, spacing, and layout of these boxes to create beautiful designs.</p>
+                
                 <div class="explanation-cards">
                     <div class="explanation-card">
-                        <h4>Content</h4>
-                        <p>The actual content of the box:</p>
+                        <h4>What is the Box Model? 🤔</h4>
+                        <p>The CSS box model is the foundation of layout on the web. It consists of:</p>
                         <ul>
-                            <li>width</li>
-                            <li>height</li>
-                            <li>min-width</li>
-                            <li>max-width</li>
+                            <li>Content - The actual content of the box</li>
+                            <li>Padding - Clear space around the content</li>
+                            <li>Border - A line around the padding</li>
+                            <li>Margin - Space between boxes</li>
                         </ul>
                     </div>
                     <div class="explanation-card">
-                        <h4>Padding</h4>
-                        <p>Space inside the border:</p>
+                        <h4>Why is it Important? 🎯</h4>
                         <ul>
-                            <li>padding-top</li>
-                            <li>padding-right</li>
-                            <li>padding-bottom</li>
-                            <li>padding-left</li>
+                            <li>Controls spacing between elements</li>
+                            <li>Determines element size</li>
+                            <li>Affects page layout</li>
+                            <li>Creates visual hierarchy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box Model Properties -->
+            <div class="lesson-section">
+                <h3>Box Model Properties 🛠️</h3>
+                <p>Let's explore the key properties that control the box model:</p>
+
+                <div class="code-playground">
+                    <div class="code-editor">
+                        <h4>Try these box model properties:</h4>
+                        <textarea id="code-input" class="code-input">
+.box {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 2px solid #333;
+    margin: 10px;
+    background-color: #f0f0f0;
+}</textarea>
+                        <button id="run-code" class="run-code">Run Code ▶️</button>
+                        <div class="preview">
+                            <h4>Preview:</h4>
+                            <iframe id="preview" class="preview-frame"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Width & Height</h4>
+                        <ul>
+                            <li>width: Sets element width</li>
+                            <li>height: Sets element height</li>
+                            <li>min-width/max-width</li>
+                            <li>min-height/max-height</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Padding & Margin</h4>
+                        <ul>
+                            <li>padding: Inner spacing</li>
+                            <li>margin: Outer spacing</li>
+                            <li>Can be set for each side</li>
+                            <li>Uses shorthand properties</li>
                         </ul>
                     </div>
                     <div class="explanation-card">
                         <h4>Border</h4>
-                        <p>The line around the box:</p>
                         <ul>
                             <li>border-width</li>
                             <li>border-style</li>
@@ -230,37 +125,93 @@
                             <li>border-radius</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+
+            <!-- Box Sizing -->
+            <div class="lesson-section">
+                <h3>Box Sizing 📏</h3>
+                <p>Understanding how box-sizing affects element dimensions:</p>
+
+                <div class="explanation-cards">
                     <div class="explanation-card">
-                        <h4>Margin</h4>
-                        <p>Space outside the border:</p>
+                        <h4>content-box</h4>
+                        <p>The default box-sizing value:</p>
                         <ul>
-                            <li>margin-top</li>
-                            <li>margin-right</li>
-                            <li>margin-bottom</li>
-                            <li>margin-left</li>
+                            <li>Width = content width</li>
+                            <li>Total width = width + padding + border</li>
+                            <li>Can be tricky to calculate</li>
                         </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>border-box</h4>
+                        <p>The modern approach:</p>
+                        <ul>
+                            <li>Width includes padding and border</li>
+                            <li>Easier to predict sizes</li>
+                            <li>Recommended for most cases</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="code-playground">
+                    <div class="code-editor">
+                        <h4>Compare box-sizing values:</h4>
+                        <textarea id="box-sizing-demo" class="code-input">
+.content-box {
+    box-sizing: content-box;
+    width: 200px;
+    padding: 20px;
+    border: 2px solid #333;
+}
+
+.border-box {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
+    border: 2px solid #333;
+}</textarea>
+                        <button id="run-box-sizing" class="run-code">Run Code ▶️</button>
+                        <div class="preview">
+                            <h4>Preview:</h4>
+                            <iframe id="box-sizing-preview" class="preview-frame"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Display Properties -->
+            <!-- Display Property -->
             <div class="lesson-section">
-                <h3>Display Properties 🖥️</h3>
+                <h3>Display Property 🎭</h3>
+                <p>The display property determines how an element behaves in the layout:</p>
+
                 <div class="explanation-cards">
                     <div class="explanation-card">
-                        <h4>Block</h4>
-                        <p>Takes full width, starts on new line:</p>
-                        <code>display: block;</code>
+                        <h4>Block Elements</h4>
+                        <ul>
+                            <li>Take full width available</li>
+                            <li>Start on a new line</li>
+                            <li>Can set width/height</li>
+                            <li>Example: div, p, h1</li>
+                        </ul>
                     </div>
                     <div class="explanation-card">
-                        <h4>Inline</h4>
-                        <p>Takes only needed width:</p>
-                        <code>display: inline;</code>
+                        <h4>Inline Elements</h4>
+                        <ul>
+                            <li>Take only needed width</li>
+                            <li>Flow with text</li>
+                            <li>Can't set width/height</li>
+                            <li>Example: span, a, strong</li>
+                        </ul>
                     </div>
                     <div class="explanation-card">
                         <h4>Inline-Block</h4>
-                        <p>Mix of both:</p>
-                        <code>display: inline-block;</code>
+                        <ul>
+                            <li>Flow with text</li>
+                            <li>Can set width/height</li>
+                            <li>Best of both worlds</li>
+                            <li>Example: images, buttons</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -270,77 +221,55 @@
                 <h3>Let's Practice! 💪</h3>
                 <div class="code-playground">
                     <div class="code-editor">
-                        <h4>Try styling a box:</h4>
-                        <textarea id="code-input" class="code-input">/* Style the box */
-.my-box {
-    width: 200px;
-    height: 200px;
+                        <h4>Create a card layout:</h4>
+                        <textarea id="practice-input" class="code-input">
+.card {
+    /* Add your styles here */
+    width: 300px;
     padding: 20px;
-    border: 2px solid blue;
-    margin: 10px;
-    background-color: lightblue;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }</textarea>
-                        <button id="run-code" class="run-code">Run Code ▶️</button>
+                        <button id="run-practice" class="run-code">Run Code ▶️</button>
                         <div class="preview">
-                            <h4>Preview:</h4>
-                            <iframe id="preview" class="preview-frame"></iframe>
+                            <h4>Your card will appear here:</h4>
+                            <iframe id="practice-preview" class="preview-frame"></iframe>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Box Sizing -->
-            <div class="lesson-section">
-                <h3>Box Sizing 📏</h3>
-                <div class="explanation-cards">
-                    <div class="explanation-card">
-                        <h4>Content-Box</h4>
-                        <p>Default behavior:</p>
-                        <code>box-sizing: content-box;</code>
-                        <p>Width and height only include content</p>
-                    </div>
-                    <div class="explanation-card">
-                        <h4>Border-Box</h4>
-                        <p>Modern approach:</p>
-                        <code>box-sizing: border-box;</code>
-                        <p>Width and height include padding and border</p>
                     </div>
                 </div>
             </div>
 
             <!-- Tips Section -->
             <div class="lesson-section">
-                <div class="tips">
-                    <h4>Pro Tips! 💡</h4>
-                    <ul>
-                        <li>Use border-box for easier sizing calculations</li>
-                        <li>Remember margins collapse between elements</li>
-                        <li>Use shorthand properties for cleaner code</li>
-                        <li>Consider using relative units for responsive design</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Challenge Section -->
-            <div class="lesson-section">
-                <h3>Mini Challenge 🏆</h3>
-                <div class="mission">
-                    <h4>Your Mission:</h4>
-                    <p>Create a card design with these requirements:</p>
-                    <ul class="mission-tasks">
-                        <li>Fixed width and height</li>
-                        <li>Padding around content</li>
-                        <li>Rounded corners</li>
-                        <li>Shadow effect</li>
-                        <li>Centered on the page</li>
-                    </ul>
+                <h3>Pro Tips! 💡</h3>
+                <div class="explanation-cards">
+                    <div class="explanation-card">
+                        <h4>Best Practices</h4>
+                        <ul>
+                            <li>Use border-box for predictable sizing</li>
+                            <li>Be consistent with units (px, em, rem)</li>
+                            <li>Use margin to separate elements</li>
+                            <li>Use padding for inner spacing</li>
+                        </ul>
+                    </div>
+                    <div class="explanation-card">
+                        <h4>Common Pitfalls</h4>
+                        <ul>
+                            <li>Forgetting to clear floats</li>
+                            <li>Mixing different box-sizing values</li>
+                            <li>Not accounting for padding in widths</li>
+                            <li>Ignoring margin collapse</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <!-- Next Steps -->
             <div class="lesson-section next-steps">
-                <h3>Excellent Progress! 🌟</h3>
-                <p>Now you understand how boxes work in CSS! Next, we'll learn about Flexbox and Grid for advanced layouts.</p>
+                <h3>Great Progress! 🌟</h3>
+                <p>Now you understand how the CSS box model works! In the next lesson, we'll explore Flexbox and Grid - modern layout systems that make complex layouts easy!</p>
                 <a href="lesson4.html" class="next-lesson">
                     Next Lesson: Flexbox & Grid
                 </a>

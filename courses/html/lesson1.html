@@ -9,125 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../course-styles.css">
-    <style>
-        .explanation-box {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 1rem 0;
-            border: 2px solid var(--green);
-        }
-
-        .fun-fact {
-            background: rgba(237, 159, 71, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .fun-fact .emoji {
-            font-size: 2rem;
-        }
-
-        .analogy {
-            display: grid;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .analogy-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-        }
-
-        .analogy-item .emoji {
-            font-size: 2rem;
-        }
-
-        .code-explanation {
-            list-style: none;
-            padding: 0;
-        }
-
-        .code-explanation li {
-            margin: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .code-explanation li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--green);
-        }
-
-        .mission-tasks {
-            list-style: none;
-            padding: 0;
-        }
-
-        .mission-tasks li {
-            margin: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .help-box {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 1rem 0;
-        }
-
-        .common-problems {
-            margin-bottom: 1.5rem;
-        }
-
-        .example {
-            background: white;
-            padding: 0.5rem;
-            border-radius: 4px;
-            margin-top: 0.5rem;
-            font-family: monospace;
-        }
-
-        .example p {
-            margin: 0.25rem 0;
-        }
-
-        .demo-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            margin: 1rem 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .demo-image:hover {
-            transform: scale(1.02);
-        }
-
-        .image-caption {
-            text-align: center;
-            color: #666;
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
-
-        .image-container {
-            margin: 2rem 0;
-        }
-    </style>
 </head>
 <body>
     <header class="lesson-header">
@@ -297,19 +178,101 @@
                 </a>
             </div>
 
-            <div class="lesson-section links-images">
-                <h1>Links and Images in HTML</h1>
-                <div class="image-container">
-                    <img src="../../images/girlcoding.png" alt="Young girl learning to code" class="demo-image">
-                    <p class="image-caption">A young student exploring the world of coding</p>
-                </div>
-                <p>Images and links are fundamental elements that make web pages interactive and visually appealing.</p>
-                <h2>Working with Images</h2>
-                <div class="image-container">
-                    <img src="../../images/kidsonpc.png" alt="Kids working on computers" class="demo-image">
-                    <p class="image-caption">Students collaborating on coding projects</p>
-                </div>
-            </div>
+            <style>
+                .explanation-box {
+                    background: #f8f9fa;
+                    padding: 1.5rem;
+                    border-radius: 12px;
+                    margin: 1rem 0;
+                    border: 2px solid var(--green);
+                }
+
+                .fun-fact {
+                    background: rgba(237, 159, 71, 0.1);
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin-top: 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+
+                .fun-fact .emoji {
+                    font-size: 2rem;
+                }
+
+                .analogy {
+                    display: grid;
+                    gap: 1rem;
+                    margin: 1rem 0;
+                }
+
+                .analogy-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    background: white;
+                    padding: 1rem;
+                    border-radius: 8px;
+                }
+
+                .analogy-item .emoji {
+                    font-size: 2rem;
+                }
+
+                .code-explanation {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .code-explanation li {
+                    margin: 0.5rem 0;
+                    padding-left: 1.5rem;
+                    position: relative;
+                }
+
+                .code-explanation li:before {
+                    content: "→";
+                    position: absolute;
+                    left: 0;
+                    color: var(--green);
+                }
+
+                .mission-tasks {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .mission-tasks li {
+                    margin: 0.5rem 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                .help-box {
+                    background: #f8f9fa;
+                    padding: 1.5rem;
+                    border-radius: 12px;
+                    margin: 1rem 0;
+                }
+
+                .common-problems {
+                    margin-bottom: 1.5rem;
+                }
+
+                .example {
+                    background: white;
+                    padding: 0.5rem;
+                    border-radius: 4px;
+                    margin-top: 0.5rem;
+                    font-family: monospace;
+                }
+
+                .example p {
+                    margin: 0.25rem 0;
+                }
+            </style>
         </section>
     </main>
 
