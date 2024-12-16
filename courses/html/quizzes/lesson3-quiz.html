@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links & Images Quiz | HTML & CSS - Young Innovators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../styles.css">
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .question {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--green);
+        }
+
+        .question h3 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .options {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .option {
+            padding: 1rem;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            border-color: var(--orange);
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            background: var(--green);
+            color: white;
+            border-color: var(--green);
+        }
+
+        .submit-quiz {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .submit-quiz:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .stars {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        .back-to-lesson {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--green);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .back-to-lesson:hover {
+            background: var(--orange);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header class="lesson-header">
+        <div class="header-content">
+            <a href="../lesson3.html" class="back-home-btn">
+                <span class="home-icon">📝</span>
+                Back to Lesson
+            </a>
+            <div class="lesson-info">
+                <h1>Links & Images Quiz 🖼️</h1>
+                <p>Test your knowledge and earn stars! ⭐</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="quiz-container">
+        <div class="question" id="q1">
+            <h3>Question 1: Creating Links</h3>
+            <p>Which HTML tag is used to create a clickable link?</p>
+            <div class="options">
+                <div class="option" data-correct="true">&lt;a href="page.html"&gt;Click me&lt;/a&gt;</div>
+                <div class="option">&lt;link&gt;Click me&lt;/link&gt;</div>
+                <div class="option">&lt;button&gt;Click me&lt;/button&gt;</div>
+                <div class="option">&lt;click&gt;Click me&lt;/click&gt;</div>
+            </div>
+        </div>
+
+        <div class="question" id="q2">
+            <h3>Question 2: Adding Images</h3>
+            <p>What's the correct way to add an image to your webpage?</p>
+            <div class="options">
+                <div class="option" data-correct="true">&lt;img src="picture.jpg" alt="My picture"&gt;</div>
+                <div class="option">&lt;image&gt;picture.jpg&lt;/image&gt;</div>
+                <div class="option">&lt;picture src="picture.jpg"&gt;</div>
+                <div class="option">&lt;img&gt;picture.jpg&lt;/img&gt;</div>
+            </div>
+        </div>
+
+        <div class="question" id="q3">
+            <h3>Question 3: Image Attributes</h3>
+            <p>Which attribute should you always include with an img tag to help people who can't see the image?</p>
+            <div class="options">
+                <div class="option" data-correct="true">alt</div>
+                <div class="option">title</div>
+                <div class="option">description</div>
+                <div class="option">caption</div>
+            </div>
+        </div>
+
+        <button class="submit-quiz">
+            Check My Answers! 🎯
+        </button>
+
+        <div class="result">
+            <h2>Amazing Work! 🎉</h2>
+            <div class="stars"></div>
+            <p class="score-message"></p>
+            <a href="../lesson3.html" class="back-to-lesson">
+                <span class="home-icon">📝</span>
+                Back to Lesson
+            </a>
+        </div>
+    </main>
+
+    <script>
+        const questions = document.querySelectorAll('.question');
+        const submitButton = document.querySelector('.submit-quiz');
+        const result = document.querySelector('.result');
+        const stars = document.querySelector('.stars');
+        const scoreMessage = document.querySelector('.score-message');
+
+        questions.forEach(question => {
+            const options = question.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    options.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                });
+            });
+        });
+
+        submitButton.addEventListener('click', () => {
+            let score = 0;
+            questions.forEach(question => {
+                const selectedOption = question.querySelector('.option.selected');
+                if (selectedOption && selectedOption.dataset.correct === 'true') {
+                    score++;
+                }
+            });
+
+            // Show results
+            result.classList.add('show');
+            const totalQuestions = questions.length;
+            const percentage = (score / totalQuestions) * 100;
+
+            // Display stars based on score
+            if (percentage === 100) {
+                stars.textContent = '⭐⭐⭐';
+                scoreMessage.textContent = 'Perfect score! You\'re a HTML superstar!';
+            } else if (percentage >= 66) {
+                stars.textContent = '⭐⭐';
+                scoreMessage.textContent = 'Great job! Keep practicing to get that third star!';
+            } else {
+                stars.textContent = '⭐';
+                scoreMessage.textContent = 'Good try! Review the lesson and try again for more stars!';
+            }
+
+            // Scroll to results
+            result.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
